@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from './redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from './redux/counterSlice';
 
 function App() {
