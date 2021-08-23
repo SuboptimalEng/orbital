@@ -15,6 +15,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.18",
+    "electron-is-dev": "^2.0.0",
     "fluent-ffmpeg": "^2.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -37,6 +38,16 @@
       "react-app/jest"
     ]
   },
+  "build": {
+    "appId": "com.suboptimaleng",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "extends": null
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,7 +64,6 @@
     "autoprefixer": "^9.8.6",
     "concurrently": "^6.2.1",
     "electron": "^13.2.1",
-    "electron-is-dev": "^2.0.0",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
     "wait-on": "^6.0.0"
