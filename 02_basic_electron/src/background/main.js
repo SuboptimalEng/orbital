@@ -18,9 +18,8 @@ function createWindow() {
 
   // win.loadFile('index.html');
   win.loadURL(
-    isDev
-      ? 'http://localhost:3000'
-      : `file://${path.join(__dirname, '../build/index.html')}`
+    isDev ? 'http://localhost:3000' : `file://${__dirname}/dist/index.html`
+    // : `file://${path.join(__dirname, '../build/index.html')}`
   );
 }
 
@@ -31,12 +30,13 @@ app.whenReady().then(() => {
   createWindow();
 
   const ffmpeg = require('fluent-ffmpeg');
-  const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path.replace(
-    'app.asar',
-    'app.asar.unpacked'
-  );
-  console.log({ path: ffmpegPath.path, version: ffmpegPath.version });
-  ffmpeg.setFfmpegPath(ffmpegPath);
+  const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+  const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+
+  console.log({ ffmpegPath, ffprobePath });
+
+  ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
+  ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
 
   ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
     count: 1,

@@ -6,6 +6,7 @@
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^1.2.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -30,6 +31,7 @@
     "test": "craco test",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
+    "electron:build": "electron-builder --mac",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -64,6 +66,7 @@
     "autoprefixer": "^9.8.6",
     "concurrently": "^6.2.1",
     "electron": "^13.2.1",
+    "electron-builder": "^22.11.7",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
     "wait-on": "^6.0.0"
