@@ -30,6 +30,13 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow();
 
+  const ffmpeg = require('fluent-ffmpeg');
+  ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
+    count: 1,
+    filename: 'abcd.jpg',
+    folder: '/Users/suboptimaleng/Desktop/orb/',
+  });
+
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
