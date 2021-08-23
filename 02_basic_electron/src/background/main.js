@@ -31,9 +31,16 @@ app.whenReady().then(() => {
   createWindow();
 
   const ffmpeg = require('fluent-ffmpeg');
+  const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path.replace(
+    'app.asar',
+    'app.asar.unpacked'
+  );
+  console.log({ path: ffmpegPath.path, version: ffmpegPath.version });
+  ffmpeg.setFfmpegPath(ffmpegPath);
+
   ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
     count: 1,
-    filename: 'abcd.jpg',
+    filename: 'abc.jpg',
     folder: '/Users/suboptimaleng/Desktop/orb/',
   });
 

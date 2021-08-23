@@ -5,6 +5,7 @@
   "main": "./src/background/main.js",
   "dependencies": {
     "@craco/craco": "^6.2.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
