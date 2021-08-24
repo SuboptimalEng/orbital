@@ -1,8 +1,9 @@
 {
-  "name": "00_template",
+  "name": "orbital",
   "version": "0.1.0",
   "private": true,
-  "main": "./src/background/main.js",
+  "main": "src/background/main.js",
+  "homepage": "./",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
@@ -29,26 +30,33 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
+    "dev": "concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "electron:build": "electron-builder --mac",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "electron-pack": "electron-builder",
+    "preelectron-pack": "npm run build"
   },
   "build": {
-    "appId": "com.suboptimaleng",
+    "appId": "com.electron.example-app",
     "mac": {
       "target": [
         "dmg",
         "zip"
       ]
     },
+    "files": [
+      "**/*",
+      "build/**/*"
+    ],
+    "extraMetadata": {
+      "main": "src/background/main.js"
+    },
     "extends": null
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
