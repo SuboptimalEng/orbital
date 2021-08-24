@@ -4,7 +4,8 @@
 - TypeScript
 - Redux (counter example)
 - Tailwind CSS (toggle themes + opacity)
-- Electron Desktop App
+- FFmpeg (video processing)
+- Electron.js
 
 ## Getting Started
 
