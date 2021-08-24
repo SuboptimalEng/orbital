@@ -1,9 +1,13 @@
 {
-  "name": "app",
+  "name": "orbital",
   "version": "0.1.0",
   "private": true,
+  "main": "src/background/main.js",
+  "homepage": "./",
   "dependencies": {
     "@craco/craco": "^6.2.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^1.2.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,6 +17,8 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.18",
+    "electron-is-dev": "^2.0.0",
+    "fluent-ffmpeg": "^2.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -24,7 +30,27 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "dev": "concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
+    "electron": "wait-on tcp:3000 && electron .",
+    "electron-pack": "electron-builder",
+    "preelectron-pack": "npm run build"
+  },
+  "build": {
+    "appId": "com.electron.example-app",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "files": [
+      "**/*",
+      "build/**/*"
+    ],
+    "extraMetadata": {
+      "main": "src/background/main.js"
+    },
+    "extends": null
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +72,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "concurrently": "^6.2.1",
+    "electron": "^13.2.1",
+    "electron-builder": "^22.11.7",
     "postcss": "^7.0.36",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
+    "wait-on": "^6.0.0"
   }
 }
