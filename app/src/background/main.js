@@ -1,8 +1,12 @@
+// import { app, BrowserWindow } from 'electron';
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
 function createWindow() {
+  const preload = path.join(__dirname, 'preload.js');
+  console.log({ preload });
+
   const win = new BrowserWindow({
     width: 1200,
     height: 900,
@@ -12,6 +16,7 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
@@ -21,6 +26,18 @@ function createWindow() {
       : `file://${path.join(__dirname, '../../build/index.html')}`
   );
 }
+
+/* ================================================================ */
+/* ================================================================ */
+
+const { ipcMain } = require('electron');
+ipcMain.on('test', (event, payload) => {
+  console.log('test!!!', payload);
+  event.reply('test', { from: 'main.js' });
+});
+
+/* ================================================================ */
+/* ================================================================ */
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

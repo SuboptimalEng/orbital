@@ -7,6 +7,12 @@ import { darkTheme } from './themes/dark';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { decrement, increment } from './redux/counterSlice';
 
+declare global {
+  interface Window {
+    ipc: any;
+  }
+}
+
 function App() {
   useEffect(() => {
     applyTheme(baseTheme);
@@ -14,6 +20,12 @@ function App() {
 
   const { value } = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
+
+  window.ipc.on('test', (payload: any) => console.log({ payload }));
+
+  const ipcTest = () => {
+    window.ipc.send('test', { from: 'app.tsx' });
+  };
 
   return (
     <div className="App">
@@ -32,6 +44,9 @@ function App() {
               className="border rounded p-2 m-2"
             >
               Dark theme
+            </div>
+            <div onClick={() => ipcTest()} className="border rounded p-2 m-2">
+              IPC
             </div>
           </div>
           <img src={logo} className="App-logo w-60" alt="logo" />
