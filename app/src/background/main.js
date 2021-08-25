@@ -13,6 +13,7 @@ function createWindow() {
     vibrancy: 'under-window',
     visualEffectState: 'followWindow',
     webPreferences: {
+      webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
@@ -30,9 +31,39 @@ function createWindow() {
 /* ================================================================ */
 /* ================================================================ */
 
+const fs = require('fs');
+const ffmpeg = require('fluent-ffmpeg');
+
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+
+console.log({ ffmpegPath, ffprobePath });
+
+ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
+ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
+
 const { ipcMain } = require('electron');
 ipcMain.on('test', (event, payload) => {
+  // ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
+  //   count: 1,
+  //   filename: 'abc.jpg',
+  //   folder: '/Users/suboptimaleng/Desktop/orb/',
+  // });
+
+  // const img = {}; img.name =
+  // const str = fs.readFileSync('/Users/suboptimaleng/Desktop/orb/abc.jpg')
+
   console.log('test!!!', payload);
+  const file = fs.openSync(
+    '/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4'
+  );
+
+  ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
+    count: 1,
+    filename: 'abc.jpg',
+    folder: '/Users/suboptimaleng/Desktop/orb/',
+  });
+  console.log(file);
   event.reply('test', { from: 'main.js' });
 });
 

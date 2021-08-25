@@ -49,6 +49,14 @@ function App() {
               IPC
             </div>
           </div>
+          {/* NOTE: Two slashes does not work */}
+          {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
+          {/* NOTE: Three slashes works */}
+          {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
+          <img
+            src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg"
+            alt="logo"
+          ></img>
           <img src={logo} className="App-logo w-60" alt="logo" />
           <div className="border rounded p-2 mb-4">Learn React</div>
           <div className="flex w-full place-items-center justify-center space-x-2 mb-2">
