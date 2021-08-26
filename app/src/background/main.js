@@ -15,7 +15,7 @@ function createWindow() {
     vibrancy: 'under-window',
     visualEffectState: 'followWindow',
     webPreferences: {
-      // Allow renderer to read files from computer.
+      // SECURITY NOTE: Allow renderer to read files from computer.
       webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
