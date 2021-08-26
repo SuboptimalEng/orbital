@@ -21,11 +21,13 @@ function App() {
   const { value } = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
 
-  window.ipc.on('test', (payload: any) => console.log({ payload }));
-
   const ipcTest = () => {
+    console.log('sending...');
     window.ipc.send('test', { from: 'app.tsx' });
   };
+
+  // TODO: Only run this once (maybe in useEffect?)
+  window.ipc.on('test', (payload: any) => console.log({ payload }));
 
   return (
     <div className="App">

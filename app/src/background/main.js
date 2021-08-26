@@ -6,9 +6,6 @@ const path = require('path');
 const isDev = require('electron-is-dev');
 
 function createWindow() {
-  const preload = path.join(__dirname, 'preload.js');
-  console.log({ preload });
-
   const win = new BrowserWindow({
     width: 1200,
     height: 900,
@@ -40,8 +37,7 @@ function createWindow() {
 /* ================================================================ */
 /* ================================================================ */
 
-const fs = require('fs');
-
+// const fs = require('fs');
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
@@ -55,13 +51,6 @@ ipcMain.on('test', (event, payload) => {
   //   filename: 'abc.jpg',
   //   folder: '/Users/suboptimaleng/Desktop/orb/',
   // });
-
-  console.log('test!!!', payload);
-  const file = fs.openSync(
-    '/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4'
-  );
-
-  console.log(file);
   event.reply('test', { from: 'main.js' });
 });
 
@@ -74,12 +63,13 @@ ipcMain.on('test', (event, payload) => {
 app.whenReady().then(() => {
   createWindow();
 
-  if (isDev) {
-    protocol.interceptFileProtocol('file', (request, callback) => {
-      const pathname = decodeURIComponent(request.url.replace('file:///', ''));
-      callback(pathname);
-    });
-  }
+  // SN: No need to intercept file protocol with web security enabled?
+  // if (isDev) {
+  //   protocol.interceptFileProtocol('file', (request, callback) => {
+  //     const pathname = decodeURIComponent(request.url.replace('file:///', ''));
+  //     callback(pathname);
+  //   });
+  // }
 
   // const ffmpeg = require('fluent-ffmpeg');
   // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
