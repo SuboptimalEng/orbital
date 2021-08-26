@@ -56,6 +56,7 @@ function App() {
           <img
             src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg"
             alt="logo"
+            className="w-80"
           ></img>
           <img src={logo} className="App-logo w-60" alt="logo" />
           <div className="border rounded p-2 mb-4">Learn React</div>

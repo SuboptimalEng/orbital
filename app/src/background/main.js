@@ -1,5 +1,7 @@
-// import { app, BrowserWindow } from 'electron';
-const { app, BrowserWindow } = require('electron');
+// import { app, BrowserWindow, protocol } from 'electron';
+// import path from 'path';
+// import isDev from 'electron-is-dev';
+const { app, BrowserWindow, protocol } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
@@ -13,7 +15,7 @@ function createWindow() {
     vibrancy: 'under-window',
     visualEffectState: 'followWindow',
     webPreferences: {
-      webSecurity: false,
+      // webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
@@ -32,15 +34,12 @@ function createWindow() {
 /* ================================================================ */
 
 const fs = require('fs');
-const ffmpeg = require('fluent-ffmpeg');
 
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffprobePath = require('@ffprobe-installer/ffprobe').path;
-
-console.log({ ffmpegPath, ffprobePath });
-
-ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
-ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
+// const ffmpeg = require('fluent-ffmpeg');
+// const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+// const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+// ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
+// ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
 
 const { ipcMain } = require('electron');
 ipcMain.on('test', (event, payload) => {
@@ -58,11 +57,6 @@ ipcMain.on('test', (event, payload) => {
     '/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4'
   );
 
-  ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
-    count: 1,
-    filename: 'abc.jpg',
-    folder: '/Users/suboptimaleng/Desktop/orb/',
-  });
   console.log(file);
   event.reply('test', { from: 'main.js' });
 });
@@ -75,6 +69,12 @@ ipcMain.on('test', (event, payload) => {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow();
+
+  protocol.interceptFileProtocol('file', (request, callback) => {
+    const pathname = request.url.replace('file:///', '');
+    console.log('hi!!!!!!!!!');
+    callback(pathname);
+  });
 
   // const ffmpeg = require('fluent-ffmpeg');
   // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
