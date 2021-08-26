@@ -15,7 +15,8 @@ function createWindow() {
     vibrancy: 'under-window',
     visualEffectState: 'followWindow',
     webPreferences: {
-      // webSecurity: false,
+      // Allow renderer to read files from computer.
+      webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
