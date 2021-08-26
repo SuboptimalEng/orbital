@@ -15,11 +15,13 @@ function createWindow() {
     vibrancy: 'under-window',
     visualEffectState: 'followWindow',
     webPreferences: {
-      // SECURITY NOTE: Allow renderer to read files from computer.
-      webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
+      // SN: Allow renderer to read files from computer.
+      webSecurity: false,
+      // SN: Paired with webSecurity.
+      allowRunningInsecureContent: false,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
