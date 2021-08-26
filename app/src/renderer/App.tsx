@@ -58,6 +58,11 @@ function App() {
             alt="logo"
             className="w-80"
           ></img>
+          <video
+            src="file:///Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4"
+            className="w-80"
+            controls
+          ></video>
           <img src={logo} className="App-logo w-60" alt="logo" />
           <div className="border rounded p-2 mb-4">Learn React</div>
           <div className="flex w-full place-items-center justify-center space-x-2 mb-2">

@@ -18,11 +18,11 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
-      // SN: Allow renderer to read files from computer.
-      webSecurity: false,
-      // SN: Paired with webSecurity.
-      allowRunningInsecureContent: false,
       preload: path.join(__dirname, 'preload.js'),
+      // SN: Allow renderer to read files from computer in dev mode by disabling security.
+      // SN: This is automatically resolved in Mac DMG as that asks for FS access from user.
+      webSecurity: isDev ? false : true,
+      allowRunningInsecureContent: false,
     },
   });
 
@@ -31,6 +31,10 @@ function createWindow() {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../../build/index.html')}`
   );
+
+  if (isDev) {
+    win.webContents.openDevTools();
+  }
 }
 
 /* ================================================================ */
@@ -52,9 +56,6 @@ ipcMain.on('test', (event, payload) => {
   //   folder: '/Users/suboptimaleng/Desktop/orb/',
   // });
 
-  // const img = {}; img.name =
-  // const str = fs.readFileSync('/Users/suboptimaleng/Desktop/orb/abc.jpg')
-
   console.log('test!!!', payload);
   const file = fs.openSync(
     '/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4'
@@ -73,11 +74,12 @@ ipcMain.on('test', (event, payload) => {
 app.whenReady().then(() => {
   createWindow();
 
-  protocol.interceptFileProtocol('file', (request, callback) => {
-    const pathname = request.url.replace('file:///', '');
-    console.log('hi!!!!!!!!!');
-    callback(pathname);
-  });
+  if (isDev) {
+    protocol.interceptFileProtocol('file', (request, callback) => {
+      const pathname = decodeURIComponent(request.url.replace('file:///', ''));
+      callback(pathname);
+    });
+  }
 
   // const ffmpeg = require('fluent-ffmpeg');
   // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
