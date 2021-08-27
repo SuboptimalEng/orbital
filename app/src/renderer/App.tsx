@@ -3,6 +3,7 @@ import './App.css';
 import { applyTheme } from './themes/utils';
 import { baseTheme } from './themes/base';
 import { darkTheme } from './themes/dark';
+import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
 
 declare global {
@@ -49,7 +50,8 @@ function App() {
           {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
           {/* NOTE: Three slashes works */}
           {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
-          <img
+          {/* NOTE: Hide this for now. */}
+          {/* <img
             src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/abc.jpg"
             alt="logo"
             className="w-80"
@@ -58,7 +60,9 @@ function App() {
             src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4"
             className="w-80"
             controls
-          ></video>
+          ></video> */}
+
+          <FolderPicker />
           <ReduxExample />
         </div>
       </header>

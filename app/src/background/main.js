@@ -5,8 +5,9 @@ const { app, BrowserWindow, protocol } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
+let win;
 function createWindow() {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 1600,
     height: 1200,
     // NOTE: Disable vibrancy.
@@ -36,14 +37,14 @@ function createWindow() {
 /* ================================================================ */
 /* ================================================================ */
 
-// const fs = require('fs');
+const fs = require('fs');
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 // ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
 // ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
 
-const { ipcMain } = require('electron');
+const { ipcMain, dialog } = require('electron');
 ipcMain.on('test', (event, payload) => {
   // ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
   //   count: 1,
@@ -51,6 +52,30 @@ ipcMain.on('test', (event, payload) => {
   //   folder: '/Users/suboptimaleng/Desktop/orb/',
   // });
   event.reply('test', { from: 'main.js' });
+});
+
+ipcMain.on('select-dirs', async (event, payload) => {
+  const result = await dialog.showOpenDialog(win, {
+    properties: ['openDirectory'],
+  });
+  if (result.canceled) {
+    event.reply('select-dirs', {
+      actionComplete: false,
+      result: 'no dir selected',
+    });
+  } else {
+    const files = [];
+    fs.readdirSync(result.filePaths[0]).forEach((file) => {
+      const fullFilePath = `${result.filePaths[0]}/${file}`;
+      if (fs.statSync(fullFilePath).isFile()) {
+        files.push({ filepath: fullFilePath, filename: file });
+      }
+    });
+    event.reply('select-dirs', {
+      actionComplete: true,
+      files: files,
+    });
+  }
 });
 
 /* ================================================================ */
@@ -64,6 +89,7 @@ app.whenReady().then(() => {
 
   // SN: Register file protocol to work in dev mode.
   protocol.registerFileProtocol('file-protocol', (request, callback) => {
+    console.log(request);
     const url = decodeURIComponent(
       request.url.replace('file-protocol://getMediaFile/', '')
     );
