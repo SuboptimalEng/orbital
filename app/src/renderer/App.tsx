@@ -55,13 +55,19 @@ function App() {
           {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
           {/* NOTE: Three slashes works */}
           {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
-          <img
+          {/* NOTE: This is an alternative way to display files in prod. */}
+          {/* <img
             src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg"
+            alt="logo"
+            className="w-80"
+          ></img> */}
+          <img
+            src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/abc.jpg"
             alt="logo"
             className="w-80"
           ></img>
           <video
-            src="file:///Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4"
+            src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4"
             className="w-80"
             controls
           ></video>

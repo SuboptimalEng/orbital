@@ -15,11 +15,9 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
-      preload: path.join(__dirname, 'preload.js'),
-      // SN: Allow renderer to read files from computer in dev mode by disabling security.
-      // SN: This is automatically resolved in Mac DMG as that asks for FS access from user.
-      webSecurity: isDev ? false : true,
+      webSecurity: true,
       allowRunningInsecureContent: false,
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
@@ -63,13 +61,18 @@ ipcMain.on('test', (event, payload) => {
 app.whenReady().then(() => {
   createWindow();
 
-  // SN: No need to intercept file protocol with web security enabled?
-  // if (isDev) {
-  //   protocol.interceptFileProtocol('file', (request, callback) => {
-  //     const pathname = decodeURIComponent(request.url.replace('file:///', ''));
-  //     callback(pathname);
-  //   });
-  // }
+  // SN: Register file protocol to work in dev mode.
+  protocol.registerFileProtocol('file-protocol', (request, callback) => {
+    const url = decodeURIComponent(
+      request.url.replace('file-protocol://getMediaFile/', '')
+    );
+    try {
+      return callback(url);
+    } catch (e) {
+      console.error(e);
+      return callback(404);
+    }
+  });
 
   // const ffmpeg = require('fluent-ffmpeg');
   // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
