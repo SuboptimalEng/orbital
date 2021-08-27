@@ -7,10 +7,11 @@ const isDev = require('electron-is-dev');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1200,
-    height: 900,
-    vibrancy: 'under-window',
-    visualEffectState: 'followWindow',
+    width: 1600,
+    height: 1200,
+    // NOTE: Disable vibrancy.
+    // vibrancy: 'under-window',
+    // visualEffectState: 'followWindow',
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
