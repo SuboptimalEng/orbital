@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './renderer/App';
 import reportWebVitals from './renderer/reportWebVitals';
+
 import { Provider } from 'react-redux';
 import { store } from './renderer/redux/store';
 
