@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import './App.css';
-import { applyTheme } from './themes/utils';
 import { baseTheme } from './themes/base';
 import { darkTheme } from './themes/dark';
+import { applyTheme } from './themes/utils';
 import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
 
@@ -26,32 +25,31 @@ function App() {
   window.ipc.on('test', (payload: any) => console.log({ payload }));
 
   return (
-    <div className="App">
-      <header className="App-header ">
-        <div className="bg-secondary text-text-base flex flex-col place-items-center">
-          <div className="flex">
-            <div
-              onClick={() => applyTheme(baseTheme)}
-              className="border rounded p-2 m-2"
-            >
-              Base theme
-            </div>
-            <div
-              onClick={() => applyTheme(darkTheme)}
-              className="border rounded p-2 m-2"
-            >
-              Dark theme
-            </div>
-            <div onClick={() => ipcTest()} className="border rounded p-2 m-2">
-              IPC
-            </div>
+    <div>
+      <div className="bg-secondary text-text-base flex flex-col place-items-center">
+        <div className="flex">
+          <div
+            onClick={() => applyTheme(baseTheme)}
+            className="border rounded p-2 m-2"
+          >
+            Base theme
           </div>
-          {/* NOTE: Two slashes does not work */}
-          {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
-          {/* NOTE: Three slashes works */}
-          {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
-          {/* NOTE: Hide this for now. */}
-          {/* <img
+          <div
+            onClick={() => applyTheme(darkTheme)}
+            className="border rounded p-2 m-2"
+          >
+            Dark theme
+          </div>
+          <div onClick={() => ipcTest()} className="border rounded p-2 m-2">
+            IPC
+          </div>
+        </div>
+        {/* NOTE: Two slashes does not work */}
+        {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
+        {/* NOTE: Three slashes works */}
+        {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
+        {/* NOTE: Hide this for now. */}
+        {/* <img
             src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/abc.jpg"
             alt="logo"
             className="w-80"
@@ -62,10 +60,9 @@ function App() {
             controls
           ></video> */}
 
-          <FolderPicker />
-          <ReduxExample />
-        </div>
-      </header>
+        <FolderPicker />
+        <ReduxExample />
+      </div>
     </div>
   );
 }

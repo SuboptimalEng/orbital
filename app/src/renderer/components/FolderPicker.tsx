@@ -10,8 +10,8 @@ const FolderPicker = () => {
         console.log(files);
       }
     });
-  }, []); 
-  // eslint-disable-next-line
+    // eslint-disable-next-line
+  }, []);
 
   const selectFolder = () => {
     window.ipc.send('select-dirs');
@@ -19,7 +19,7 @@ const FolderPicker = () => {
 
   return (
     <div>
-      <button className="border" onClick={() => selectFolder()}>
+      <button className="border p-2 rounded" onClick={() => selectFolder()}>
         Select Folder
       </button>
       <div className="flex flex-row flex-wrap justify-between mx-4">
@@ -33,6 +33,7 @@ const FolderPicker = () => {
                 <img
                   src={`file-protocol://getMediaFile/${file.filepath}`}
                   className="w-40 self-center"
+                  alt=""
                 ></img>
                 <div className="text-xs border p-2">{file.filename}</div>
               </div>
