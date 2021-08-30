@@ -60,19 +60,19 @@ ipcMain.on('select-dirs', async (event, payload) => {
   });
   if (result.canceled) {
     event.reply('select-dirs', {
-      actionComplete: false,
-      result: 'no dir selected',
+      path: '',
+      files: [],
     });
   } else {
     const files = [];
     fs.readdirSync(result.filePaths[0]).forEach((file) => {
       const fullFilePath = `${result.filePaths[0]}/${file}`;
       if (fs.statSync(fullFilePath).isFile()) {
-        files.push({ filepath: fullFilePath, filename: file });
+        files.push({ path: fullFilePath, name: file });
       }
     });
     event.reply('select-dirs', {
-      actionComplete: true,
+      path: result.filePaths[0],
       files: files,
     });
   }

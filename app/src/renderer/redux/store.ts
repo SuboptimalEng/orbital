@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { folderSliceReducer } from './folderSlice';
 import { counterSliceReducer } from './counterSlice';
 
 export const store = configureStore({
   reducer: {
+    folder: folderSliceReducer,
     counter: counterSliceReducer,
     // posts: postsReducer,
     // comments: commentsReducer,
