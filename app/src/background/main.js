@@ -89,7 +89,8 @@ app.whenReady().then(() => {
 
   // SN: Register file protocol to work in dev mode.
   protocol.registerFileProtocol('file-protocol', (request, callback) => {
-    console.log(request);
+    // NOTE: Maybe leave this in for debugging?
+    // console.log(request);
     const url = decodeURIComponent(
       request.url.replace('file-protocol://getMediaFile/', '')
     );
