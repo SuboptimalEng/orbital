@@ -1,6 +1,6 @@
 import React from 'react';
-import { decrement, increment } from '../redux/counterSlice';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { decrement, increment } from '../slices/counterSlice';
+import { useAppDispatch, useAppSelector } from '../slices/hooks';
 
 const ReduxExample = () => {
   const { value } = useAppSelector((state) => state.counter);

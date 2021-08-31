@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './renderer/App';
 
 import { Provider } from 'react-redux';
-import { store } from './renderer/redux/store';
+import { store } from './renderer/slices/store';
 
 ReactDOM.render(
   <React.StrictMode>

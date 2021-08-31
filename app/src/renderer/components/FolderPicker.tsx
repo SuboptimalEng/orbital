@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { setFolder } from '../redux/folderSlice';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { setFolder } from '../slices/folderSlice';
+import { useAppDispatch, useAppSelector } from '../slices/hooks';
 
 const FolderPicker = () => {
   const { path, files } = useAppSelector((state) => state.folder);
