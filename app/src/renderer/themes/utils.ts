@@ -11,8 +11,6 @@ export function createTheme({
   activityBackground,
   sidebarBackground,
   editorBackground,
-  textDark,
-  textLight,
 
   red,
   blue,
@@ -25,8 +23,6 @@ export function createTheme({
     '--theme-activity-bg': activityBackground,
     '--theme-sidebar-bg': sidebarBackground,
     '--theme-editor-bg': editorBackground,
-    '--theme-text-dark': textDark,
-    '--theme-text-light': textLight,
 
     '--theme-red': red,
     '--theme-blue': blue,

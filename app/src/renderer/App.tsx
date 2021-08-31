@@ -26,13 +26,13 @@ function App() {
 
   return (
     <div>
-      <div className="bg-activity-bg text-text-light flex flex-col place-items-center">
+      <div className="bg-activity-bg text-white flex flex-col place-items-center">
         <div className="flex">
           <div
             onClick={() => applyTheme(gruvboxTheme)}
             className="border rounded p-2 m-2"
           >
-            Base Theme
+            Gruvbox Theme
           </div>
           <div
             onClick={() => applyTheme(draculaTheme)}

@@ -2,11 +2,9 @@ import { ITheme } from '../types';
 import { createTheme } from './utils';
 
 export const draculaTheme: ITheme = createTheme({
-  activityBackground: '#f8f8f2',
-  sidebarBackground: '#282a36',
-  editorBackground: '#fafafa',
-  textDark: '#000000',
-  textLight: '#fafafa',
+  activityBackground: '#282a36',
+  sidebarBackground: '#44475a',
+  editorBackground: '#282a36',
 
   red: '#ff5555',
   blue: '#8be9fd',

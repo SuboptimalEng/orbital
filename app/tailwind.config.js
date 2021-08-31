@@ -19,13 +19,8 @@ module.exports = {
         // bg: withOpacity('--theme-background'),
 
         'activity-bg': 'var(--theme-activity-bg)',
-        'activity-fg': 'var(--theme-activity-fg)',
         'sidebar-bg': 'var(--theme-sidebar-bg)',
-        'sidebar-fg': 'var(--theme-sidebar-fg)',
         'editor-bg': 'var(--theme-editor-bg)',
-        'editor-fg': 'var(--theme-editor-fg)',
-        'active-item-bg': 'var(--theme-active-item-bg)',
-        'active-item-fg': 'var(--theme-active-item-fg)',
 
         red: 'var(--theme-red)',
         blue: 'var(--theme-blue)',

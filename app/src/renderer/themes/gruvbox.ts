@@ -2,16 +2,14 @@ import { ITheme } from '../types';
 import { createTheme } from './utils';
 
 export const gruvboxTheme: ITheme = createTheme({
-  activityBackground: '#0a0a0a',
-  sidebarBackground: '#fafafa',
-  editorBackground: '#fafafa',
-  textDark: '#000000',
-  textLight: '#fafafa',
+  activityBackground: '#1d2021',
+  sidebarBackground: '#282828',
+  editorBackground: '#1d2021',
 
-  red: 'red',
-  blue: 'blue',
-  green: 'green',
-  orange: 'orange',
-  purple: 'purple',
-  yellow: 'yellow',
+  red: '#cc241d',
+  blue: '#458588',
+  green: '#98971a',
+  orange: '#d65d0e',
+  purple: '#b16286',
+  yellow: '#d79921',
 });

@@ -20,8 +20,6 @@ export interface ITheme {
   '--theme-activity-bg': string;
   '--theme-sidebar-bg': string;
   '--theme-editor-bg': string;
-  '--theme-text-dark': string;
-  '--theme-text-light': string;
 
   '--theme-red': string;
   '--theme-blue': string;
@@ -35,8 +33,6 @@ export interface ICreateTheme {
   activityBackground: string;
   sidebarBackground: string;
   editorBackground: string;
-  textDark: string;
-  textLight: string;
 
   red: string;
   blue: string;
