@@ -1,15 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import type { RootState } from './store';
-
-interface IFile {
-  name: string;
-  path: string;
-}
-
-interface IFolder {
-  path: string;
-  files: Array<IFile>;
-}
+import { IFolder } from '../types/index';
+// import type { RootState } from './index';
 
 const initialState: IFolder = {
   path: '',
@@ -26,6 +17,9 @@ export const folderSlice = createSlice({
     },
   },
 });
+
+// Other code such as selectors can use the imported `RootState` type
+// export const selectFolderFiles = (state: RootState) => state.folder.files;
 
 export const { setFolder } = folderSlice.actions;
 export const folderSliceReducer = folderSlice.reducer;

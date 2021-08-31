@@ -1,3 +1,4 @@
+// NOTE: Use this to add transparency.
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue === undefined) {
@@ -14,16 +15,24 @@ module.exports = {
     extend: {
       colors: {
         // NOTE: This is for reference.
-        // primary: 'var(--theme-primary)',
-        // primary: ({ opacityValue }) => {
-        //   if (opacityValue !== undefined) {
-        //     return `rgba(var(--theme-primary), ${opacityValue})`;
-        //   }
-        //   return 'rgba(var(--theme-primary, 1))';
-        // },
-        primary: withOpacity('--theme-primary'),
-        secondary: withOpacity('--theme-secondary'),
-        'text-base': withOpacity('--theme-text-base'),
+        // fg: withOpacity('--theme-foreground'),
+        // bg: withOpacity('--theme-background'),
+
+        'activity-bg': 'var(--theme-activity-bg)',
+        'activity-fg': 'var(--theme-activity-fg)',
+        'sidebar-bg': 'var(--theme-sidebar-bg)',
+        'sidebar-fg': 'var(--theme-sidebar-fg)',
+        'editor-bg': 'var(--theme-editor-bg)',
+        'editor-fg': 'var(--theme-editor-fg)',
+        'active-item-bg': 'var(--theme-active-item-bg)',
+        'active-item-fg': 'var(--theme-active-item-fg)',
+
+        red: 'var(--theme-red)',
+        blue: 'var(--theme-blue)',
+        green: 'var(--theme-green)',
+        orange: 'var(--theme-orange)',
+        purple: 'var(--theme-purple)',
+        yellow: 'var(--theme-yellow)',
       },
     },
   },

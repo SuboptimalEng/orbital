@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { baseTheme } from './themes/base';
-import { darkTheme } from './themes/dark';
+import { gruvboxTheme } from './themes/gruvbox';
+import { draculaTheme } from './themes/dracula';
 import { applyTheme } from './themes/utils';
 import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
@@ -13,7 +13,7 @@ declare global {
 
 function App() {
   useEffect(() => {
-    applyTheme(baseTheme);
+    applyTheme(gruvboxTheme);
   }, []);
 
   const ipcTest = () => {
@@ -26,19 +26,19 @@ function App() {
 
   return (
     <div>
-      <div className="bg-secondary text-text-base flex flex-col place-items-center">
+      <div className="bg-activity-bg text-text-light flex flex-col place-items-center">
         <div className="flex">
           <div
-            onClick={() => applyTheme(baseTheme)}
+            onClick={() => applyTheme(gruvboxTheme)}
             className="border rounded p-2 m-2"
           >
-            Base theme
+            Base Theme
           </div>
           <div
-            onClick={() => applyTheme(darkTheme)}
+            onClick={() => applyTheme(draculaTheme)}
             className="border rounded p-2 m-2"
           >
-            Dark theme
+            Dracula Theme
           </div>
           <div onClick={() => ipcTest()} className="border rounded p-2 m-2">
             IPC

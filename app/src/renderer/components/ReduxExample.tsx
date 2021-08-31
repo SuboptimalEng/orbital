@@ -3,6 +3,8 @@ import { decrement, increment } from '../store/counterSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const ReduxExample = () => {
+  // NOTE: How to utilize selectCount.
+  // const value = useSelector(selectCount);
   const { value } = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
 
