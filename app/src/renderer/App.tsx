@@ -25,22 +25,22 @@ function App() {
   window.ipc.on('test', (payload: any) => console.log({ payload }));
 
   return (
-    <div>
-      <div className="bg-activity-bg text-white flex flex-col place-items-center">
+    <div className="font-sans antialiased">
+      <div className="bg-activity-bg text-red flex text-6xl flex-col place-items-center">
         <div className="flex">
           <div
             onClick={() => applyTheme(gruvboxTheme)}
-            className="border rounded p-2 m-2"
+            className="border-2 rounded p-2 m-2"
           >
             Gruvbox Theme
           </div>
           <div
             onClick={() => applyTheme(draculaTheme)}
-            className="border rounded p-2 m-2"
+            className="border-2 rounded p-2 m-2"
           >
             Dracula Theme
           </div>
-          <div onClick={() => ipcTest()} className="border rounded p-2 m-2">
+          <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
             IPC
           </div>
         </div>

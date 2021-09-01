@@ -10,6 +10,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1600,
     height: 1200,
+    fullscreen: true,
     // NOTE: Disable vibrancy.
     // vibrancy: 'under-window',
     // visualEffectState: 'followWindow',

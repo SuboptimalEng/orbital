@@ -1,12 +1,12 @@
 // NOTE: Use this to add transparency.
-function withOpacity(variableName) {
-  return ({ opacityValue }) => {
-    if (opacityValue === undefined) {
-      opacityValue = 1;
-    }
-    return `rgba(var(${variableName}), ${opacityValue})`;
-  };
-}
+// function withOpacity(variableName) {
+//   return ({ opacityValue }) => {
+//     if (opacityValue === undefined) {
+//       opacityValue = 1;
+//     }
+//     return `rgba(var(${variableName}), ${opacityValue})`;
+//   };
+// }
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
