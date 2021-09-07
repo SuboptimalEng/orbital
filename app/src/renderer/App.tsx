@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { gruvboxTheme } from './themes/gruvbox';
 import { draculaTheme } from './themes/dracula';
 import { applyTheme } from './themes/utils';
+import { ActivityBar } from './components/ActivityBar';
 import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
 
@@ -26,7 +27,8 @@ function App() {
 
   return (
     <div className="font-sans antialiased">
-      <div className="bg-activity-bg text-red flex text-6xl flex-col place-items-center">
+      <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen">
+        <ActivityBar></ActivityBar>
         <div className="flex">
           <div
             onClick={() => applyTheme(gruvboxTheme)}

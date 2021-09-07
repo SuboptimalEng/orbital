@@ -3,8 +3,8 @@ import { setFolder } from '../store/folderSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const FolderPicker = () => {
-  const { path, files } = useAppSelector((state) => state.folder);
   const dispatch = useAppDispatch();
+  const { path, files } = useAppSelector((state) => state.folder);
 
   useEffect(() => {
     window.ipc.on('select-dirs', (payload: any) => {

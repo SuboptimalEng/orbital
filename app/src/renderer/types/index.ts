@@ -2,6 +2,16 @@
 // Slices
 // ================================================================
 
+export interface IActivity {
+  name: string;
+  icon: string;
+  isActive: boolean;
+}
+
+export interface IActivityBar {
+  activityBar: Array<IActivity>;
+}
+
 export interface IFile {
   name: string;
   path: string;

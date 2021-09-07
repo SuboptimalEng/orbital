@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { folderSliceReducer } from './folderSlice';
 import { counterSliceReducer } from './counterSlice';
+import { activityBarSliceReducer } from './activityBarSlice';
 
 export const store = configureStore({
   reducer: {
     folder: folderSliceReducer,
     counter: counterSliceReducer,
+    activityBar: activityBarSliceReducer,
     // posts: postsReducer,
     // comments: commentsReducer,
     // users: usersReducer,
