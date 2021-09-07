@@ -10,7 +10,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1600,
     height: 1200,
-    fullscreen: true,
+    // fullscreen: true,
     // NOTE: Disable vibrancy.
     // vibrancy: 'under-window',
     // visualEffectState: 'followWindow',
@@ -99,7 +99,7 @@ app.whenReady().then(() => {
       return callback(url);
     } catch (e) {
       console.error(e);
-      return callback(404);
+      return callback('404');
     }
   });
 
