@@ -89,6 +89,7 @@ app.whenReady().then(() => {
   createWindow();
 
   // SN: Register file protocol to work in dev mode.
+  // NOTE: Works live because app asks for user permission.
   protocol.registerFileProtocol('file-protocol', (request, callback) => {
     // NOTE: Maybe leave this in for debugging?
     // console.log(request);

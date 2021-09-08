@@ -1,27 +1,23 @@
+import { IActivity } from '../types';
+import { activate } from '../store/activityBarSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import {
-  activateActivityBar,
-  deactivateActivityBar,
-} from '../store/activityBarSlice';
 
 const ActivityBar = () => {
   const dispatch = useAppDispatch();
   const { activityBar } = useAppSelector((state) => state.activityBar);
 
   return (
-    <div className="flex flex-col h-full border-r-4 border-green bg-activity-bg">
-      <button onClick={() => dispatch(activateActivityBar())}>Activate</button>
-      <button onClick={() => dispatch(deactivateActivityBar())}>
-        Deactivate
-      </button>
-      {activityBar.map((activity) => {
+    <div className="flex flex-col h-full border-r-2 border-green bg-activity-bg">
+      {activityBar.map((activity: IActivity) => {
         return (
-          <div className="flex" key={activity.name}>
+          <div
+            className="flex"
+            key={activity.name}
+            onClick={() => dispatch(activate(activity.name))}
+          >
             <div
               className={
-                activity.isActive
-                  ? 'p-4 hover:bg-sidebar-bg bg-green'
-                  : 'p-4 hover:bg-sidebar-bg bg-red'
+                activity.isActive ? 'p-4 bg-green' : 'p-4 hover:bg-sidebar-bg'
               }
             >
               {activity.icon}
