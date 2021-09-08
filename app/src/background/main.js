@@ -104,18 +104,6 @@ app.whenReady().then(() => {
     }
   });
 
-  // const ffmpeg = require('fluent-ffmpeg');
-  // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-  // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
-  // console.log({ ffmpegPath, ffprobePath });
-  // ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
-  // ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
-  // ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
-  //   count: 1,
-  //   filename: 'abc.jpg',
-  //   folder: '/Users/suboptimaleng/Desktop/orb/',
-  // });
-
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
