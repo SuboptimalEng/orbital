@@ -4,7 +4,7 @@ import { IActivity, IActivityBar } from '../types/index';
 const initialState: IActivityBar = {
   activityBar: [
     {
-      name: 'fileSystem',
+      name: 'explorer',
       isActive: false,
       icon: '📁',
     },
@@ -25,14 +25,15 @@ export const activityBarSlice = createSlice({
   name: 'activityBar',
   initialState,
   reducers: {
-    activate: (state, action: PayloadAction<string>) => {
+    toggleActivity: (state, action: PayloadAction<string>) => {
       // NOTE: Deep clone an object.
       // const activityBarClone = JSON.parse(JSON.stringify(state.activityBar));
       const updatedActivityBar = state.activityBar.map(
         (activity: IActivity) => {
           return {
             ...activity,
-            isActive: activity.name === action.payload ? true : false,
+            isActive:
+              activity.name === action.payload ? !activity.isActive : false,
           };
         }
       );
@@ -41,5 +42,5 @@ export const activityBarSlice = createSlice({
   },
 });
 
-export const { activate } = activityBarSlice.actions;
+export const { toggleActivity } = activityBarSlice.actions;
 export const activityBarSliceReducer = activityBarSlice.reducer;

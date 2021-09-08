@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { gruvboxTheme } from './themes/gruvbox';
 import { draculaTheme } from './themes/dracula';
 import { applyTheme } from './themes/utils';
+import { Sidebar } from './components/Sidebar';
 import { ActivityBar } from './components/ActivityBar';
 import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
+import { useAppSelector } from './store/hooks';
 
 declare global {
   interface Window {
@@ -25,11 +27,15 @@ function App() {
   // TODO: Only run this once (maybe in useEffect?)
   window.ipc.on('test', (payload: any) => console.log({ payload }));
 
+  const { activityBar } = useAppSelector((state) => state.activityBar);
+  const sidebar = activityBar.find((activity) => activity.isActive);
+
   return (
     <div className="font-sans antialiased">
-      <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen">
+      <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen min-w-full max-w-full">
         <ActivityBar></ActivityBar>
-        <div className="flex">
+        {sidebar?.isActive ? <Sidebar {...sidebar} /> : null}
+        <div className="flex flex-col">
           <div
             onClick={() => applyTheme(gruvboxTheme)}
             className="border-2 rounded p-2 m-2"
@@ -62,8 +68,10 @@ function App() {
             controls
           ></video> */}
 
-        <FolderPicker />
-        <ReduxExample />
+        <div className="flex flex-col">
+          <FolderPicker />
+          <ReduxExample />
+        </div>
       </div>
     </div>
   );

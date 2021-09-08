@@ -1,5 +1,5 @@
 import { IActivity } from '../types';
-import { activate } from '../store/activityBarSlice';
+import { toggleActivity } from '../store/activityBarSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const ActivityBar = () => {
@@ -13,7 +13,7 @@ const ActivityBar = () => {
           <div
             className="flex"
             key={activity.name}
-            onClick={() => dispatch(activate(activity.name))}
+            onClick={() => dispatch(toggleActivity(activity.name))}
           >
             <div
               className={
