@@ -1,4 +1,4 @@
-import { ITheme } from '../types';
+import { ITheme } from '../types/index';
 import { createTheme } from './utils';
 
 export const gruvboxTheme: ITheme = createTheme({

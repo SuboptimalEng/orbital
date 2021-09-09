@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
+
+import { applyTheme } from './themes/utils';
 import { gruvboxTheme } from './themes/gruvbox';
 import { draculaTheme } from './themes/dracula';
-import { applyTheme } from './themes/utils';
-import { Sidebar } from './components/Sidebar';
+
+import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
 import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
+
 import { useAppSelector } from './store/hooks';
 
 declare global {
