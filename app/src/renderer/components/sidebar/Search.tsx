@@ -1,7 +1,7 @@
-const Search = (icon: String) => {
+const Search = (props: { icon: string }) => {
   return (
     <div>
-      <div>{icon}</div>
+      <div>{props.icon}</div>
     </div>
   );
 };

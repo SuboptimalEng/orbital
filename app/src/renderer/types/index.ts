@@ -51,3 +51,10 @@ export interface ICreateTheme {
   purple: string;
   yellow: string;
 }
+
+export interface ISelectableTheme {
+  name: string;
+  theme: ITheme;
+}
+
+export interface ISelectableThemes extends Array<ISelectableTheme> {}

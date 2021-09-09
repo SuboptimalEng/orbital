@@ -1,4 +1,23 @@
-import { ITheme, ICreateTheme } from '../types/index';
+import { draculaTheme } from './dracula';
+import { gruvboxTheme } from './gruvbox';
+import { ITheme, ICreateTheme, ISelectableThemes } from '../types/index';
+
+export const selectableThemes: ISelectableThemes = [
+  {
+    name: 'dracula',
+    theme: draculaTheme,
+  },
+  {
+    name: 'gruvbox',
+    theme: gruvboxTheme,
+  },
+];
+
+export function applyRandomTheme() {
+  const randomTheme =
+    selectableThemes[Math.floor(Math.random() * selectableThemes.length)].theme;
+  applyTheme(randomTheme);
+}
 
 export function applyTheme(theme: ITheme) {
   const root = document.documentElement;

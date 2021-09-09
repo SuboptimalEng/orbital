@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 
-import { applyTheme } from './themes/utils';
-import { gruvboxTheme } from './themes/gruvbox';
-import { draculaTheme } from './themes/dracula';
+import { applyRandomTheme } from './themes/utils';
 
 import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
-import { FolderPicker } from './components/FolderPicker';
 import { ReduxExample } from './components/ReduxExample';
 
-import { useAppSelector } from './store/hooks';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { setFolder } from './store/folderSlice';
 
 declare global {
   interface Window {
@@ -18,8 +16,21 @@ declare global {
 }
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  // NOTE: Apply random theme when app is initialized.
   useEffect(() => {
-    applyTheme(gruvboxTheme);
+    applyRandomTheme();
+    // eslint-disable-next-line
+  }, []);
+
+  // NOTE: Create ipc event handler for handling directory changes.
+  useEffect(() => {
+    window.ipc.on('select-dirs', (payload: any) => {
+      console.log(payload);
+      dispatch(setFolder(payload));
+    });
+    // eslint-disable-next-line
   }, []);
 
   const ipcTest = () => {
@@ -38,22 +49,8 @@ function App() {
       <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen min-w-full max-w-full">
         <ActivityBar></ActivityBar>
         {sidebar?.isActive ? <Sidebar {...sidebar} /> : null}
-        <div className="flex flex-col">
-          <div
-            onClick={() => applyTheme(gruvboxTheme)}
-            className="border-2 rounded p-2 m-2"
-          >
-            Gruvbox Theme
-          </div>
-          <div
-            onClick={() => applyTheme(draculaTheme)}
-            className="border-2 rounded p-2 m-2"
-          >
-            Dracula Theme
-          </div>
-          <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
-            IPC
-          </div>
+        <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
+          IPC
         </div>
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
@@ -72,7 +69,6 @@ function App() {
           ></video> */}
 
         <div className="flex flex-col">
-          <FolderPicker />
           <ReduxExample />
         </div>
       </div>
