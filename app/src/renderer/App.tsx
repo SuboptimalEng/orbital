@@ -4,10 +4,9 @@ import { applyRandomTheme } from './themes/utils';
 
 import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
-import { ReduxExample } from './components/ReduxExample';
 
-import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setFolder } from './store/folderSlice';
+import { useAppDispatch, useAppSelector } from './store/hooks';
 
 declare global {
   interface Window {
@@ -48,7 +47,9 @@ function App() {
     <div className="font-sans antialiased">
       <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen min-w-full max-w-full">
         <ActivityBar></ActivityBar>
-        {sidebar?.isActive ? <Sidebar {...sidebar} /> : null}
+
+        {sidebar?.isActive && <Sidebar {...sidebar} />}
+
         <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
           IPC
         </div>
@@ -67,10 +68,6 @@ function App() {
             className="w-80"
             controls
           ></video> */}
-
-        <div className="flex flex-col">
-          <ReduxExample />
-        </div>
       </div>
     </div>
   );

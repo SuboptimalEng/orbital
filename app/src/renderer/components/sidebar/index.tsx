@@ -1,6 +1,6 @@
 import { IActivity } from '../../types/index';
-import { Explorer } from './Explorer';
 import { Search } from './Search';
+import { Explorer } from './Explorer';
 import { Settings } from './Settings';
 
 const Sidebar = ({ name, icon, isActive }: IActivity) => {
