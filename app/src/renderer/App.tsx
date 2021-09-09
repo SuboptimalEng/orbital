@@ -32,13 +32,11 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-  const ipcTest = () => {
-    console.log('sending...');
-    window.ipc.send('test', { from: 'app.tsx' });
-  };
-
-  // TODO: Only run this once (maybe in useEffect?)
-  window.ipc.on('test', (payload: any) => console.log({ payload }));
+  // NOTE: Run this in useEffect to prevent multiple-triggers
+  useEffect(() => {
+    window.ipc.on('test', (payload: any) => console.log({ payload }));
+    // eslint-disable-next-line
+  }, []);
 
   const { activityBar } = useAppSelector((state) => state.activityBar);
   const sidebar = activityBar.find((activity) => activity.isActive);
@@ -50,9 +48,6 @@ function App() {
 
         {sidebar?.isActive && <Sidebar {...sidebar} />}
 
-        <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
-          IPC
-        </div>
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
         {/* NOTE: Three slashes works */}

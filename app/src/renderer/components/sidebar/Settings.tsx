@@ -5,6 +5,11 @@ import { ReduxExample } from '../ReduxExample';
 const Settings = (props: { icon: string }) => {
   const [toggle, setToggle] = useState(false);
 
+  const ipcTest = () => {
+    console.log('sending...');
+    window.ipc.send('test', { from: 'app.tsx' });
+  };
+
   return (
     <div>
       <div className="border" onClick={() => setToggle(!toggle)}>
@@ -28,6 +33,9 @@ const Settings = (props: { icon: string }) => {
       <div>
         <div className="flex flex-col">
           <ReduxExample />
+        </div>
+        <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
+          IPC
         </div>
       </div>
     </div>
