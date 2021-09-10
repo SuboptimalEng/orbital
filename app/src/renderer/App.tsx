@@ -3,8 +3,9 @@ import { useAppDispatch } from './store/hooks';
 import { setFolder } from './store/folderSlice';
 import { applyRandomTheme } from './themes/utils';
 
-import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
+import { Sidebar } from './components/sidebar/index';
+import { Editor } from './components/Editor';
 
 declare global {
   // TODO: Properly set up window interface.
@@ -34,9 +35,10 @@ function App() {
 
   return (
     <div className="font-sans antialiased">
-      <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen min-w-full max-w-full">
+      <div className="bg-activity-bg text-red text-4xl flex place-items-center h-screen min-w-full max-w-full">
         <ActivityBar />
         <Sidebar />
+        <Editor />
 
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
