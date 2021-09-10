@@ -43,7 +43,7 @@ const Sidebar = () => {
 
   return (
     <div className="text-white h-full border-r-2 border-green">
-      <div className="w-full">{sidebarDisplay}</div>
+      <div className="w-full p-2">{sidebarDisplay}</div>
     </div>
   );
 };
