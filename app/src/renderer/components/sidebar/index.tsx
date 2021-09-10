@@ -1,8 +1,9 @@
+import { useAppSelector } from '../../store/hooks';
+import { ActivityNameTypes, IActivity } from '../../types';
+
 import { Search } from './Search';
 import { Explorer } from './Explorer';
 import { Settings } from './Settings';
-import { useAppSelector } from '../../store/hooks';
-import { ActivityNameTypes, IActivity } from '../../types';
 
 const Sidebar = () => {
   const { activityBar } = useAppSelector((state) => state.activityBar);
