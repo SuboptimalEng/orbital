@@ -8,6 +8,7 @@ import { ActivityBar } from './components/ActivityBar';
 import { applyRandomTheme } from './themes/utils';
 
 declare global {
+  // TODO: Properly set up window interface.
   interface Window {
     ipc: any;
   }
