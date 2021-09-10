@@ -6,7 +6,7 @@ import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
 
 import { setFolder } from './store/folderSlice';
-import { useAppDispatch, useAppSelector } from './store/hooks';
+import { useAppDispatch } from './store/hooks';
 
 declare global {
   interface Window {
@@ -38,15 +38,11 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-  const { activityBar } = useAppSelector((state) => state.activityBar);
-  const sidebar = activityBar.find((activity) => activity.isActive);
-
   return (
     <div className="font-sans antialiased">
       <div className="bg-activity-bg text-red text-6xl flex place-items-center h-screen min-w-full max-w-full">
-        <ActivityBar></ActivityBar>
-
-        {sidebar?.isActive && <Sidebar {...sidebar} />}
+        <ActivityBar />
+        <Sidebar />
 
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}

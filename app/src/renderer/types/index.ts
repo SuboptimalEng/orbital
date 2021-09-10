@@ -2,8 +2,16 @@
 // Slices
 // ================================================================
 
+export const Activities = {
+  Search: 'search',
+  Explorer: 'explorer',
+  Settings: 'settings',
+} as const;
+
+export type ActivityNameTypes = typeof Activities[keyof typeof Activities];
+
 export interface IActivity {
-  name: string;
+  name: ActivityNameTypes;
   icon: string;
   isActive: boolean;
 }

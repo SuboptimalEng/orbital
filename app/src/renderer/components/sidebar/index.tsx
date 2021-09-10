@@ -1,13 +1,26 @@
-import { IActivity } from '../../types/index';
 import { Search } from './Search';
 import { Explorer } from './Explorer';
 import { Settings } from './Settings';
+import { useAppSelector } from '../../store/hooks';
+import { ActivityNameTypes, IActivity } from '../../types';
 
-const Sidebar = ({ name, icon, isActive }: IActivity) => {
-  interface ISidebarDisplays {
-    [key: string]: JSX.Element;
+const Sidebar = () => {
+  const { activityBar } = useAppSelector((state) => state.activityBar);
+  const sidebar = activityBar.find((activity) => activity.isActive);
+  if (!sidebar) {
+    return null;
   }
 
+  const { icon, name }: IActivity = { ...sidebar };
+
+  type sidebarDisplaysType = {
+    [key in ActivityNameTypes]: JSX.Element;
+  };
+
+  // NOTE: This works.
+  // interface ISidebarDisplays {
+  //   [key: string]: JSX.Element;
+  // }
   // NOTE: This works.
   // interface ISidebarDisplays {
   //   [key: string]: () => JSX.Element;
@@ -15,7 +28,7 @@ const Sidebar = ({ name, icon, isActive }: IActivity) => {
 
   // NOTE: Conditional rendering is hard to understand.
   // NOTE: Might be worth figuring this out at some point.
-  const sidebarDisplays: ISidebarDisplays = {
+  const sidebarDisplays: sidebarDisplaysType = {
     search: <Search icon={icon} />,
     explorer: <Explorer icon={icon} />,
     settings: <Settings icon={icon} />,
