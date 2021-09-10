@@ -7,21 +7,25 @@ const ActivityBar = () => {
   const { activityBar } = useAppSelector((state) => state.activityBar);
 
   return (
-    <div className="flex flex-col h-full border-r-2 border-green bg-activity-bg">
+    <div className="flex flex-col place-items-center h-full border-r-2 border-green bg-activity-bg">
       {activityBar.map((activity: IActivity) => {
         return (
           <div
-            className="flex"
+            className="flex w-full place-items-center"
             key={activity.name}
             onClick={() => dispatch(toggleActivity(activity.name))}
           >
-            <div
-              className={
-                activity.isActive ? 'p-4 bg-green' : 'p-4 hover:bg-sidebar-bg'
-              }
-            >
-              {activity.icon}
-              {activity.isActive}
+            <div className="w-full  text-center">
+              <div
+                className={
+                  activity.isActive
+                    ? 'py-2 bg-green'
+                    : 'py-2 hover:bg-sidebar-bg'
+                }
+              >
+                {activity.icon}
+                {activity.isActive}
+              </div>
             </div>
           </div>
         );

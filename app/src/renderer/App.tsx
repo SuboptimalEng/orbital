@@ -5,7 +5,7 @@ import { applyRandomTheme } from './themes/utils';
 
 import { ActivityBar } from './components/ActivityBar';
 import { Sidebar } from './components/sidebar/index';
-import { Editor } from './components/Editor';
+import { Editor } from './components/editor/index';
 
 declare global {
   // TODO: Properly set up window interface.
@@ -35,10 +35,16 @@ function App() {
 
   return (
     <div className="font-sans antialiased">
-      <div className="bg-activity-bg text-red text-4xl flex place-items-center h-screen min-w-full max-w-full">
-        <ActivityBar />
-        <Sidebar />
-        <Editor />
+      <div className="bg-activity-bg text-red text-4xl flex place-items-center h-screen relative">
+        <div className="absolute top-0 bottom-0 w-16">
+          <ActivityBar />
+        </div>
+        <div className="absolute left-16 top-0 bottom-0 w-48">
+          <Sidebar />
+        </div>
+        <div className="absolute left-64 top-0 bottom-0 right-0">
+          <Editor />
+        </div>
 
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}

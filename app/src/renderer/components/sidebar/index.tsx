@@ -42,8 +42,8 @@ const Sidebar = () => {
   const sidebarDisplay = sidebarDisplays[name];
 
   return (
-    <div className="text-white h-full w-96 border-r-2 border-green">
-      <div className="w-full p-4">{sidebarDisplay}</div>
+    <div className="text-white h-full border-r-2 border-green">
+      <div className="w-full">{sidebarDisplay}</div>
     </div>
   );
 };
