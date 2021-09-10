@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-
-import { applyRandomTheme } from './themes/utils';
+import { useAppDispatch } from './store/hooks';
+import { setFolder } from './store/folderSlice';
 
 import { Sidebar } from './components/sidebar/index';
 import { ActivityBar } from './components/ActivityBar';
 
-import { setFolder } from './store/folderSlice';
-import { useAppDispatch } from './store/hooks';
+import { applyRandomTheme } from './themes/utils';
 
 declare global {
   interface Window {
