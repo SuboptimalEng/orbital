@@ -17,24 +17,19 @@ declare global {
 function App() {
   const dispatch = useAppDispatch();
 
-  // NOTE: Apply random theme when app is initialized.
   useEffect(() => {
+    // NOTE: Ensure that random theme is applied only once.
     applyRandomTheme();
-    // eslint-disable-next-line
-  }, []);
 
-  // NOTE: Create ipc event handler for handling directory changes.
-  useEffect(() => {
+    // NOTE: Create ipc event handler for handling directory changes.
     window.ipc.on('select-dirs', (payload: any) => {
       console.log(payload);
       dispatch(setFolder(payload));
     });
-    // eslint-disable-next-line
-  }, []);
 
-  // NOTE: Run this in useEffect to prevent multiple-triggers
-  useEffect(() => {
+    // NOTE: Run this in useEffect to prevent multiple-triggers
     window.ipc.on('test', (payload: any) => console.log({ payload }));
+
     // eslint-disable-next-line
   }, []);
 
