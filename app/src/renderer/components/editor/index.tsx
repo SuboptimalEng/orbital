@@ -11,11 +11,11 @@ const Editor = () => {
         {files.map((file: IFile) => {
           return (
             <div
-              className="flex flex-col border"
+              className="flex flex-col border-2 border-green rounded-lg"
               key={`file-protocol://getMediaFile/${file.path}`}
             >
               <video src={`file-protocol://getMediaFile/${file.path}`} />
-              <div className="text-xs p-2 border">{file.name}</div>
+              <div className="text-xs p-2">{file.name}</div>
             </div>
           );
         })}
