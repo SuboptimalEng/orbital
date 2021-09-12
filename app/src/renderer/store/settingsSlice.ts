@@ -12,10 +12,10 @@ export const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    incrementNumOfCols(state) {
+    incrementNumOfCols: (state) => {
       state.numOfCols += 1;
     },
-    decrementNumOfCols(state) {
+    decrementNumOfCols: (state) => {
       state.numOfCols -= 1;
     },
   },
