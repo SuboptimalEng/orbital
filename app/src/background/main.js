@@ -68,7 +68,11 @@ ipcMain.on('select-dirs', async (event, payload) => {
     const files = [];
     fs.readdirSync(result.filePaths[0]).forEach((file) => {
       const fullFilePath = `${result.filePaths[0]}/${file}`;
-      if (fs.statSync(fullFilePath).isFile()) {
+      // TODO: Allow user to filter through multiple file types.
+      if (
+        fs.statSync(fullFilePath).isFile() &&
+        path.extname(fullFilePath) === '.mp4'
+      ) {
         files.push({ path: fullFilePath, name: file });
       }
     });
