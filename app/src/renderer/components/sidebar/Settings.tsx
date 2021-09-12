@@ -1,9 +1,17 @@
 import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { applyTheme, selectableThemes } from '../../themes/utils';
 import { ReduxExample } from '../ReduxExample';
+import {
+  decrementNumOfCols,
+  incrementNumOfCols,
+} from '../../store/settingsSlice';
 
 const Settings = (props: { icon: string }) => {
   const [toggle, setToggle] = useState(false);
+
+  const { numOfCols } = useAppSelector((state) => state.settings);
+  const dispatch = useAppDispatch();
 
   const ipcTest = () => {
     console.log('sending...');
@@ -32,9 +40,22 @@ const Settings = (props: { icon: string }) => {
       </div>
       <div>
         <div className="flex flex-col">
+          <div
+            className="border-2"
+            onClick={() => dispatch(decrementNumOfCols())}
+          >
+            -
+          </div>
+          <div>{numOfCols}</div>
+          <div
+            className="border-2"
+            onClick={() => dispatch(incrementNumOfCols())}
+          >
+            +
+          </div>
           <ReduxExample />
         </div>
-        <div onClick={() => ipcTest()} className="border-2 rounded p-2 m-2">
+        <div onClick={() => ipcTest()} className="border-2 rounded p-2">
           IPC
         </div>
       </div>

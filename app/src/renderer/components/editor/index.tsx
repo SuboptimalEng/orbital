@@ -2,6 +2,7 @@ import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
 
 const Editor = () => {
+  const { numOfCols } = useAppSelector((state) => state.settings);
   const { path, files } = useAppSelector((state) => state.folder);
 
   return (
@@ -9,7 +10,7 @@ const Editor = () => {
       <div className="border-2 border-green rounded-lg p-2 mb-4">
         {path.length > 0 ? path : 'Editor'}
       </div>
-      <div className="grid grid-cols-3 gap-8">
+      <div className={`grid grid-cols-${numOfCols} gap-8`}>
         {files.map((file: IFile) => {
           return (
             <div
