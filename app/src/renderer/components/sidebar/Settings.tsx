@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { applyTheme, selectableThemes } from '../../themes/utils';
-import { ReduxExample } from '../ReduxExample';
 import {
   decrementNumOfCols,
   incrementNumOfCols,
@@ -53,7 +52,6 @@ const Settings = (props: { icon: string }) => {
           >
             +
           </div>
-          <ReduxExample />
         </div>
         <div onClick={() => ipcTest()} className="border-2 rounded p-2">
           IPC

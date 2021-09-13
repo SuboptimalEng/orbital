@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { RootState } from './index';
 
 interface ISettingsState {
   numOfCols: number;
@@ -20,6 +21,9 @@ export const settingsSlice = createSlice({
     },
   },
 });
+
+// Other code such as selectors can use the imported `RootState` type
+export const selectNumOfCols = (state: RootState) => state.settings.numOfCols;
 
 export const { incrementNumOfCols, decrementNumOfCols } = settingsSlice.actions;
 export const settingsSliceReducer = settingsSlice.reducer;
