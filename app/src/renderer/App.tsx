@@ -8,6 +8,9 @@ import { Sidebar } from './components/Sidebar/index';
 import { StatusBar } from './components/StatusBar/index';
 import { ActivityBar } from './components/ActivityBar';
 
+// TODO: Remove this?
+// import './App.css';
+
 declare global {
   // TODO: Properly set up window interface.
   interface Window {
