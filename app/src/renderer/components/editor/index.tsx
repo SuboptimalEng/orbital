@@ -2,8 +2,8 @@ import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
 
 const Editor = () => {
+  const { files } = useAppSelector((state) => state.folder);
   const { numOfCols } = useAppSelector((state) => state.settings);
-  const { path, files } = useAppSelector((state) => state.folder);
 
   interface INumOfColsToGridMap {
     [key: string]: string;
@@ -27,9 +27,6 @@ const Editor = () => {
 
   return (
     <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-green scrollbar-track-sidebar-bg">
-      <div className="border-2 border-green rounded-lg p-2 mb-4">
-        {path.length > 0 ? path : 'Editor'}
-      </div>
       <div className={gridColsClassName()}>
         {files.map((file: IFile) => {
           return (
