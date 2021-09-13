@@ -3,9 +3,10 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setFolder } from './store/folderSlice';
 import { applyRandomTheme } from './themes/utils';
 
+import { Editor } from './components/Editor/index';
+import { Sidebar } from './components/Sidebar/index';
+import { StatusBar } from './components/StatusBar/index';
 import { ActivityBar } from './components/ActivityBar';
-import { Sidebar } from './components/sidebar/index';
-import { Editor } from './components/editor/index';
 
 declare global {
   // TODO: Properly set up window interface.
@@ -39,20 +40,23 @@ function App() {
   return (
     <div className="font-sans antialiased">
       <div className="bg-activity-bg text-red text-4xl flex place-items-center h-screen relative">
-        <div className="absolute top-0 bottom-0 w-16">
+        <div className="absolute top-0 bottom-8 w-16">
           <ActivityBar />
         </div>
-        <div className="absolute left-16 top-0 bottom-0 right-0 w-80">
+        <div className="absolute left-16 top-0 bottom-8 right-0 w-80">
           <Sidebar />
         </div>
         <div
           className={
             !sidebar
-              ? 'absolute left-16 top-0 bottom-0 right-0'
-              : 'absolute left-96 top-0 bottom-0 right-0'
+              ? 'absolute left-16 top-0 bottom-8 right-0'
+              : 'absolute left-96 top-0 bottom-8 right-0'
           }
         >
           <Editor />
+        </div>
+        <div className="absolute left-0 right-0 bottom-0">
+          <StatusBar />
         </div>
 
         {/* NOTE: Two slashes does not work */}

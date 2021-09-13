@@ -18,6 +18,7 @@ const Editor = () => {
     '6': 'grid-cols-6',
   };
 
+  // NOTE: Ensure that tailwind purges the right CSS styles when building.
   const gridColsClassName = () => {
     const numOfGridColsStr = numOfColsToGridMap[numOfCols.toString()];
     const className = `grid ${numOfGridColsStr} gap-8`;
@@ -25,7 +26,7 @@ const Editor = () => {
   };
 
   return (
-    <div className="absolute inset-0 overflow-y-auto p-2">
+    <div className="absolute inset-0 overflow-y-auto px-16 py-2">
       <div className="border-2 border-green rounded-lg p-2 mb-4">
         {path.length > 0 ? path : 'Editor'}
       </div>

@@ -21,6 +21,7 @@ const Settings = (props: { icon: string }) => {
     <div>
       <div className="border" onClick={() => setToggle(!toggle)}>
         {props.icon}
+        Settings
         {toggle && (
           <div className="absolute bg-activity-bg border">
             {selectableThemes.map((theme) => {
@@ -38,7 +39,7 @@ const Settings = (props: { icon: string }) => {
         )}
       </div>
       <div>
-        <div className="flex flex-col">
+        <div className="flex">
           <div
             className="border-2"
             onClick={() => dispatch(decrementNumOfCols())}
