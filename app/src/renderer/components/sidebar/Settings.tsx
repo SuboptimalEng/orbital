@@ -17,6 +17,20 @@ const Settings = (props: { icon: string }) => {
     window.ipc.send('test', { from: 'app.tsx' });
   };
 
+  const maybeDecrementNumOfCols = () => {
+    if (numOfCols <= 1) {
+      return;
+    }
+    dispatch(decrementNumOfCols());
+  };
+
+  const maybeIncrementNumOfCols = () => {
+    if (numOfCols >= 5) {
+      return;
+    }
+    dispatch(incrementNumOfCols());
+  };
+
   return (
     <div>
       <div className="border" onClick={() => setToggle(!toggle)}>
@@ -40,17 +54,11 @@ const Settings = (props: { icon: string }) => {
       </div>
       <div>
         <div className="flex">
-          <div
-            className="border-2"
-            onClick={() => dispatch(decrementNumOfCols())}
-          >
+          <div className="border-2" onClick={maybeDecrementNumOfCols}>
             -
           </div>
           <div>{numOfCols}</div>
-          <div
-            className="border-2"
-            onClick={() => dispatch(incrementNumOfCols())}
-          >
+          <div className="border-2" onClick={maybeIncrementNumOfCols}>
             +
           </div>
         </div>
