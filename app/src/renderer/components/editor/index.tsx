@@ -38,7 +38,9 @@ const Editor = () => {
                 src={`file-protocol://getMediaFile/${file.path}`}
                 className="rounded-t-lg border-b-2 border-green"
               />
-              <div className="text-xs p-2">{file.name}</div>
+              <div className="text-xs p-2">
+                {file.name} - {file.duration}
+              </div>
             </div>
           );
         })}
