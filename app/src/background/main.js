@@ -39,11 +39,11 @@ function createWindow() {
 /* ================================================================ */
 
 const fs = require('fs');
-const ffmpeg = require('fluent-ffmpeg');
+// const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+// const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 // ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
-ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
+// ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
 
 const { ipcMain, dialog } = require('electron');
 ipcMain.on('test', (event, payload) => {
@@ -60,15 +60,14 @@ ipcMain.on('select-dirs', async (event, payload) => {
     properties: ['openDirectory'],
   });
 
-  const files = [];
-  const promises = [];
-
   if (result.canceled) {
     event.reply('select-dirs', {
       path: '',
       files: [],
     });
   } else {
+    const files = [];
+
     fs.readdirSync(result.filePaths[0]).forEach((filename) => {
       const fullFilePath = `${result.filePaths[0]}/${filename}`;
       // TODO: Allow user to filter through multiple file types.
@@ -76,26 +75,16 @@ ipcMain.on('select-dirs', async (event, payload) => {
         fs.statSync(fullFilePath).isFile() &&
         path.extname(fullFilePath) === '.mp4'
       ) {
-        promises.push(
-          new Promise((resolve, reject) => {
-            ffmpeg.ffprobe(fullFilePath, (err, metadata) => {
-              files.push({
-                name: filename,
-                path: fullFilePath,
-                duration: Math.round(metadata.format.duration) + 1,
-              });
-              resolve(true);
-            });
-          })
-        );
-      }
-
-      Promise.all(promises).then(() => {
-        event.reply('select-dirs', {
-          path: result.filePaths[0],
-          files: files,
+        files.push({
+          name: filename,
+          path: fullFilePath,
         });
-      });
+      }
+    });
+
+    event.reply('select-dirs', {
+      path: result.filePaths[0],
+      files: files,
     });
   }
 });

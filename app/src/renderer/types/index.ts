@@ -23,7 +23,6 @@ export interface IActivityBar {
 export interface IFile {
   name: string;
   path: string;
-  duration: number;
 }
 
 export interface IFolder {
