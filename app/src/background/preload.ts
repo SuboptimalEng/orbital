@@ -20,5 +20,3 @@ contextBridge.exposeInMainWorld('ipc', {
     }
   },
 });
-
-export {};

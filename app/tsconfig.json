@@ -11,12 +11,15 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
+    // NOTE: Figure this out.
+    // "baseUrl": "./src",
+    // "outDir": "./dist",
+    // NOTE: noEmit is required for react.
   },
-  "include": ["src/background/*"],
-  "exclude": ["node_modules"]
+  "include": ["./src/background/*"],
+  "exclude": ["./node_modules", "./dist", "./build"]
 }
