@@ -22,14 +22,16 @@
     "typescript": "^4.1.2"
   },
   "scripts": {
-    "tsc": "tsc --build --clean && tsc ./src/background/*",
+    "clean": "tsc --build --clean",
+    "tsc": "tsc ./src/background/*",
+    "compile": "npm run clean && npm run tsc",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "dev": "npm run tsc && concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
+    "dev": "npm run compile && concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
     "electron": "wait-on tcp:3000 && electron .",
     "electron-pack": "electron-builder",
-    "preelectron-pack": "npm run tsc && npm run build"
+    "preelectron-pack": "npm run compile && npm run build"
   },
   "build": {
     "appId": "com.electron.example-app",

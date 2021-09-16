@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+# don't add js files that have been compiled with tsc
+
 # testing
 /coverage
 
