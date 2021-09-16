@@ -1,6 +1,7 @@
 import { app, BrowserWindow, protocol } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
+import { add } from './add';
 // const { app, BrowserWindow, protocol } = require('electron');
 // const path = require('path');
 // const isDev = require('electron-is-dev');
@@ -53,6 +54,7 @@ ipcMain.on('test', (event, payload) => {
   //   filename: 'abc.jpg',
   //   folder: '/Users/suboptimaleng/Desktop/orb/',
   // });
+  console.log('add test: ', add(1, 2));
   event.reply('test', { from: 'main.js' });
 });
 
