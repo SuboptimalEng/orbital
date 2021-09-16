@@ -13,14 +13,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+
     // NOTE: We need to figure out a way to create .js files for the .ts files
     // in the src/background process but the current work around with `npm run tsc`
     // will suffice. Perhaps specifying a tsconfig inside the subfolder will work?
     // Regardless, noEmit = true is required for create-react-app.
+
     "noEmit": true,
     "jsx": "react-jsx"
+
     // NOTE: Why is the baseUrl only allowed to be ./src or ./node_modules?
     // "baseUrl": "./src",
+
     // NOTE: If we can figure out a way to set noEmit = false, then we will want
     // to send the compiled .js files to the dist folder. Leave as is for now.
     // "outDir": "./dist",
