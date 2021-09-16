@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState, VideoHTMLAttributes } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
 

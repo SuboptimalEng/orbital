@@ -22,13 +22,14 @@
     "typescript": "^4.1.2"
   },
   "scripts": {
+    "tsc": "tsc --build --clean && tsc ./src/background/*",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "dev": "concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
+    "dev": "npm run tsc && concurrently -k \"BROWSER=none npm run start\" \"npm run electron\"",
     "electron": "wait-on tcp:3000 && electron .",
     "electron-pack": "electron-builder",
-    "preelectron-pack": "npm run build"
+    "preelectron-pack": "npm run tsc && npm run build"
   },
   "build": {
     "appId": "com.electron.example-app",
@@ -67,9 +68,9 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/node": "^14.14.33",
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.18",
     "autoprefixer": "^9.8.6",
     "concurrently": "^6.2.1",

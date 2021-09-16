@@ -11,10 +11,12 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./src"]
+  "include": ["src/background/*"],
+  "exclude": ["node_modules"]
 }
