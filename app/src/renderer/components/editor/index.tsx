@@ -1,9 +1,10 @@
 import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
 import { Video } from './Video';
+import { Welcome } from './Welcome';
 
 const Editor = () => {
-  const { files } = useAppSelector((state) => state.folder);
+  const { path, files } = useAppSelector((state) => state.folder);
   const { numOfCols } = useAppSelector((state) => state.settings);
 
   interface INumOfColsToGridMap {
@@ -27,19 +28,25 @@ const Editor = () => {
   };
 
   return (
-    <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-green scrollbar-track-sidebar-bg">
-      <div className={gridColsClassName()}>
-        {files.map((file: IFile) => {
-          return (
-            <div
-              className="flex flex-col border-2 border-green rounded-lg"
-              key={`file-protocol://getMediaFile/${file.path}`}
-            >
-              <Video {...file}></Video>
-            </div>
-          );
-        })}
-      </div>
+    <div>
+      {path.length === 0 ? (
+        <Welcome />
+      ) : (
+        <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-green scrollbar-track-sidebar-bg">
+          <div className={gridColsClassName()}>
+            {files.map((file: IFile) => {
+              return (
+                <div
+                  className="flex flex-col border-2 border-green rounded-lg"
+                  key={`file-protocol://getMediaFile/${file.path}`}
+                >
+                  <Video {...file}></Video>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

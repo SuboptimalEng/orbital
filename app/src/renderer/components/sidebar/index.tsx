@@ -12,7 +12,7 @@ const Sidebar = () => {
     return null;
   }
 
-  const { icon, name }: IActivity = { ...sidebar };
+  const { name }: IActivity = { ...sidebar };
 
   type sidebarDisplaysType = {
     [key in ActivityNameTypes]: JSX.Element;
@@ -30,9 +30,9 @@ const Sidebar = () => {
   // NOTE: Conditional rendering is hard to understand.
   // NOTE: Might be worth figuring this out at some point.
   const sidebarDisplays: sidebarDisplaysType = {
-    search: <Search icon={icon} />,
-    explorer: <Explorer icon={icon} />,
-    settings: <Settings icon={icon} />,
+    search: <Search />,
+    explorer: <Explorer />,
+    settings: <Settings />,
     // NOTE: This works.
     // search: () => <Search icon={icon} />,
     // explorer: () => <Explorer icon={icon} />,
@@ -42,7 +42,7 @@ const Sidebar = () => {
   const sidebarDisplay = sidebarDisplays[name];
 
   return (
-    <div className="text-white h-full border-r-2 border-green">
+    <div className="text-green h-full border-r-2 border-green">
       <div className="w-full px-4 py-2">{sidebarDisplay}</div>
     </div>
   );

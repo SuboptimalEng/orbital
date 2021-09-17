@@ -7,7 +7,7 @@ import {
 } from '../../store/settingsSlice';
 import { SidebarHeader } from '../Base/SidebarHeader';
 
-const Settings = (props: { icon: string }) => {
+const Settings = () => {
   const [toggle, setToggle] = useState(false);
 
   const { numOfCols } = useAppSelector((state) => state.settings);

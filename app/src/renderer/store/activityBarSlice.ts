@@ -3,11 +3,11 @@ import { IActivity, IActivityBar } from '../types';
 
 const initialState: IActivityBar = {
   activityBar: [
-    {
-      name: 'explorer',
-      isActive: false,
-      icon: '📁',
-    },
+    // {
+    //   name: 'explorer',
+    //   isActive: false,
+    //   icon: '📁',
+    // },
     {
       name: 'search',
       isActive: false,

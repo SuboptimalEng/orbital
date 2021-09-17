@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="font-sans antialiased">
-      <div className="bg-activity-bg text-red text-4xl flex place-items-center h-screen relative">
+      <div className="bg-activity-bg text-green text-4xl flex place-items-center h-screen relative">
         <div className="absolute top-0 bottom-8 w-16">
           <ActivityBar />
         </div>

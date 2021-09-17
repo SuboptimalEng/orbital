@@ -1,6 +1,6 @@
 import { SidebarHeader } from '../Base/SidebarHeader';
 
-const Explorer = (props: { icon: string }) => {
+const Explorer = () => {
   const selectFolder = () => {
     window.ipc.send('select-dirs');
   };
