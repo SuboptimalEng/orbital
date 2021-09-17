@@ -58,13 +58,13 @@ ipcMain.on('test', (event, payload) => {
   event.reply('test', { from: 'main.js' });
 });
 
-ipcMain.on('select-dirs', async (event, payload) => {
+ipcMain.on('open-directory', async (event, payload) => {
   const result = await dialog.showOpenDialog(win, {
     properties: ['openDirectory'],
   });
 
   if (result.canceled) {
-    event.reply('select-dirs', {
+    event.reply('open-directory', {
       path: '',
       files: [],
     });
@@ -85,7 +85,7 @@ ipcMain.on('select-dirs', async (event, payload) => {
       }
     });
 
-    event.reply('select-dirs', {
+    event.reply('open-directory', {
       path: result.filePaths[0],
       files: files,
     });

@@ -26,7 +26,7 @@ function App() {
     applyRandomTheme();
 
     // NOTE: Create ipc event handler for handling directory changes.
-    window.ipc.on('select-dirs', (payload: any) => {
+    window.ipc.on('open-directory', (payload: any) => {
       console.log(payload);
       dispatch(setFolder(payload));
     });
