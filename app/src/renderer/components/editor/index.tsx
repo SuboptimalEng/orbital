@@ -32,6 +32,7 @@ const Editor = () => {
       {path.length === 0 ? (
         <Welcome />
       ) : (
+        // TODO: Make this a VideoList.tsx component.
         <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-green scrollbar-track-sidebar-bg">
           <div className={gridColsClassName()}>
             {files.map((file: IFile) => {
