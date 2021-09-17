@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IActivity, IActivityBar } from '../types/index';
+import { IActivity, IActivityBar } from '../types';
 
 const initialState: IActivityBar = {
   activityBar: [

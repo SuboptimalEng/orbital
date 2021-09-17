@@ -1,4 +1,4 @@
-import { IActivity } from '../types/index';
+import { IActivity } from '../types';
 import { toggleActivity } from '../store/activityBarSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 

@@ -1,6 +1,6 @@
 import { draculaTheme } from './dracula';
 import { gruvboxTheme } from './gruvbox';
-import { ITheme, ICreateTheme, ISelectableThemes } from '../types/index';
+import { ITheme, ICreateTheme, ISelectableThemes } from '../types';
 
 export const selectableThemes: ISelectableThemes = [
   {

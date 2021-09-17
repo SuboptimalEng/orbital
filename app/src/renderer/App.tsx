@@ -3,9 +3,9 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setFolder } from './store/folderSlice';
 import { applyRandomTheme } from './themes/utils';
 
-import { Editor } from './components/Editor/index';
-import { Sidebar } from './components/Sidebar/index';
-import { StatusBar } from './components/StatusBar/index';
+import { Editor } from './components/Editor';
+import { Sidebar } from './components/Sidebar';
+import { StatusBar } from './components/StatusBar';
 import { ActivityBar } from './components/ActivityBar';
 
 // TODO: Properly set up window interface.

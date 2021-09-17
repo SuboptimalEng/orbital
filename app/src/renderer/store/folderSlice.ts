@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IFolder } from '../types/index';
+import { IFolder } from '../types';
 // import type { RootState } from './index';
 
 const initialState: IFolder = {
