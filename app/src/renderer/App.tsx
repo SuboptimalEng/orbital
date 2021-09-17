@@ -8,10 +8,13 @@ import { Sidebar } from './components/Sidebar/index';
 import { StatusBar } from './components/StatusBar/index';
 import { ActivityBar } from './components/ActivityBar';
 
+// TODO: Properly set up window interface.
 declare global {
-  // TODO: Properly set up window interface.
   interface Window {
-    ipc: any;
+    ipc: {
+      send: (channel: string, data?: any) => void;
+      on: (channel: string, func: any) => void;
+    };
   }
 }
 

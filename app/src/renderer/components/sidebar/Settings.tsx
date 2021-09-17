@@ -5,6 +5,7 @@ import {
   decrementNumOfCols,
   incrementNumOfCols,
 } from '../../store/settingsSlice';
+import { SidebarHeader } from '../Base/SidebarHeader';
 
 const Settings = (props: { icon: string }) => {
   const [toggle, setToggle] = useState(false);
@@ -33,9 +34,9 @@ const Settings = (props: { icon: string }) => {
 
   return (
     <div>
+      <SidebarHeader title="Settings" />
       <div className="border" onClick={() => setToggle(!toggle)}>
-        {props.icon}
-        Settings
+        Theme
         {toggle && (
           <div className="absolute bg-activity-bg border">
             {selectableThemes.map((theme) => {

@@ -29,6 +29,6 @@
     // to send the compiled .js files to the dist folder. Leave as is for now.
     // "outDir": "./dist",
   },
-  "include": ["./src/background/*"],
+  "include": ["./src/background/*", "./src/renderer/**/*"],
   "exclude": ["./node_modules", "./dist", "./build"]
 }

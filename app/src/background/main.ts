@@ -9,7 +9,7 @@ import { add } from './add';
 let win: any;
 function createWindow() {
   win = new BrowserWindow({
-    width: 1600,
+    width: 2000,
     height: 1200,
     // fullscreen: true,
     // NOTE: Disable vibrancy.
