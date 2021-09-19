@@ -14,6 +14,11 @@ A desktop app that allows you to search, filter, and preview video files on your
 ## Getting Started
 
 ```
+// running orbital
 npm install
-npm run start
+npm run dev
+
+// building orbital
+npm install
+npm run electron-pack
 ```
