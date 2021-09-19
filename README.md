@@ -13,7 +13,7 @@ A desktop app that allows you to search, filter, and preview video files on your
 
 ## Getting Started
 
-```
+```javascript
 // running orbital
 npm install
 npm run dev
