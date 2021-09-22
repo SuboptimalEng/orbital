@@ -2,27 +2,27 @@ import { ITheme } from '../types';
 import { createTheme } from './utils';
 
 export const draculaTheme: ITheme = createTheme({
-  activityBg: '#282a36',
+  activityBg: '#343746',
   activityFg: '#f8f8f2',
   activityHover: '#44475a',
   // pink
   activityActive: '#ff79c6',
-  activityBorder: '#f8f8f2',
+  activityBorder: '#343746',
 
-  sidebarBg: '#282a36',
+  sidebarBg: '#21222c',
   sidebarFg: '#f8f8f2',
   sidebarHover: '#44475a',
-  sidebarBorder: '#f8f8f2',
+  sidebarBorder: '#21222c',
 
   editorBg: '#282a36',
   editorFg: '#f8f8f2',
   editorHover: '#44475a',
   editorBorder: '#f8f8f2',
 
-  statusBg: '#282a36',
+  statusBg: '#191a21',
   statusFg: '#f8f8f2',
   statusHover: '#44475a',
-  statusBorder: '#f8f8f2',
+  statusBorder: '#191a21',
 
   // pink
   hyperlink: '#ff79c6',
