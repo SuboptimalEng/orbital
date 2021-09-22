@@ -28,9 +28,8 @@ export const draculaTheme: ITheme = createTheme({
   hyperlink: '#ff79c6',
 
   // hover
-  scrollbarBg: '#44475a',
-  // pink
-  scrollbarFg: '#ff79c6',
+  scrollbarBg: '#343746',
+  scrollbarFg: '#191a21',
 
   red: '#ff5555',
   blue: '#8be9fd',

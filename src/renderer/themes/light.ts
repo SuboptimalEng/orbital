@@ -29,8 +29,8 @@ export const lightTheme: ITheme = createTheme({
 
   // gray-200
   scrollbarBg: '#e5e7eb',
-  // blue
-  scrollbarFg: '#007acc',
+  // gray-400
+  scrollbarFg: '#9CA3AF',
 
   red: '#ff0000',
   blue: '#007acc',

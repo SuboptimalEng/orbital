@@ -30,7 +30,7 @@ export const gruvboxTheme: ITheme = createTheme({
   // hover
   scrollbarBg: '#282828',
   // orange
-  scrollbarFg: '#fe8019',
+  scrollbarFg: '#131414',
 
   red: '#cc241d',
   blue: '#458588',
