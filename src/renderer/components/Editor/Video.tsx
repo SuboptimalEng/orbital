@@ -13,7 +13,7 @@ const Video = ({ path, name }: IFile) => {
       <video
         id={path}
         src={`file-protocol://getMediaFile/${path}`}
-        className="rounded-t-lg border-b-2 border-green"
+        className="rounded-t-lg border-b-2 border-editor-border"
         onLoadedMetadata={setDurationOnLoad}
       />
       <div className="text-xs p-2">

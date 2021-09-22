@@ -1,8 +1,13 @@
+import { lightTheme } from './light';
 import { draculaTheme } from './dracula';
 import { gruvboxTheme } from './gruvbox';
 import { ITheme, ICreateTheme, ISelectableThemes } from '../types';
 
 export const selectableThemes: ISelectableThemes = [
+  {
+    name: 'light',
+    theme: lightTheme,
+  },
   {
     name: 'dracula',
     theme: draculaTheme,
@@ -27,9 +32,29 @@ export function applyTheme(theme: ITheme) {
 }
 
 export function createTheme({
-  activityBackground,
-  sidebarBackground,
-  editorBackground,
+  activityBg,
+  activityFg,
+  activityHover,
+  activityActive,
+  activityBorder,
+
+  sidebarBg,
+  sidebarFg,
+  sidebarHover,
+  sidebarBorder,
+
+  editorBg,
+  editorFg,
+  editorHover,
+  editorBorder,
+
+  statusBg,
+  statusFg,
+  statusHover,
+  statusBorder,
+
+  scrollbarBg,
+  scrollbarFg,
 
   red,
   blue,
@@ -39,9 +64,29 @@ export function createTheme({
   yellow,
 }: ICreateTheme): ITheme {
   return {
-    '--theme-activity-bg': activityBackground,
-    '--theme-sidebar-bg': sidebarBackground,
-    '--theme-editor-bg': editorBackground,
+    '--theme-activity-bg': activityBg,
+    '--theme-activity-fg': activityFg,
+    '--theme-activity-hover': activityHover,
+    '--theme-activity-active': activityActive,
+    '--theme-activity-border': activityBorder,
+
+    '--theme-sidebar-bg': sidebarBg,
+    '--theme-sidebar-fg': sidebarFg,
+    '--theme-sidebar-hover': sidebarHover,
+    '--theme-sidebar-border': sidebarBorder,
+
+    '--theme-editor-bg': editorBg,
+    '--theme-editor-fg': editorFg,
+    '--theme-editor-hover': editorHover,
+    '--theme-editor-border': editorBorder,
+
+    '--theme-status-bg': statusBg,
+    '--theme-status-fg': statusFg,
+    '--theme-status-hover': statusHover,
+    '--theme-status-border': statusBorder,
+
+    '--theme-scrollbar-bg': scrollbarBg,
+    '--theme-scrollbar-fg': scrollbarFg,
 
     '--theme-red': red,
     '--theme-blue': blue,

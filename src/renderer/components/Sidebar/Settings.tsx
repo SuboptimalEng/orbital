@@ -35,16 +35,19 @@ const Settings = () => {
   return (
     <div>
       <SidebarHeader title="Settings" />
-      <div className="border" onClick={() => setToggle(!toggle)}>
+      <div
+        className="border-2 border-sidebar-fg rounded"
+        onClick={() => setToggle(!toggle)}
+      >
         Theme
         {toggle && (
-          <div className="absolute bg-activity-bg border">
+          <div className="absolute bg-sidebar-bg border-2 border-sidebar-fg rounded">
             {selectableThemes.map((theme) => {
               return (
                 <div
                   key={theme.name}
                   onClick={() => applyTheme(theme.theme)}
-                  className="border-2 rounded p-2 m-2"
+                  className="border-2 border-sidebar-fg rounded p-2"
                 >
                   {theme.name}
                 </div>
@@ -55,15 +58,24 @@ const Settings = () => {
       </div>
       <div>
         <div className="flex">
-          <div className="border-2" onClick={maybeDecrementNumOfCols}>
+          <button
+            className="border-2 border-sidebar-fg rounded"
+            onClick={maybeDecrementNumOfCols}
+          >
             -
-          </div>
+          </button>
           <div>{numOfCols}</div>
-          <div className="border-2" onClick={maybeIncrementNumOfCols}>
+          <button
+            className="border-2 border-sidebar-fg rounded"
+            onClick={maybeIncrementNumOfCols}
+          >
             +
-          </div>
+          </button>
         </div>
-        <div onClick={() => ipcTest()} className="border-2 rounded p-2">
+        <div
+          onClick={() => ipcTest()}
+          className="border-2 border-sidebar-fg rounded p-2"
+        >
           IPC
         </div>
       </div>

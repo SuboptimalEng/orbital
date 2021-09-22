@@ -28,17 +28,17 @@ const Editor = () => {
   };
 
   return (
-    <div>
+    <div className="bg-editor-bg text-editor-fg h-full">
       {path.length === 0 ? (
         <Welcome />
       ) : (
         // TODO: Make this a VideoList.tsx component.
-        <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-green scrollbar-track-sidebar-bg">
+        <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
           <div className={gridColsClassName()}>
             {files.map((file: IFile) => {
               return (
                 <div
-                  className="flex flex-col border-2 border-green rounded-lg"
+                  className="flex flex-col border-2 border-editor-border rounded-lg"
                   key={`file-protocol://getMediaFile/${file.path}`}
                 >
                   <Video {...file}></Video>

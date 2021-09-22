@@ -2,7 +2,6 @@ import { useAppSelector } from '../../store/hooks';
 import { ActivityNameTypes, IActivity } from '../../types';
 
 import { Search } from './Search';
-import { Explorer } from './Explorer';
 import { Settings } from './Settings';
 
 const Sidebar = () => {
@@ -31,18 +30,16 @@ const Sidebar = () => {
   // NOTE: Might be worth figuring this out at some point.
   const sidebarDisplays: sidebarDisplaysType = {
     search: <Search />,
-    explorer: <Explorer />,
     settings: <Settings />,
     // NOTE: This works.
     // search: () => <Search icon={icon} />,
-    // explorer: () => <Explorer icon={icon} />,
     // settings: () => <Settings icon={icon} />,
   };
 
   const sidebarDisplay = sidebarDisplays[name];
 
   return (
-    <div className="text-green h-full border-r-2 border-green">
+    <div className="h-full bg-sidebar-bg text-sidebar-fg border-r-2 border-sidebar-border">
       <div className="w-full px-4 py-2">{sidebarDisplay}</div>
     </div>
   );

@@ -2,14 +2,38 @@ import { ITheme } from '../types';
 import { createTheme } from './utils';
 
 export const gruvboxTheme: ITheme = createTheme({
-  activityBackground: '#1d2021',
-  sidebarBackground: '#282828',
-  editorBackground: '#1d2021',
+  activityBg: '#1d2021',
+  activityFg: '#ebdbb2',
+  activityHover: '#282828',
+  // orange
+  activityActive: '#fe8019',
+  activityBorder: '#ebdbb2',
+
+  sidebarBg: '#1d2021',
+  sidebarFg: '#ebdbb2',
+  sidebarHover: '#282828',
+  sidebarBorder: '#ebdbb2',
+
+  editorBg: '#1d2021',
+  editorFg: '#ebdbb2',
+  editorHover: '#282828',
+  editorBorder: '#ebdbb2',
+
+  statusBg: '#1d2021',
+  statusFg: '#ebdbb2',
+  statusHover: '#282828',
+  statusBorder: '#ebdbb2',
+
+  // hover
+  scrollbarBg: '#282828',
+  // orange
+  scrollbarFg: '#fe8019',
 
   red: '#cc241d',
   blue: '#458588',
+  pink: '#d3869b',
   green: '#98971a',
-  orange: '#d65d0e',
+  orange: '#fe8019',
   purple: '#b16286',
   yellow: '#d79921',
 });

@@ -8,12 +8,12 @@ const StatusBar = () => {
   };
 
   return (
-    <div className="bg-activity-bg border-t-2 border-green h-8 text-lg content-center">
+    <div className="bg-status-bg text-status-fg border-t-2 border-status-border h-8 text-lg px-2 content-center">
       <div className="flex justify-between h-full place-items-center">
-        <button onClick={openDirectory} className="px-4 hover:bg-sidebar-bg">
+        <button onClick={openDirectory} className="px-2 hover:bg-status-hover">
           📁 {path.length > 0 ? path : 'n/a'}
         </button>
-        <div className="px-4 hover:bg-sidebar-bg">Check For Updates</div>
+        <div className="px-2 hover:bg-status-hover">🔄 Check For Updates</div>
       </div>
     </div>
   );
