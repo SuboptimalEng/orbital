@@ -24,6 +24,9 @@ export const lightTheme: ITheme = createTheme({
   statusHover: '#44475a',
   statusBorder: '#007acc',
 
+  // blue
+  hyperlink: '#007acc',
+
   // gray-200
   scrollbarBg: '#e5e7eb',
   // blue

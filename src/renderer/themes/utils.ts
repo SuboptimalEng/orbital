@@ -53,6 +53,8 @@ export function createTheme({
   statusHover,
   statusBorder,
 
+  hyperlink,
+
   scrollbarBg,
   scrollbarFg,
 
@@ -84,6 +86,8 @@ export function createTheme({
     '--theme-status-fg': statusFg,
     '--theme-status-hover': statusHover,
     '--theme-status-border': statusBorder,
+
+    '--theme-hyperlink': hyperlink,
 
     '--theme-scrollbar-bg': scrollbarBg,
     '--theme-scrollbar-fg': scrollbarFg,

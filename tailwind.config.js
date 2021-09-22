@@ -39,6 +39,8 @@ module.exports = {
         'status-hover': 'var(--theme-status-hover)',
         'status-border': 'var(--theme-status-border)',
 
+        hyperlink: 'var(--theme-hyperlink)',
+
         'scrollbar-bg': 'var(--theme-scrollbar-bg)',
         'scrollbar-fg': 'var(--theme-scrollbar-fg)',
 

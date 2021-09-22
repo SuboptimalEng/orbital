@@ -24,6 +24,9 @@ export const gruvboxTheme: ITheme = createTheme({
   statusHover: '#282828',
   statusBorder: '#ebdbb2',
 
+  // orange
+  hyperlink: '#fe8019',
+
   // hover
   scrollbarBg: '#282828',
   // orange

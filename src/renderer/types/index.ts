@@ -55,6 +55,8 @@ export interface ITheme {
   '--theme-status-hover': string;
   '--theme-status-border': string;
 
+  '--theme-hyperlink': string;
+
   '--theme-scrollbar-bg': string;
   '--theme-scrollbar-fg': string;
 
@@ -87,6 +89,8 @@ export interface ICreateTheme {
   statusFg: string;
   statusHover: string;
   statusBorder: string;
+
+  hyperlink: string;
 
   scrollbarBg: string;
   scrollbarFg: string;
