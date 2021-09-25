@@ -36,6 +36,8 @@
   "build": {
     "appId": "com.electron.example-app",
     "mac": {
+      "icon": "./public/assets/orbital.icns",
+      "category": "public.app-category.productivity",
       "target": [
         "dmg",
         "zip"
@@ -43,10 +45,14 @@
     },
     "files": [
       "**/*",
-      "build/**/*"
+      "./build/**/*",
+      "./public/**/*"
     ],
     "extraMetadata": {
-      "main": "src/background/main.js"
+      "main": "./src/background/main.js"
+    },
+    "directories": {
+      "buildResources": "./build/**/*"
     },
     "extends": null
   },
