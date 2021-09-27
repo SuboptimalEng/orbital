@@ -1,4 +1,4 @@
-import { app, BrowserWindow, protocol } from 'electron';
+import { app, BrowserWindow, protocol, shell } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
 import { add } from './add';
@@ -57,6 +57,14 @@ ipcMain.on('test', (event, payload) => {
   // });
   console.log('add test: ', add(1, 2));
   event.reply('test', { from: 'main.js' });
+});
+
+ipcMain.on('open-external', async (event, payload) => {
+  shell.openExternal(payload.url);
+});
+
+ipcMain.on('open-file', async (event, payload) => {
+  shell.openPath(payload.path);
 });
 
 ipcMain.on('open-directory', async (event, payload) => {

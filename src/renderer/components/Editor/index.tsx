@@ -33,12 +33,12 @@ const Editor = () => {
         <Welcome />
       ) : (
         // TODO: Make this a VideoList.tsx component.
-        <div className="absolute inset-0 px-16 py-2 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
+        <div className="absolute inset-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
           <div className={gridColsClassName()}>
             {files.map((file: IFile) => {
               return (
                 <div
-                  className="flex flex-col border-2 border-editor-border rounded-lg"
+                  className="flex flex-col border border-editor-border"
                   key={`file-protocol://getMediaFile/${file.path}`}
                 >
                   <Video {...file}></Video>

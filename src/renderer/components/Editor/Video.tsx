@@ -8,7 +8,11 @@ const Video = ({ path, name, ctime }: IFile) => {
     setDuration(e.currentTarget.duration);
   };
 
-  const getReadableDuration = (duration: number): string => {
+  const openFile = () => {
+    window.ipc.send('open-file', { path });
+  };
+
+  const getReadableDuration = (): string => {
     const date = new Date(0);
     date.setSeconds(duration); // specify value for SECONDS here
     let readableDuration = date.toISOString().substr(11, 8);
@@ -18,26 +22,26 @@ const Video = ({ path, name, ctime }: IFile) => {
     return readableDuration;
   };
 
-  const getReadableDate = (date: string): string => {
-    return new Date(date).toLocaleString().split(',')[0];
+  const getReadableDate = (): string => {
+    return new Date(ctime).toLocaleString().split(',')[0];
   };
 
   return (
-    <div className="relative">
+    <button className="relative" onClick={openFile}>
       <video
         id={path}
         src={`file-protocol://getMediaFile/${path}`}
-        className="rounded-t-lg border-b-2 border-editor-border"
+        className="border-b border-editor-border"
         onLoadedMetadata={setDurationOnLoad}
       />
       <div className="absolute text-xs p-1 bottom-11 right-2 bg-activity-bg text-activity-fg rounded">
-        {getReadableDuration(duration)}
+        {getReadableDuration()}
       </div>
       <div className="flex justify-between p-2 text-sm font-bold">
         <div>{name}</div>
-        <div>{getReadableDate(ctime)}</div>
+        <div>{getReadableDate()}</div>
       </div>
-    </div>
+    </button>
   );
 };
 

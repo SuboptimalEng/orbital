@@ -1,8 +1,12 @@
 import { contextBridge, ipcRenderer } from 'electron';
-// const { contextBridge, ipcRenderer } = require('electron');
 
+const validSendChannels = [
+  'test',
+  'open-file',
+  'open-external',
+  'open-directory',
+];
 const validOnChannels = ['test', 'open-directory'];
-const validSendChannels = ['test', 'open-directory'];
 
 contextBridge.exposeInMainWorld('ipc', {
   send: (channel: string, data: any) => {

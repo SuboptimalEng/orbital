@@ -3,6 +3,12 @@ const Welcome = () => {
     window.ipc.send('open-directory');
   };
 
+  const openExternal = () => {
+    window.ipc.send('open-external', {
+      url: 'http://twitter.com/SuboptimalEng',
+    });
+  };
+
   return (
     <div className="p-20">
       <div className="flex flex-col space-y-4">
@@ -11,7 +17,9 @@ const Welcome = () => {
           <button onClick={openDirectory} className="hover:text-hyperlink">
             📁 Open a Folder
           </button>
-          <div>🐦 Updates @SuboptimalEng</div>
+          <button onClick={openExternal} className="hover:text-hyperlink">
+            🐦 Updates @SuboptimalEng
+          </button>
         </div>
       </div>
     </div>
