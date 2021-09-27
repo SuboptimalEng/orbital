@@ -11,14 +11,7 @@ const Welcome = () => {
           <button onClick={openDirectory} className="hover:text-hyperlink">
             📁 Open a Folder
           </button>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="http://twitter.com/SuboptimalEng"
-            className="hover:text-hyperlink"
-          >
-            🐦 Updates @SuboptimalEng
-          </a>
+          <div>🐦 Updates @SuboptimalEng</div>
         </div>
       </div>
     </div>

@@ -41,6 +41,7 @@ function createWindow() {
 
 // const fs = require('fs');
 import * as fs from 'fs';
+import { IFile } from '../renderer/types';
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
@@ -69,18 +70,20 @@ ipcMain.on('open-directory', async (event, payload) => {
       files: [],
     });
   } else {
-    const files: any = [];
+    const files: Array<IFile> = [];
 
-    fs.readdirSync(result.filePaths[0]).forEach((filename) => {
+    fs.readdirSync(result.filePaths[0]).forEach((filename: string) => {
       const fullFilePath = `${result.filePaths[0]}/${filename}`;
+      const fileStat = fs.statSync(fullFilePath);
       // TODO: Allow user to filter through multiple file types.
       if (
-        fs.statSync(fullFilePath).isFile() &&
-        path.extname(fullFilePath) === '.mp4'
+        fileStat.isFile() &&
+        path.extname(fullFilePath).toLocaleLowerCase() === '.mp4'
       ) {
         files.push({
           name: filename,
           path: fullFilePath,
+          ctime: fileStat.ctime.toString(),
         });
       }
     });

@@ -22,6 +22,7 @@ export interface IActivityBar {
 export interface IFile {
   name: string;
   path: string;
+  ctime: string;
 }
 
 export interface IFolder {
