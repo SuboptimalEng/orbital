@@ -32,6 +32,7 @@ export interface IFolder {
 
 export interface IQuery {
   query: string;
+  sortByName: string;
 }
 
 // ================================================================

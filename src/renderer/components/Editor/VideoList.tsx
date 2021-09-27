@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
 import { Video } from './Video';
 
 const VideoList = () => {
-  const { query } = useAppSelector((state) => state.search);
+  const { query, sortByName } = useAppSelector((state) => state.search);
   const { files } = useAppSelector((state) => state.folder);
   const { numOfCols } = useAppSelector((state) => state.settings);
 
@@ -27,7 +28,26 @@ const VideoList = () => {
     return className;
   };
 
-  const filteredFiles = files.filter((file) => file.path.includes(query));
+  const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
+  const filterFiles = () => {
+    setFilteredFiles(
+      files
+        .filter((file) => file.path.includes(query))
+        .sort((a, b) => {
+          const num = a.name.localeCompare(b.name);
+          if (sortByName === 'asc') {
+            return num;
+          } else {
+            return num * -1;
+          }
+        })
+    );
+  };
+
+  useEffect(() => {
+    filterFiles();
+    // eslint-disable-next-line
+  }, [query, sortByName]);
 
   return (
     <div className="absolute inset-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
