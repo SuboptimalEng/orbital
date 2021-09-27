@@ -30,6 +30,10 @@ export interface IFolder {
   files: Array<IFile>;
 }
 
+export interface IQuery {
+  query: string;
+}
+
 // ================================================================
 // Themes
 // ================================================================
