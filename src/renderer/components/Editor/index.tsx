@@ -1,10 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { enableActivity } from '../../store/activityBarSlice';
 
-import { Welcome } from './Welcome';
-import { Settings } from './Settings';
-import { VideoList } from './VideoList';
-import { SearchBar } from './SearchBar';
+import { WelcomeDisplay } from './WelcomeDisplay';
+import { SettingsDisplay } from './SettingsDisplay';
+import { VideosDisplay } from './VideosDisplay';
 
 const Editor = () => {
   const dispatch = useAppDispatch();
@@ -12,6 +11,8 @@ const Editor = () => {
   const { activityBar } = useAppSelector((state) => state.activityBar);
 
   let activatedActivity = activityBar.find((activity) => activity.isActive);
+
+  // NOTE: By default, select the 'explorer' view.
   if (!activatedActivity) {
     dispatch(enableActivity(activityBar[0].name));
     activatedActivity = activityBar[0];
@@ -30,19 +31,10 @@ const Editor = () => {
   // NOTE: Conditional rendering is hard to understand.
   // NOTE: Might be worth figuring this out at some point.
   const editorDisplays: IEditorDisplays = {
-    explorer: () => {
-      return path.length === 0 ? (
-        <Welcome />
-      ) : (
-        <div>
-          <SearchBar />
-          <VideoList />
-        </div>
-      );
-    },
-    settings: () => <Settings />,
+    settings: () => <SettingsDisplay />,
+    explorer: () =>
+      path.length === 0 ? <WelcomeDisplay /> : <VideosDisplay />,
   };
-
   const editorDisplay = editorDisplays[activatedActivity.name];
 
   return (

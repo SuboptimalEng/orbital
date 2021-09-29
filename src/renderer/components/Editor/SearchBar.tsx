@@ -6,14 +6,14 @@ const SearchBar = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
-      <div className="flex flex-col space-y-2 my-2 text-base">
+    <div className="bg-activity-bg h-full px-8">
+      <div className="flex space-x-2 text-base text-activity-fg p-2">
         <input
           type="text"
           value={query}
           placeholder="Search files by name"
           onChange={(e) => dispatch(setQuery(e.target.value))}
-          className="bg-activity-bg text-activity-fg w-full p-1 focus:outline-none"
+          className="bg-activity-bg border text-activity-fg w-full p-1 focus:outline-none"
         />
         <button
           onClick={() => dispatch(toggleSortByName())}

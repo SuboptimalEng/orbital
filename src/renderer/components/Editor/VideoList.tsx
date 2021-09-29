@@ -50,7 +50,7 @@ const VideoList = () => {
   }, [query, sortByName]);
 
   return (
-    <div className="absolute inset-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
+    <div className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
       {filteredFiles.length === 0 ? (
         <div>No files match your search query 😭</div>
       ) : (

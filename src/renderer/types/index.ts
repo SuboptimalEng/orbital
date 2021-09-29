@@ -44,7 +44,6 @@ export interface ITheme {
   '--theme-activity-fg': string;
   '--theme-activity-hover': string;
   '--theme-activity-active': string;
-  '--theme-activity-border': string;
 
   '--theme-editor-bg': string;
   '--theme-editor-fg': string;
@@ -54,7 +53,6 @@ export interface ITheme {
   '--theme-status-bg': string;
   '--theme-status-fg': string;
   '--theme-status-hover': string;
-  '--theme-status-border': string;
 
   '--theme-hyperlink': string;
 
@@ -74,7 +72,6 @@ export interface ICreateTheme {
   activityFg: string;
   activityHover: string;
   activityActive: string;
-  activityBorder: string;
 
   editorBg: string;
   editorFg: string;
@@ -84,7 +81,6 @@ export interface ICreateTheme {
   statusBg: string;
   statusFg: string;
   statusHover: string;
-  statusBorder: string;
 
   hyperlink: string;
 

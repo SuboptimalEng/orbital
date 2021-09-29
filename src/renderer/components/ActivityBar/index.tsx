@@ -7,7 +7,7 @@ const ActivityBar = () => {
   const { activityBar } = useAppSelector((state) => state.activityBar);
 
   return (
-    <div className="flex flex-col place-items-center h-full border-r-2 bg-activity-bg border-activity-border">
+    <div className="flex flex-col place-items-center h-full bg-activity-bg">
       {activityBar.map((activity: IActivity) => {
         return (
           <div

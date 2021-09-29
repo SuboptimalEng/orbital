@@ -36,7 +36,6 @@ export function createTheme({
   activityFg,
   activityHover,
   activityActive,
-  activityBorder,
 
   editorBg,
   editorFg,
@@ -46,7 +45,6 @@ export function createTheme({
   statusBg,
   statusFg,
   statusHover,
-  statusBorder,
 
   hyperlink,
 
@@ -65,7 +63,6 @@ export function createTheme({
     '--theme-activity-fg': activityFg,
     '--theme-activity-hover': activityHover,
     '--theme-activity-active': activityActive,
-    '--theme-activity-border': activityBorder,
 
     '--theme-editor-bg': editorBg,
     '--theme-editor-fg': editorFg,
@@ -75,7 +72,6 @@ export function createTheme({
     '--theme-status-bg': statusBg,
     '--theme-status-fg': statusFg,
     '--theme-status-hover': statusHover,
-    '--theme-status-border': statusBorder,
 
     '--theme-hyperlink': hyperlink,
 

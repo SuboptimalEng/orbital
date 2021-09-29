@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch } from './store/hooks';
-import { setFolder } from './store/folderSlice';
 import { applyRandomTheme } from './themes/utils';
+import { setFolder } from './store/folderSlice';
 
 import { Editor } from './components/Editor';
 import { StatusBar } from './components/StatusBar';

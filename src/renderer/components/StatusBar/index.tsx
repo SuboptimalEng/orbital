@@ -8,7 +8,7 @@ const StatusBar = () => {
   };
 
   return (
-    <div className="bg-status-bg text-status-fg border-t-2 border-status-border h-8 text-lg  px-2 content-center">
+    <div className="bg-status-bg text-status-fg h-8 text-lg  px-2 content-center">
       <div className="flex justify-between h-full place-items-center">
         <button
           onClick={openDirectory}

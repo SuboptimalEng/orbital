@@ -6,7 +6,6 @@ export const lightTheme: ITheme = createTheme({
   activityFg: '#fafafa',
   activityHover: '#44475a',
   activityActive: '#007acc',
-  activityBorder: '#111827',
 
   // gray-200
   editorBg: '#e5e7eb',
@@ -17,15 +16,13 @@ export const lightTheme: ITheme = createTheme({
   statusBg: '#007acc',
   statusFg: '#fafafa',
   statusHover: '#44475a',
-  statusBorder: '#007acc',
 
   // blue
   hyperlink: '#007acc',
 
-  // gray-200
-  scrollbarBg: '#e5e7eb',
+  scrollbarBg: '#9CA3AF',
   // gray-400
-  scrollbarFg: '#9CA3AF',
+  scrollbarFg: '#111827',
 
   red: '#ff0000',
   blue: '#007acc',

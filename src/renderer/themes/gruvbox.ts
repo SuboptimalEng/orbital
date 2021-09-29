@@ -7,7 +7,6 @@ export const gruvboxTheme: ITheme = createTheme({
   activityHover: '#282828',
   // orange
   activityActive: '#fe8019',
-  activityBorder: '#070808',
 
   editorBg: '#131414',
   editorFg: '#ebdbb2',
@@ -22,15 +21,14 @@ export const gruvboxTheme: ITheme = createTheme({
   statusBg: '#070808',
   statusFg: '#ebdbb2',
   statusHover: '#282828',
-  statusBorder: '#070808',
 
   // orange
   hyperlink: '#fe8019',
 
   // hover
   scrollbarBg: '#282828',
-  // orange
-  scrollbarFg: '#131414',
+  // dark
+  scrollbarFg: '#070808',
 
   red: '#cc241d',
   blue: '#458588',

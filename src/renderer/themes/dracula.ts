@@ -2,19 +2,13 @@ import { ITheme } from '../types';
 import { createTheme } from './utils';
 
 export const draculaTheme: ITheme = createTheme({
-  activityBg: '#343746',
+  activityBg: '#21222c',
   activityFg: '#f8f8f2',
   activityHover: '#44475a',
   // pink
   activityActive: '#ff79c6',
-  activityBorder: '#343746',
 
-  // editorBg: '#282a36',
-  // editorFg: '#f8f8f2',
-  // editorHover: '#44475a',
-  // editorBorder: '#f8f8f2',
-
-  editorBg: '#21222c',
+  editorBg: '#343746',
   editorFg: '#f8f8f2',
   editorHover: '#44475a',
   editorBorder: '#f8f8f2',
@@ -22,14 +16,13 @@ export const draculaTheme: ITheme = createTheme({
   statusBg: '#191a21',
   statusFg: '#f8f8f2',
   statusHover: '#44475a',
-  statusBorder: '#191a21',
 
   // pink
   hyperlink: '#ff79c6',
 
   // hover
-  scrollbarBg: '#343746',
-  scrollbarFg: '#191a21',
+  scrollbarBg: '#44475a',
+  scrollbarFg: '#21222c',
 
   red: '#ff5555',
   blue: '#8be9fd',

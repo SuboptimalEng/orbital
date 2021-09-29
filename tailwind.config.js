@@ -22,7 +22,6 @@ module.exports = {
         'activity-fg': 'var(--theme-activity-fg)',
         'activity-hover': 'var(--theme-activity-hover)',
         'activity-active': 'var(--theme-activity-active)',
-        'activity-border': 'var(--theme-activity-border)',
 
         'editor-bg': 'var(--theme-editor-bg)',
         'editor-fg': 'var(--theme-editor-fg)',
@@ -32,7 +31,6 @@ module.exports = {
         'status-bg': 'var(--theme-status-bg)',
         'status-fg': 'var(--theme-status-fg)',
         'status-hover': 'var(--theme-status-hover)',
-        'status-border': 'var(--theme-status-border)',
 
         hyperlink: 'var(--theme-hyperlink)',
 
