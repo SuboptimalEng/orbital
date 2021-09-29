@@ -5,7 +5,6 @@ import { Welcome } from './Welcome';
 import { Settings } from './Settings';
 import { VideoList } from './VideoList';
 import { SearchBar } from './SearchBar';
-// import { IActivity, ActivityNameTypes } from '../../types';
 
 const Editor = () => {
   const dispatch = useAppDispatch();
@@ -19,27 +18,22 @@ const Editor = () => {
   }
 
   // NOTE: Type example.
-  // type sidebarDisplaysType = {
-  //   [key in ActivityNameTypes]: JSX.Element;
+  // type editorDisplaysType = {
+  //   [key in ActivityNameTypes]: () => JSX.Element;
   // };
 
-  // NOTE: This works.
-  // interface ISidebarDisplays {
-  //   [key: string]: JSX.Element;
-  // }
-
-  interface ISidebarDisplays {
+  // NOTE: Interface example.
+  interface IEditorDisplays {
     [key: string]: () => JSX.Element;
   }
 
   // NOTE: Conditional rendering is hard to understand.
   // NOTE: Might be worth figuring this out at some point.
-  const sidebarDisplays: ISidebarDisplays = {
+  const editorDisplays: IEditorDisplays = {
     explorer: () => {
-      if (path.length === 0) {
-        return <Welcome />;
-      }
-      return (
+      return path.length === 0 ? (
+        <Welcome />
+      ) : (
         <div>
           <SearchBar />
           <VideoList />
@@ -49,10 +43,10 @@ const Editor = () => {
     settings: () => <Settings />,
   };
 
-  const sidebarDisplay = sidebarDisplays[activatedActivity.name];
+  const editorDisplay = editorDisplays[activatedActivity.name];
 
   return (
-    <div className="bg-editor-bg text-editor-fg h-full">{sidebarDisplay()}</div>
+    <div className="bg-editor-bg text-editor-fg h-full">{editorDisplay()}</div>
   );
 };
 

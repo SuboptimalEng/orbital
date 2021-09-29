@@ -5,6 +5,6 @@
 exports.__esModule = true;
 exports.Activities = void 0;
 exports.Activities = {
-    Search: 'search',
+    Explorer: 'explorer',
     Settings: 'settings'
 };

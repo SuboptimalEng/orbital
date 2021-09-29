@@ -5,7 +5,7 @@
 export const Activities = {
   Explorer: 'explorer',
   Settings: 'settings',
-} as const;
+};
 
 export type ActivityNameTypes = typeof Activities[keyof typeof Activities];
 
