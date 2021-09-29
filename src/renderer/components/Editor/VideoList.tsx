@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
+import { SearchBar } from './SearchBar';
 import { Video } from './Video';
 
 const VideoList = () => {
