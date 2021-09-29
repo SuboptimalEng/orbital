@@ -24,11 +24,6 @@ module.exports = {
         'activity-active': 'var(--theme-activity-active)',
         'activity-border': 'var(--theme-activity-border)',
 
-        'sidebar-bg': 'var(--theme-sidebar-bg)',
-        'sidebar-fg': 'var(--theme-sidebar-fg)',
-        'sidebar-hover': 'var(--theme-sidebar-hover)',
-        'sidebar-border': 'var(--theme-sidebar-border)',
-
         'editor-bg': 'var(--theme-editor-bg)',
         'editor-fg': 'var(--theme-editor-fg)',
         'editor-hover': 'var(--theme-editor-hover)',

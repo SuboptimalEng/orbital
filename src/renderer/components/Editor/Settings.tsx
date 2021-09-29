@@ -5,7 +5,6 @@ import {
   decrementNumOfCols,
   incrementNumOfCols,
 } from '../../store/settingsSlice';
-import { SidebarHeader } from '../Base/SidebarHeader';
 
 const Settings = () => {
   const [toggle, setToggle] = useState(false);
@@ -34,20 +33,19 @@ const Settings = () => {
 
   return (
     <div>
-      <SidebarHeader title="Settings" />
       <div
-        className="border-2 border-sidebar-fg rounded"
+        className="border-2 border-editor-fg rounded"
         onClick={() => setToggle(!toggle)}
       >
         Theme
         {toggle && (
-          <div className="absolute bg-sidebar-bg border-2 border-sidebar-fg rounded">
+          <div className="absolute bg-editor-bg border-2 border-editor-fg rounded">
             {selectableThemes.map((theme) => {
               return (
                 <div
                   key={theme.name}
                   onClick={() => applyTheme(theme.theme)}
-                  className="border-2 border-sidebar-fg rounded p-2"
+                  className="border-2 border-editor-fg rounded p-2"
                 >
                   {theme.name}
                 </div>
@@ -59,14 +57,14 @@ const Settings = () => {
       <div>
         <div className="flex">
           <button
-            className="border-2 border-sidebar-fg rounded"
+            className="border-2 border-editor-fg rounded"
             onClick={maybeDecrementNumOfCols}
           >
             -
           </button>
           <div>{numOfCols}</div>
           <button
-            className="border-2 border-sidebar-fg rounded"
+            className="border-2 border-editor-fg rounded"
             onClick={maybeIncrementNumOfCols}
           >
             +
@@ -74,7 +72,7 @@ const Settings = () => {
         </div>
         <div
           onClick={() => ipcTest()}
-          className="border-2 border-sidebar-fg rounded p-2"
+          className="border-2 border-editor-fg rounded p-2"
         >
           IPC
         </div>

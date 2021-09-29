@@ -9,12 +9,7 @@ export const lightTheme: ITheme = createTheme({
   activityBorder: '#111827',
 
   // gray-200
-  sidebarBg: '#e5e7eb',
-  sidebarFg: '#000000',
-  sidebarHover: '#44475a',
-  sidebarBorder: '#e5e7eb',
-
-  editorBg: '#fafafa',
+  editorBg: '#e5e7eb',
   editorFg: '#000000',
   editorHover: '#44475a',
   editorBorder: '#000000',

@@ -1,6 +1,6 @@
-import { IActivity } from '../types';
-import { toggleActivity } from '../store/activityBarSlice';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { IActivity } from '../../types';
+import { enableActivity } from '../../store/activityBarSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 const ActivityBar = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ const ActivityBar = () => {
           <div
             className="flex w-full place-items-center"
             key={activity.name}
-            onClick={() => dispatch(toggleActivity(activity.name))}
+            onClick={() => dispatch(enableActivity(activity.name))}
           >
             <button className="w-full text-center">
               <div

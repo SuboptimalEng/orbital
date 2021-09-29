@@ -38,11 +38,6 @@ export function createTheme({
   activityActive,
   activityBorder,
 
-  sidebarBg,
-  sidebarFg,
-  sidebarHover,
-  sidebarBorder,
-
   editorBg,
   editorFg,
   editorHover,
@@ -71,11 +66,6 @@ export function createTheme({
     '--theme-activity-hover': activityHover,
     '--theme-activity-active': activityActive,
     '--theme-activity-border': activityBorder,
-
-    '--theme-sidebar-bg': sidebarBg,
-    '--theme-sidebar-fg': sidebarFg,
-    '--theme-sidebar-hover': sidebarHover,
-    '--theme-sidebar-border': sidebarBorder,
 
     '--theme-editor-bg': editorBg,
     '--theme-editor-fg': editorFg,

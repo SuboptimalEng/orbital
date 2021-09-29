@@ -1,14 +1,12 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setQuery, toggleSortByName } from '../../store/searchSlice';
-import { SidebarHeader } from '../Base/SidebarHeader';
 
-const Search = () => {
+const SearchBar = () => {
   const { query } = useAppSelector((state) => state.search);
   const dispatch = useAppDispatch();
 
   return (
     <div>
-      <SidebarHeader title="Search" />
       <div className="flex flex-col space-y-2 my-2 text-base">
         <input
           type="text"
@@ -28,4 +26,4 @@ const Search = () => {
   );
 };
 
-export { Search };
+export { SearchBar };

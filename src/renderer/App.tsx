@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from './store/hooks';
+import { useAppDispatch } from './store/hooks';
 import { setFolder } from './store/folderSlice';
 import { applyRandomTheme } from './themes/utils';
 
 import { Editor } from './components/Editor';
-import { Sidebar } from './components/Sidebar';
 import { StatusBar } from './components/StatusBar';
 import { ActivityBar } from './components/ActivityBar';
 
@@ -37,25 +36,13 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-  const { activityBar } = useAppSelector((state) => state.activityBar);
-  const sidebar = activityBar.find((activity) => activity.isActive);
-
   return (
     <div className="font-sans antialiased">
       <div className="text-4xl flex place-items-center h-screen relative">
         <div className="absolute top-0 bottom-8 w-16">
           <ActivityBar />
         </div>
-        <div className="absolute left-16 top-0 bottom-8 right-0 w-80">
-          <Sidebar />
-        </div>
-        <div
-          className={
-            !sidebar
-              ? 'absolute left-16 top-0 bottom-8 right-0'
-              : 'absolute left-96 top-0 bottom-8 right-0'
-          }
-        >
+        <div className="absolute left-16 top-0 bottom-8 right-0">
           <Editor />
         </div>
         <div className="absolute left-0 right-0 bottom-0">

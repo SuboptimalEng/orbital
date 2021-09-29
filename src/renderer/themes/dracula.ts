@@ -9,12 +9,12 @@ export const draculaTheme: ITheme = createTheme({
   activityActive: '#ff79c6',
   activityBorder: '#343746',
 
-  sidebarBg: '#21222c',
-  sidebarFg: '#f8f8f2',
-  sidebarHover: '#44475a',
-  sidebarBorder: '#21222c',
+  // editorBg: '#282a36',
+  // editorFg: '#f8f8f2',
+  // editorHover: '#44475a',
+  // editorBorder: '#f8f8f2',
 
-  editorBg: '#282a36',
+  editorBg: '#21222c',
   editorFg: '#f8f8f2',
   editorHover: '#44475a',
   editorBorder: '#f8f8f2',

@@ -9,15 +9,15 @@ export const gruvboxTheme: ITheme = createTheme({
   activityActive: '#fe8019',
   activityBorder: '#070808',
 
-  sidebarBg: '#131414',
-  sidebarFg: '#ebdbb2',
-  sidebarHover: '#282828',
-  sidebarBorder: '#131414',
-
-  editorBg: '#202020',
+  editorBg: '#131414',
   editorFg: '#ebdbb2',
   editorHover: '#282828',
   editorBorder: '#ebdbb2',
+
+  // editorBg: '#202020',
+  // editorFg: '#ebdbb2',
+  // editorHover: '#282828',
+  // editorBorder: '#ebdbb2',
 
   statusBg: '#070808',
   statusFg: '#ebdbb2',

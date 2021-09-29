@@ -3,15 +3,10 @@ import { IActivity, IActivityBar } from '../types';
 
 const initialState: IActivityBar = {
   activityBar: [
-    // {
-    //   name: 'explorer',
-    //   isActive: false,
-    //   icon: '📁',
-    // },
     {
-      name: 'search',
+      name: 'explorer',
       isActive: false,
-      icon: '🔎',
+      icon: '📁',
     },
     {
       name: 'settings',
@@ -25,15 +20,14 @@ export const activityBarSlice = createSlice({
   name: 'activityBar',
   initialState,
   reducers: {
-    toggleActivity: (state, action: PayloadAction<string>) => {
+    enableActivity: (state, action: PayloadAction<string>) => {
       // NOTE: Deep clone an object.
       // const activityBarClone = JSON.parse(JSON.stringify(state.activityBar));
       const updatedActivityBar = state.activityBar.map(
         (activity: IActivity) => {
           return {
             ...activity,
-            isActive:
-              activity.name === action.payload ? !activity.isActive : false,
+            isActive: activity.name === action.payload ? true : false,
           };
         }
       );
@@ -42,5 +36,5 @@ export const activityBarSlice = createSlice({
   },
 });
 
-export const { toggleActivity } = activityBarSlice.actions;
+export const { enableActivity } = activityBarSlice.actions;
 export const activityBarSliceReducer = activityBarSlice.reducer;

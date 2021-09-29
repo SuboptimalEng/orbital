@@ -3,7 +3,7 @@
 // ================================================================
 
 export const Activities = {
-  Search: 'search',
+  Explorer: 'explorer',
   Settings: 'settings',
 } as const;
 
@@ -46,11 +46,6 @@ export interface ITheme {
   '--theme-activity-active': string;
   '--theme-activity-border': string;
 
-  '--theme-sidebar-bg': string;
-  '--theme-sidebar-fg': string;
-  '--theme-sidebar-hover': string;
-  '--theme-sidebar-border': string;
-
   '--theme-editor-bg': string;
   '--theme-editor-fg': string;
   '--theme-editor-hover': string;
@@ -80,11 +75,6 @@ export interface ICreateTheme {
   activityHover: string;
   activityActive: string;
   activityBorder: string;
-
-  sidebarBg: string;
-  sidebarFg: string;
-  sidebarHover: string;
-  sidebarBorder: string;
 
   editorBg: string;
   editorFg: string;
