@@ -37,7 +37,7 @@ const Video = ({ path, name, ctime }: IFile) => {
       <div className="absolute text-xs p-1 bottom-11 right-2 bg-activity-bg text-activity-fg rounded">
         {getReadableDuration()}
       </div>
-      <div className="flex justify-between p-2 text-sm font-bold">
+      <div className="flex justify-between p-2 text-xs font-bold">
         <div>{name}</div>
         <div>{getReadableDate()}</div>
       </div>
