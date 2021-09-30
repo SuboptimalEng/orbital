@@ -23,6 +23,9 @@ module.exports = {
         'activity-hover': 'var(--theme-activity-hover)',
         'activity-active': 'var(--theme-activity-active)',
 
+        'search-bg': 'var(--theme-search-bg)',
+        'search-fg': 'var(--theme-search-fg)',
+
         'editor-bg': 'var(--theme-editor-bg)',
         'editor-fg': 'var(--theme-editor-fg)',
         'editor-hover': 'var(--theme-editor-hover)',

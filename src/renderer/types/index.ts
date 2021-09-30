@@ -45,6 +45,9 @@ export interface ITheme {
   '--theme-activity-hover': string;
   '--theme-activity-active': string;
 
+  '--theme-search-bg': string;
+  '--theme-search-fg': string;
+
   '--theme-editor-bg': string;
   '--theme-editor-fg': string;
   '--theme-editor-hover': string;
@@ -72,6 +75,9 @@ export interface ICreateTheme {
   activityFg: string;
   activityHover: string;
   activityActive: string;
+
+  searchBg: string;
+  searchFg: string;
 
   editorBg: string;
   editorFg: string;

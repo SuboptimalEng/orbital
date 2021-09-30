@@ -5,8 +5,10 @@ export const draculaTheme: ITheme = createTheme({
   activityBg: '#21222c',
   activityFg: '#f8f8f2',
   activityHover: '#44475a',
-  // pink
   activityActive: '#ff79c6',
+
+  searchBg: '#21222c',
+  searchFg: '#f8f8f2',
 
   editorBg: '#343746',
   editorFg: '#f8f8f2',
@@ -17,12 +19,10 @@ export const draculaTheme: ITheme = createTheme({
   statusFg: '#f8f8f2',
   statusHover: '#44475a',
 
-  // pink
   hyperlink: '#ff79c6',
 
-  // hover
-  scrollbarBg: '#44475a',
-  scrollbarFg: '#21222c',
+  scrollbarBg: '#21222c',
+  scrollbarFg: '#ff79c6',
 
   red: '#ff5555',
   blue: '#8be9fd',

@@ -5,30 +5,24 @@ export const gruvboxTheme: ITheme = createTheme({
   activityBg: '#070808',
   activityFg: '#ebdbb2',
   activityHover: '#282828',
-  // orange
   activityActive: '#fe8019',
+
+  searchBg: '#070808',
+  searchFg: '#ebdbb2',
 
   editorBg: '#131414',
   editorFg: '#ebdbb2',
   editorHover: '#282828',
   editorBorder: '#ebdbb2',
 
-  // editorBg: '#202020',
-  // editorFg: '#ebdbb2',
-  // editorHover: '#282828',
-  // editorBorder: '#ebdbb2',
-
   statusBg: '#070808',
   statusFg: '#ebdbb2',
   statusHover: '#282828',
 
-  // orange
   hyperlink: '#fe8019',
 
-  // hover
   scrollbarBg: '#282828',
-  // dark
-  scrollbarFg: '#070808',
+  scrollbarFg: '#fe8019',
 
   red: '#cc241d',
   blue: '#458588',

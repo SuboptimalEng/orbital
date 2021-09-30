@@ -37,6 +37,9 @@ export function createTheme({
   activityHover,
   activityActive,
 
+  searchBg,
+  searchFg,
+
   editorBg,
   editorFg,
   editorHover,
@@ -63,6 +66,9 @@ export function createTheme({
     '--theme-activity-fg': activityFg,
     '--theme-activity-hover': activityHover,
     '--theme-activity-active': activityActive,
+
+    '--theme-search-bg': searchBg,
+    '--theme-search-fg': searchFg,
 
     '--theme-editor-bg': editorBg,
     '--theme-editor-fg': editorFg,
