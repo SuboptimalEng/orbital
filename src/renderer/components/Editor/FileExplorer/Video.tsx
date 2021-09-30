@@ -22,9 +22,10 @@ export default function Video({ path, name, ctime }: IFile) {
     return readableDuration;
   };
 
-  const getReadableDate = (): string => {
-    return new Date(ctime).toLocaleString().split(',')[0];
-  };
+  // TODO V2: Display date at some point.
+  // const getReadableDate = (): string => {
+  //   return new Date(ctime).toLocaleString().split(',')[0];
+  // };
 
   return (
     <button className="relative" onClick={openFile}>
@@ -39,7 +40,7 @@ export default function Video({ path, name, ctime }: IFile) {
       </div>
       <div className="flex justify-between p-2 text-xs font-bold">
         <div>{name}</div>
-        <div>{getReadableDate()}</div>
+        {/* <div>{getReadableDate()}</div> */}
       </div>
     </button>
   );
