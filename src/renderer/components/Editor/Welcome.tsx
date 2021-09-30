@@ -1,4 +1,4 @@
-export default function WelcomeDisplay() {
+export default function Welcome() {
   const openDirectory = () => {
     window.ipc.send('open-directory');
   };

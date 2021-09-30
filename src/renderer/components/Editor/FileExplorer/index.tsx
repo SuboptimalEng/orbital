@@ -1,11 +1,11 @@
-import VideoList from './VideoList';
+import Files from './Files';
 import SearchBar from './SearchBar';
 
-export default function MediaDisplay() {
+export default function FileExplorer() {
   return (
     <div className="w-full h-full">
       <SearchBar />
-      <VideoList />
+      <Files />
     </div>
   );
 }

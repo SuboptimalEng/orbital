@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { setQuery } from '../../store/searchSlice';
+import { setQuery } from '../../../store/searchSlice';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 export default function SearchBar() {
   const { query } = useAppSelector((state) => state.search);

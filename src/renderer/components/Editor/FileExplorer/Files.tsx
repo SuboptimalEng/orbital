@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../store/hooks';
-import { IFile } from '../../types';
+import { IFile } from '../../../types';
+import { useAppSelector } from '../../../store/hooks';
+
 import Video from './Video';
 
-export default function VideoList() {
-  const { query, sortByName } = useAppSelector((state) => state.search);
+export default function Files() {
+  const { query } = useAppSelector((state) => state.search);
   const { files } = useAppSelector((state) => state.folder);
   const { numOfCols } = useAppSelector((state) => state.settings);
 
@@ -29,25 +30,12 @@ export default function VideoList() {
   };
 
   const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
-  const filterFiles = () => {
-    setFilteredFiles(
-      files
-        .filter((file) => file.path.includes(query))
-        .sort((a, b) => {
-          const num = a.name.localeCompare(b.name);
-          if (sortByName === 'asc') {
-            return num;
-          } else {
-            return num * -1;
-          }
-        })
-    );
-  };
 
   useEffect(() => {
-    filterFiles();
+    // TODO V2: Sort files by name using the sortByName redux variable.
+    setFilteredFiles(files.filter((file) => file.path.includes(query)));
     // eslint-disable-next-line
-  }, [query, sortByName]);
+  }, [query]);
 
   return (
     <div className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">

@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { enableActivity } from '../../store/activityBarSlice';
 
-import MediaDisplay from './MediaDisplay';
-import WelcomeDisplay from './WelcomeDisplay';
-import SettingsDisplay from './SettingsDisplay';
+import Welcome from './Welcome';
+import Settings from './Settings';
+import FileExplorer from './FileExplorer';
 
 export default function Editor() {
   const dispatch = useAppDispatch();
@@ -31,8 +31,8 @@ export default function Editor() {
   // NOTE: Conditional rendering is hard to understand.
   // NOTE: Might be worth figuring this out at some point.
   const editorDisplays: IEditorDisplays = {
-    settings: () => <SettingsDisplay />,
-    explorer: () => (path.length === 0 ? <WelcomeDisplay /> : <MediaDisplay />),
+    settings: () => <Settings />,
+    explorer: () => (path.length === 0 ? <Welcome /> : <FileExplorer />),
   };
   const editorDisplay = editorDisplays[activatedActivity.name];
 

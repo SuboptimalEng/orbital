@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
-import { IFile } from '../../types';
+import { IFile } from '../../../types';
 
 export default function Video({ path, name, ctime }: IFile) {
   const [duration, setDuration] = useState<number>(0);
