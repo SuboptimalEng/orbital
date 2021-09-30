@@ -42,6 +42,9 @@ function createWindow() {
 // const fs = require('fs');
 import * as fs from 'fs';
 import { IFile } from '../renderer/types';
+
+import { glob } from 'glob';
+
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
@@ -80,25 +83,38 @@ ipcMain.on('open-directory', async (event, payload) => {
   } else {
     const files: Array<IFile> = [];
 
-    fs.readdirSync(result.filePaths[0]).forEach((filename: string) => {
-      const fullFilePath = `${result.filePaths[0]}/${filename}`;
-      const fileStat = fs.statSync(fullFilePath);
-      // TODO: Allow user to filter through multiple file types.
-      if (
-        fileStat.isFile() &&
-        path.extname(fullFilePath).toLocaleLowerCase() === '.mp4'
-      ) {
-        files.push({
-          name: filename,
-          path: fullFilePath,
-          ctime: fileStat.ctime.toString(),
+    const rootDir = result.filePaths[0];
+    glob(`${rootDir}/**/*.mp4`, function (err, fullFilePaths) {
+      if (err) {
+        // TODO: Replace with with error log
+        console.log('err');
+        event.reply('open-directory', {
+          path: '',
+          files: [],
         });
+        return;
       }
-    });
 
-    event.reply('open-directory', {
-      path: result.filePaths[0],
-      files: files,
+      fullFilePaths.map((fullFilePath) => {
+        const fileStat = fs.statSync(fullFilePath);
+        // TODO: Allow user to filter through multiple file types.
+        if (
+          fileStat.isFile() &&
+          path.extname(fullFilePath).toLocaleLowerCase() === '.mp4'
+        ) {
+          const filename = fullFilePath.substr(rootDir.length + 1);
+          files.push({
+            name: filename,
+            path: fullFilePath,
+            ctime: fileStat.ctime.toString(),
+          });
+        }
+      });
+
+      event.reply('open-directory', {
+        path: result.filePaths[0],
+        files: files,
+      });
     });
   }
 });
