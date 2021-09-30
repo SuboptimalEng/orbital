@@ -1,4 +1,4 @@
-const WelcomeDisplay = () => {
+export default function WelcomeDisplay() {
   const openDirectory = () => {
     window.ipc.send('open-directory');
   };
@@ -24,6 +24,4 @@ const WelcomeDisplay = () => {
       </div>
     </div>
   );
-};
-
-export { WelcomeDisplay };
+}

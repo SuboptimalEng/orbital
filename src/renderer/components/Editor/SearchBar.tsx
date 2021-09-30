@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setQuery } from '../../store/searchSlice';
 
-const SearchBar = () => {
+export default function SearchBar() {
   const { query } = useAppSelector((state) => state.search);
   const dispatch = useAppDispatch();
 
@@ -18,6 +18,4 @@ const SearchBar = () => {
       </div>
     </div>
   );
-};
-
-export { SearchBar };
+}

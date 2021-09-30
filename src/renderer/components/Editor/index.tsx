@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { enableActivity } from '../../store/activityBarSlice';
 
-import { WelcomeDisplay } from './WelcomeDisplay';
-import { SettingsDisplay } from './SettingsDisplay';
-import { VideosDisplay } from './VideosDisplay';
+import MediaDisplay from './MediaDisplay';
+import WelcomeDisplay from './WelcomeDisplay';
+import SettingsDisplay from './SettingsDisplay';
 
 const Editor = () => {
   const dispatch = useAppDispatch();
@@ -32,8 +32,7 @@ const Editor = () => {
   // NOTE: Might be worth figuring this out at some point.
   const editorDisplays: IEditorDisplays = {
     settings: () => <SettingsDisplay />,
-    explorer: () =>
-      path.length === 0 ? <WelcomeDisplay /> : <VideosDisplay />,
+    explorer: () => (path.length === 0 ? <WelcomeDisplay /> : <MediaDisplay />),
   };
   const editorDisplay = editorDisplays[activatedActivity.name];
 

@@ -6,7 +6,7 @@ import {
   incrementNumOfCols,
 } from '../../store/settingsSlice';
 
-const SettingsDisplay = () => {
+export default function SettingsDisplay() {
   const [toggle, setToggle] = useState(false);
 
   const { numOfCols } = useAppSelector((state) => state.settings);
@@ -85,6 +85,4 @@ const SettingsDisplay = () => {
       </div>
     </div>
   );
-};
-
-export { SettingsDisplay };
+}

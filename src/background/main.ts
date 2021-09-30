@@ -82,9 +82,12 @@ ipcMain.on('open-directory', async (event, payload) => {
     });
   } else {
     const files: Array<IFile> = [];
-
     const rootDir = result.filePaths[0];
-    glob(`${rootDir}/**/*.mp4`, function (err, fullFilePaths) {
+
+    // TODO: Allow user to filter through multiple file types.
+    glob(`${rootDir}/**/*(*.mp4|*.png)`, function (err, fullFilePaths) {
+      console.log(fullFilePaths);
+
       if (err) {
         // TODO: Replace with with error log
         console.log('err');
@@ -97,18 +100,12 @@ ipcMain.on('open-directory', async (event, payload) => {
 
       fullFilePaths.map((fullFilePath) => {
         const fileStat = fs.statSync(fullFilePath);
-        // TODO: Allow user to filter through multiple file types.
-        if (
-          fileStat.isFile() &&
-          path.extname(fullFilePath).toLocaleLowerCase() === '.mp4'
-        ) {
-          const filename = fullFilePath.substr(rootDir.length + 1);
-          files.push({
-            name: filename,
-            path: fullFilePath,
-            ctime: fileStat.ctime.toString(),
-          });
-        }
+        const filename = fullFilePath.substr(rootDir.length + 1);
+        files.push({
+          name: filename,
+          path: fullFilePath,
+          ctime: fileStat.ctime.toString(),
+        });
       });
 
       event.reply('open-directory', {

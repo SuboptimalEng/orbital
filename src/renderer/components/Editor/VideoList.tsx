@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { IFile } from '../../types';
-import { Video } from './Video';
+import Video from './Video';
 
-const VideoList = () => {
+export default function VideoList() {
   const { query, sortByName } = useAppSelector((state) => state.search);
   const { files } = useAppSelector((state) => state.folder);
   const { numOfCols } = useAppSelector((state) => state.settings);
@@ -61,7 +61,15 @@ const VideoList = () => {
                 className="flex flex-col border border-editor-border"
                 key={`file-protocol://getMediaFile/${file.path}`}
               >
-                <Video {...file}></Video>
+                {file.path.includes('mp4') ? (
+                  <Video {...file} />
+                ) : (
+                  <img
+                    src={`file-protocol://getMediaFile/${file.path}`}
+                    className="object-cover h-full"
+                    alt=""
+                  />
+                )}
               </div>
             );
           })}
@@ -69,6 +77,4 @@ const VideoList = () => {
       )}
     </div>
   );
-};
-
-export { VideoList };
+}

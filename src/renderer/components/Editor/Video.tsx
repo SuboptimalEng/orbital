@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { IFile } from '../../types';
 
-const Video = ({ path, name, ctime }: IFile) => {
+export default function Video({ path, name, ctime }: IFile) {
   const [duration, setDuration] = useState<number>(0);
 
   const setDurationOnLoad = (e: SyntheticEvent<HTMLVideoElement>) => {
@@ -43,6 +43,4 @@ const Video = ({ path, name, ctime }: IFile) => {
       </div>
     </button>
   );
-};
-
-export { Video };
+}
