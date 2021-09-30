@@ -66,7 +66,7 @@ export default function VideoList() {
                 ) : (
                   <img
                     src={`file-protocol://getMediaFile/${file.path}`}
-                    className="object-cover h-full"
+                    className="object-cover w-full"
                     alt=""
                   />
                 )}

@@ -3,9 +3,9 @@ import { useAppDispatch } from './store/hooks';
 import { applyRandomTheme } from './themes/utils';
 import { setFolder } from './store/folderSlice';
 
-import { Editor } from './components/Editor';
-import { StatusBar } from './components/StatusBar';
-import { ActivityBar } from './components/ActivityBar';
+import Editor from './components/Editor';
+import StatusBar from './components/StatusBar';
+import ActivityBar from './components/ActivityBar';
 
 // TODO: Properly set up window interface.
 declare global {

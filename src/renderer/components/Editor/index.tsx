@@ -5,7 +5,7 @@ import MediaDisplay from './MediaDisplay';
 import WelcomeDisplay from './WelcomeDisplay';
 import SettingsDisplay from './SettingsDisplay';
 
-const Editor = () => {
+export default function Editor() {
   const dispatch = useAppDispatch();
   const { path } = useAppSelector((state) => state.folder);
   const { activityBar } = useAppSelector((state) => state.activityBar);
@@ -39,6 +39,4 @@ const Editor = () => {
   return (
     <div className="bg-editor-bg text-editor-fg h-full">{editorDisplay()}</div>
   );
-};
-
-export { Editor };
+}

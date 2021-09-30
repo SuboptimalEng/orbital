@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../store/hooks';
 
-const StatusBar = () => {
+export default function StatusBar() {
   const { path } = useAppSelector((state) => state.folder);
 
   const openDirectory = () => {
@@ -22,6 +22,4 @@ const StatusBar = () => {
       </div>
     </div>
   );
-};
-
-export { StatusBar };
+}

@@ -2,7 +2,7 @@ import { IActivity } from '../../types';
 import { enableActivity } from '../../store/activityBarSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
-const ActivityBar = () => {
+export default function ActivityBar() {
   const dispatch = useAppDispatch();
   const { activityBar } = useAppSelector((state) => state.activityBar);
 
@@ -32,6 +32,4 @@ const ActivityBar = () => {
       })}
     </div>
   );
-};
-
-export { ActivityBar };
+}
