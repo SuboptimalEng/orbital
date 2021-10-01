@@ -1,11 +1,35 @@
-import { SyntheticEvent, useState } from 'react';
+import { MouseEvent, SyntheticEvent, useState } from 'react';
 import { IFile } from '../../../types';
 
 export default function Video({ path, name, ctime }: IFile) {
+  let videoWidth = 10000;
+  let boundingClientLeft = 0;
   const [duration, setDuration] = useState<number>(0);
 
   const setDurationOnLoad = (e: SyntheticEvent<HTMLVideoElement>) => {
     setDuration(e.currentTarget.duration);
+  };
+
+  const saveVideoElementData = (e: SyntheticEvent<HTMLVideoElement>) => {
+    videoWidth = e.currentTarget.getBoundingClientRect().width;
+    boundingClientLeft = e.currentTarget.getBoundingClientRect().left;
+  };
+
+  const previewOnHover = (e: MouseEvent) => {
+    const videoElement = document.getElementById(path) as HTMLVideoElement;
+    if (videoElement.readyState < 3) {
+      return;
+    }
+
+    // NOTE: Percent of distance the mouse has travelled across the video element.
+    // NOTE: Ensure that this percentage is in increments of 10% (1 - 10%, 2 - 20%, etc.).
+    // NOTE: Percent Enum => 1 - 10%, 2 - 20%, 3 - 30%, etc.
+    const percentEnum = Math.round(
+      ((e.clientX - boundingClientLeft) * 10) / videoWidth
+    );
+    const currentTime = Math.round((percentEnum / 10) * videoElement.duration);
+
+    videoElement.currentTime = currentTime;
   };
 
   const openFile = () => {
@@ -34,6 +58,8 @@ export default function Video({ path, name, ctime }: IFile) {
         src={`file-protocol://getMediaFile/${path}`}
         className="border-b border-editor-border"
         onLoadedMetadata={setDurationOnLoad}
+        onMouseEnter={saveVideoElementData}
+        onMouseMove={previewOnHover}
       />
       <div className="absolute text-xs p-1 bottom-11 right-2 bg-activity-bg text-activity-fg rounded">
         {getReadableDuration()}
