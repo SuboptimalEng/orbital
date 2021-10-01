@@ -85,7 +85,7 @@ ipcMain.on('open-directory', async (event, payload) => {
     const rootDir = result.filePaths[0];
 
     // TODO: Allow user to filter through multiple file types.
-    glob(`${rootDir}/**/*(*.mp4|*.png)`, function (err, fullFilePaths) {
+    glob(`${rootDir}/**/*(*.mp4|*.png|*.MP4)`, function (err, fullFilePaths) {
       console.log(fullFilePaths);
 
       if (err) {

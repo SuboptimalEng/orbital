@@ -49,7 +49,7 @@ export default function Files() {
                 className="flex flex-col border border-editor-border"
                 key={`file-protocol://getMediaFile/${file.path}`}
               >
-                {file.path.includes('mp4') ? (
+                {file.path.includes('mp4') || file.path.includes('MP4') ? (
                   <Video {...file} />
                 ) : (
                   <img
