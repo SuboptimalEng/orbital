@@ -32,6 +32,7 @@ export default function Files() {
 
   const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
   const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
+  const [hasMoreFiles, setHasMoreFiles] = useState(true);
 
   useEffect(() => {
     // TODO V2: Sort files by name using the sortByName redux variable.
@@ -39,28 +40,44 @@ export default function Files() {
     setFilteredFiles(filteredFiles);
 
     // NOTE: Get first 10 files for infinite scroll.
-    const first10: Array<IFile> = [];
-    for (let i = 0; i < 10; i++) {
-      first10.push(filteredFiles[i]);
+    const initialFiles: Array<IFile> = [];
+    const numOfFiles = filteredFiles.length < 10 ? filteredFiles.length : 10;
+
+    // TODO: Do proper bound checks
+    for (let i = 0; i < numOfFiles; i++) {
+      initialFiles.push(filteredFiles[i]);
     }
-    setInfiniteFiles([...first10]);
+    setInfiniteFiles([...initialFiles]);
+
+    if (filteredFiles.length < 10) {
+      setHasMoreFiles(false);
+    } else {
+      setHasMoreFiles(true);
+    }
 
     // eslint-disable-next-line
   }, [query]);
 
   const updateInfiniteFiles = () => {
-    console.log('hi');
-    const next10: Array<IFile> = [];
+    const nextSetOfFiles: Array<IFile> = [];
+
+    const numOfFiles =
+      infiniteFiles.length + 10 > filteredFiles.length
+        ? filteredFiles.length
+        : infiniteFiles.length + 10;
 
     // TODO: Do proper bound checks
-    for (let i = infiniteFiles.length; i < infiniteFiles.length + 10; i++) {
-      next10.push(filteredFiles[i]);
+    for (let i = infiniteFiles.length; i < numOfFiles; i++) {
+      nextSetOfFiles.push(filteredFiles[i]);
     }
 
-    console.log(next10);
+    if (infiniteFiles.length + 10 > filteredFiles.length) {
+      setHasMoreFiles(false);
+    } else {
+      setHasMoreFiles(true);
+    }
 
-    setInfiniteFiles([...infiniteFiles, ...next10]);
-    console.log(infiniteFiles);
+    setInfiniteFiles([...infiniteFiles, ...nextSetOfFiles]);
   };
 
   return (
@@ -71,34 +88,35 @@ export default function Files() {
       {infiniteFiles.length === 0 ? (
         <div>No files match your search query 😭</div>
       ) : (
-        // <div className={gridColsClassName()}>
         <InfiniteScroll
           dataLength={infiniteFiles.length}
           next={updateInfiniteFiles}
-          hasMore={true}
+          hasMore={hasMoreFiles}
           loader={<h4>Loading...</h4>}
           scrollableTarget="scrollableDiv"
+          className="scrollbar-none"
         >
-          {infiniteFiles.map((file: IFile) => {
-            return (
-              <div
-                className="flex flex-col border border-editor-border"
-                key={`file-protocol://getMediaFile/${file.path}`}
-              >
-                {file.path.includes('mp4') || file.path.includes('MP4') ? (
-                  <Video {...file} />
-                ) : (
-                  <img
-                    src={`file-protocol://getMediaFile/${file.path}`}
-                    className="object-cover w-full"
-                    alt=""
-                  />
-                )}
-              </div>
-            );
-          })}
+          <div className={gridColsClassName()}>
+            {infiniteFiles.map((file: IFile) => {
+              return (
+                <div
+                  className="flex flex-col border border-editor-border"
+                  key={`file-protocol://getMediaFile/${file.path}`}
+                >
+                  {file.path.includes('mp4') || file.path.includes('MP4') ? (
+                    <Video {...file} />
+                  ) : (
+                    <img
+                      src={`file-protocol://getMediaFile/${file.path}`}
+                      className="object-cover w-full"
+                      alt=""
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </InfiniteScroll>
-        // </div>
       )}
     </div>
   );
