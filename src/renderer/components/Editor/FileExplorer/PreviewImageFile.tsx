@@ -9,15 +9,16 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
   };
 
   const getReadablePath = (): string => {
-    const subStringArray = path.substr(folder.path.length).split('/');
-    let readablePath = '';
-    for (let i = 0; i < subStringArray.length - 1; i++) {
-      if (subStringArray[i].length > 0) {
-        readablePath += '/' + subStringArray[i][0];
-      }
-    }
-    readablePath += '/' + subStringArray[subStringArray.length - 1];
-    return readablePath;
+    return path.substr(folder.path.length);
+    // const subStringArray = path.substr(folder.path.length).split('/');
+    // let readablePath = '';
+    // for (let i = 0; i < subStringArray.length - 1; i++) {
+    //   if (subStringArray[i].length > 0) {
+    //     readablePath += '/' + subStringArray[i][0];
+    //   }
+    // }
+    // readablePath += '/' + subStringArray[subStringArray.length - 1];
+    // return readablePath;
   };
   return (
     <div

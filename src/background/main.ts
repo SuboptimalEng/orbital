@@ -1,10 +1,7 @@
-import { app, BrowserWindow, protocol, shell } from 'electron';
+import { add } from './add';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
-import { add } from './add';
-// const { app, BrowserWindow, protocol } = require('electron');
-// const path = require('path');
-// const isDev = require('electron-is-dev');
+import { app, BrowserWindow, protocol, shell } from 'electron';
 
 let win: any;
 function createWindow() {
@@ -39,12 +36,11 @@ function createWindow() {
 /* ================================================================ */
 /* ================================================================ */
 
-// const fs = require('fs');
 import * as fs from 'fs';
 import { IFile } from '../renderer/types';
 
 import { glob } from 'glob';
-import { mediaExtensions } from '../common/mediaExtensions';
+import { allFileExtensions } from '../common/fileExtensions';
 
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -84,10 +80,10 @@ ipcMain.on('open-directory', async (event, payload) => {
   } else {
     const files: Array<IFile> = [];
     const rootDir = result.filePaths[0];
-
-    const globExtensions = mediaExtensions
-      .map((mediaExtension) => `*.${mediaExtension}`)
+    const globExtensions = allFileExtensions
+      .map((fileExtension) => `*.${fileExtension}`)
       .join('|');
+
     glob(
       `${rootDir}/**/*(${globExtensions})`,
       { nocase: true },

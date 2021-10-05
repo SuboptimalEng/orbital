@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
-import { videoExtensions } from '../../../../common/mediaExtensions';
+import { videoExtensions } from '../../../../common/fileExtensions';
 
 import PreviewImageFile from './PreviewImageFile';
 import PreviewVideoFile from './PreviewVideoFile';
@@ -116,7 +116,7 @@ export default function Files() {
               return (
                 <div
                   key={`file-protocol://getMediaFile/${file.path}`}
-                  className="h-48 w-64 flex-initial flex-grow m-1"
+                  className="h-60 w-80 flex-initial flex-grow m-1"
                 >
                   {getPreviewComponent(file)}
                 </div>

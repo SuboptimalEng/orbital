@@ -49,15 +49,16 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
   };
 
   const getReadablePath = (): string => {
-    const subStringArray = path.substr(folder.path.length).split('/');
-    let readablePath = '';
-    for (let i = 0; i < subStringArray.length - 1; i++) {
-      if (subStringArray[i].length > 0) {
-        readablePath += '/' + subStringArray[i][0];
-      }
-    }
-    readablePath += '/' + subStringArray[subStringArray.length - 1];
-    return readablePath;
+    return path.substr(folder.path.length);
+    // const subStringArray = path.substr(folder.path.length).split('/');
+    // let readablePath = '';
+    // for (let i = 0; i < subStringArray.length - 1; i++) {
+    //   if (subStringArray[i].length > 0) {
+    //     readablePath += '/' + subStringArray[i][0];
+    //   }
+    // }
+    // readablePath += '/' + subStringArray[subStringArray.length - 1];
+    // return readablePath;
   };
 
   // TODO V2: Display date at some point.
@@ -73,6 +74,7 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
       <video
         id={path}
         src={`file-protocol://getMediaFile/${path}`}
+        typeof="video/ogg"
         className="object-cover h-full"
         onLoadedMetadata={setDurationOnLoad}
         onMouseEnter={saveVideoElementData}
