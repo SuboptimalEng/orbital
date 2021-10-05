@@ -44,6 +44,7 @@ import * as fs from 'fs';
 import { IFile } from '../renderer/types';
 
 import { glob } from 'glob';
+import { mediaExtensions } from './mediaExtensions';
 
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -84,35 +85,41 @@ ipcMain.on('open-directory', async (event, payload) => {
     const files: Array<IFile> = [];
     const rootDir = result.filePaths[0];
 
-    // TODO: Allow user to filter through multiple file types.
-    glob(`${rootDir}/**/*(*.mp4|*.png|*.MP4)`, function (err, fullFilePaths) {
-      console.log(fullFilePaths);
+    const globExtensions = mediaExtensions
+      .map((mediaExtension) => `*.${mediaExtension}`)
+      .join('|');
+    glob(
+      `${rootDir}/**/*(${globExtensions})`,
+      { nocase: true },
+      function (err, fullFilePaths) {
+        console.log(fullFilePaths);
 
-      if (err) {
-        // TODO: Replace with with error log
-        console.log('err');
+        if (err) {
+          // TODO: Replace with with error log
+          console.log('err');
+          event.reply('open-directory', {
+            path: '',
+            files: [],
+          });
+          return;
+        }
+
+        fullFilePaths.map((fullFilePath) => {
+          const fileStat = fs.statSync(fullFilePath);
+          const filename = fullFilePath.substr(rootDir.length + 1);
+          files.push({
+            name: filename,
+            path: fullFilePath,
+            ctime: fileStat.ctime.toString(),
+          });
+        });
+
         event.reply('open-directory', {
-          path: '',
-          files: [],
+          path: result.filePaths[0],
+          files: files,
         });
-        return;
       }
-
-      fullFilePaths.map((fullFilePath) => {
-        const fileStat = fs.statSync(fullFilePath);
-        const filename = fullFilePath.substr(rootDir.length + 1);
-        files.push({
-          name: filename,
-          path: fullFilePath,
-          ctime: fileStat.ctime.toString(),
-        });
-      });
-
-      event.reply('open-directory', {
-        path: result.filePaths[0],
-        files: files,
-      });
-    });
+    );
   }
 });
 
