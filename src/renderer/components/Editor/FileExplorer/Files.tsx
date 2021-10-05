@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
+import { videoExtensions } from '../../../../common/mediaExtensions';
 
 import PreviewImageFile from './PreviewImageFile';
 import PreviewVideoFile from './PreviewVideoFile';
@@ -63,17 +64,22 @@ export default function Files() {
     setInfiniteFiles([...infiniteFiles, ...nextSetOfFiles]);
   };
 
-  const getPreviewComponent = (file: IFile) => {
+  const isVideoFile = (path: string): boolean => {
+    const isVideoFile = videoExtensions.some((videoExtension) => {
+      return path.includes(`.${videoExtension}`);
+    });
+    return isVideoFile;
+  };
+
+  const getPreviewComponent = (file: IFile): JSX.Element => {
     const previewComponentMap = {
       video: <PreviewVideoFile {...file} />,
       image: <PreviewImageFile {...file} />,
     };
 
-    if (file.path.includes('mp4') || file.path.includes('MP4')) {
-      return previewComponentMap.video;
-    } else {
-      return previewComponentMap.image;
-    }
+    return isVideoFile(file.path)
+      ? previewComponentMap.video
+      : previewComponentMap.image;
   };
 
   return (
@@ -104,13 +110,13 @@ export default function Files() {
                 </div>
               );
             })}
-            </div> */}
+          </div> */}
           <div className="flex flex-wrap justify-items-center">
             {infiniteFiles.map((file: IFile) => {
               return (
                 <div
                   key={`file-protocol://getMediaFile/${file.path}`}
-                  className="h-60 w-80 flex-grow flex-initial m-2"
+                  className="h-48 w-64 flex-initial flex-grow m-1"
                 >
                   {getPreviewComponent(file)}
                 </div>

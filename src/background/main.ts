@@ -44,7 +44,7 @@ import * as fs from 'fs';
 import { IFile } from '../renderer/types';
 
 import { glob } from 'glob';
-import { mediaExtensions } from './mediaExtensions';
+import { mediaExtensions } from '../common/mediaExtensions';
 
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;

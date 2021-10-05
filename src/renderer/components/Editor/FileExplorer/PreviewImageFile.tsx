@@ -9,7 +9,15 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
   };
 
   const getReadablePath = (): string => {
-    return path.substr(folder.path.length);
+    const subStringArray = path.substr(folder.path.length).split('/');
+    let readablePath = '';
+    for (let i = 0; i < subStringArray.length - 1; i++) {
+      if (subStringArray[i].length > 0) {
+        readablePath += '/' + subStringArray[i][0];
+      }
+    }
+    readablePath += '/' + subStringArray[subStringArray.length - 1];
+    return readablePath;
   };
   return (
     <div
@@ -18,11 +26,11 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
     >
       <img
         src={`file-protocol://getMediaFile/${path}`}
-        className="object-contain max-h-full"
+        className="object-cover max-h-full"
         alt=""
       />
 
-      <div className="absolute text-base p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
+      <div className="absolute text-xs p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
         {getReadablePath()}
       </div>
     </div>

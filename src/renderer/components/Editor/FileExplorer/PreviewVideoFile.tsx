@@ -49,7 +49,15 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
   };
 
   const getReadablePath = (): string => {
-    return path.substr(folder.path.length);
+    const subStringArray = path.substr(folder.path.length).split('/');
+    let readablePath = '';
+    for (let i = 0; i < subStringArray.length - 1; i++) {
+      if (subStringArray[i].length > 0) {
+        readablePath += '/' + subStringArray[i][0];
+      }
+    }
+    readablePath += '/' + subStringArray[subStringArray.length - 1];
+    return readablePath;
   };
 
   // TODO V2: Display date at some point.
@@ -70,10 +78,10 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
         onMouseEnter={saveVideoElementData}
         onMouseMove={previewOnHover}
       />
-      <div className="absolute text-base p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
+      <div className="absolute text-xs p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
         {getReadablePath()}
       </div>
-      <div className="absolute text-base p-1 bottom-2 right-0 bg-editor-bg text-editor-fg font-medium rounded-l-lg">
+      <div className="absolute text-xs p-1 bottom-2 right-0 bg-editor-bg text-editor-fg font-medium rounded-l-lg">
         {getReadableDuration()}
       </div>
       {/* <div className="flex justify-between p-2 text-xs font-bold">
