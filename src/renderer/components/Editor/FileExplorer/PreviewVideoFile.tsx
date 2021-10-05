@@ -1,9 +1,11 @@
 import { MouseEvent, SyntheticEvent, useState } from 'react';
+import { useAppSelector } from '../../../store/hooks';
 import { IFile } from '../../../types';
 
-export default function Video({ path, name, ctime }: IFile) {
+export default function PreviewVideoFile({ path, name, ctime }: IFile) {
   let videoWidth = 10000;
   let boundingClientLeft = 0;
+  const folder = useAppSelector((state) => state.folder);
   const [duration, setDuration] = useState<number>(0);
 
   const setDurationOnLoad = (e: SyntheticEvent<HTMLVideoElement>) => {
@@ -46,28 +48,38 @@ export default function Video({ path, name, ctime }: IFile) {
     return readableDuration;
   };
 
+  const getReadablePath = (): string => {
+    return path.substr(folder.path.length);
+  };
+
   // TODO V2: Display date at some point.
   // const getReadableDate = (): string => {
   //   return new Date(ctime).toLocaleString().split(',')[0];
   // };
 
   return (
-    <button className="relative" onClick={openFile}>
+    <div
+      onClick={openFile}
+      className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer"
+    >
       <video
         id={path}
         src={`file-protocol://getMediaFile/${path}`}
-        className="border-b border-editor-border"
+        className="object-cover h-full w-full"
         onLoadedMetadata={setDurationOnLoad}
         onMouseEnter={saveVideoElementData}
         onMouseMove={previewOnHover}
       />
-      <div className="absolute text-xs p-1 bottom-11 right-2 bg-activity-bg text-activity-fg rounded">
+      <div className="absolute text-base p-1 bottom-2 left-0 bg-activity-bg text-activity-fg rounded-r-lg">
+        {getReadablePath()}
+      </div>
+      <div className="absolute text-base p-1 bottom-2 right-0 bg-activity-bg text-activity-fg rounded-l-lg">
         {getReadableDuration()}
       </div>
-      <div className="flex justify-between p-2 text-xs font-bold">
-        <div>{name}</div>
-        {/* <div>{getReadableDate()}</div> */}
-      </div>
-    </button>
+      {/* <div className="flex justify-between p-2 text-xs font-bold">
+          <div>{name}</div>
+          <div>{getReadableDate()}</div>
+        </div> */}
+    </div>
   );
 }

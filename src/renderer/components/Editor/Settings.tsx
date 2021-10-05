@@ -1,34 +1,12 @@
 import { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { applyTheme, selectableThemes } from '../../themes/utils';
-import {
-  decrementNumOfCols,
-  incrementNumOfCols,
-} from '../../store/settingsSlice';
 
 export default function SettingsDisplay() {
   const [toggle, setToggle] = useState(false);
 
-  const { numOfCols } = useAppSelector((state) => state.settings);
-  const dispatch = useAppDispatch();
-
   const ipcTest = () => {
     console.log('sending...');
     window.ipc.send('test', { from: 'app.tsx' });
-  };
-
-  const maybeDecrementNumOfCols = () => {
-    if (numOfCols <= 1) {
-      return;
-    }
-    dispatch(decrementNumOfCols());
-  };
-
-  const maybeIncrementNumOfCols = () => {
-    if (numOfCols >= 5) {
-      return;
-    }
-    dispatch(incrementNumOfCols());
   };
 
   return (
@@ -61,21 +39,6 @@ export default function SettingsDisplay() {
       </div>
 
       <div>
-        <div className="flex">
-          <button
-            className="border-2 border-editor-fg rounded"
-            onClick={maybeDecrementNumOfCols}
-          >
-            -
-          </button>
-          <div>{numOfCols}</div>
-          <button
-            className="border-2 border-editor-fg rounded"
-            onClick={maybeIncrementNumOfCols}
-          >
-            +
-          </button>
-        </div>
         <div
           onClick={() => ipcTest()}
           className="flex border-2 border-editor-fg rounded p-2"
