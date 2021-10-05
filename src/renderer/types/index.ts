@@ -30,9 +30,13 @@ export interface IFolder {
   files: Array<IFile>;
 }
 
-export interface IQuery {
+export interface ISearch {
   query: string;
   sortByName: string;
+}
+
+export interface ISettings {
+  filesToLoad: number;
 }
 
 // ================================================================

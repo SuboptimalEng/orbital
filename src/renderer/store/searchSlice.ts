@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IQuery } from '../types';
+import { ISearch } from '../types';
 
-const initialState: IQuery = {
+const initialState: ISearch = {
   query: '',
   sortByName: 'asc',
 };

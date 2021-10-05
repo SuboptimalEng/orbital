@@ -9,10 +9,9 @@ import PreviewVideoFile from './PreviewVideoFile';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default function Files() {
-  const { query } = useAppSelector((state) => state.search);
   const { files } = useAppSelector((state) => state.folder);
-
-  const n = 50;
+  const { query } = useAppSelector((state) => state.search);
+  const { filesToLoad } = useAppSelector((state) => state.settings);
 
   const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
   const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
@@ -23,17 +22,16 @@ export default function Files() {
     const filteredFiles = files.filter((file) => file.path.includes(query));
     setFilteredFiles(filteredFiles);
 
-    // NOTE: Get first 'n' files for infinite scroll.
     const initialFiles: Array<IFile> = [];
-    const numOfFiles = filteredFiles.length < n ? filteredFiles.length : n;
+    const numOfFiles =
+      filteredFiles.length < filesToLoad ? filteredFiles.length : filesToLoad;
 
-    // TODO: Do proper bound checks
     for (let i = 0; i < numOfFiles; i++) {
       initialFiles.push(filteredFiles[i]);
     }
     setInfiniteFiles([...initialFiles]);
 
-    if (filteredFiles.length < n) {
+    if (filteredFiles.length < filesToLoad) {
       setHasMoreFiles(false);
     } else {
       setHasMoreFiles(true);
@@ -42,20 +40,20 @@ export default function Files() {
     // eslint-disable-next-line
   }, [query]);
 
+  // TODO V2: Fix fake loading bug when scroll not activated.
   const updateInfiniteFiles = () => {
     const nextSetOfFiles: Array<IFile> = [];
 
     const numOfFiles =
-      infiniteFiles.length + n > filteredFiles.length
+      infiniteFiles.length + filesToLoad > filteredFiles.length
         ? filteredFiles.length
-        : infiniteFiles.length + n;
+        : infiniteFiles.length + filesToLoad;
 
-    // TODO: Do proper bound checks
     for (let i = infiniteFiles.length; i < numOfFiles; i++) {
       nextSetOfFiles.push(filteredFiles[i]);
     }
 
-    if (infiniteFiles.length + n > filteredFiles.length) {
+    if (infiniteFiles.length + filesToLoad > filteredFiles.length) {
       setHasMoreFiles(false);
     } else {
       setHasMoreFiles(true);

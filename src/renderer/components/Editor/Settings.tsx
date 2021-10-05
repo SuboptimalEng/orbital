@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { applyTheme, selectableThemes } from '../../themes/utils';
+import {
+  decrementFilesToLoad,
+  incrementFilesToLoad,
+} from '../../store/settingsSlice';
 
 export default function SettingsDisplay() {
+  const dispatch = useAppDispatch();
   const [toggle, setToggle] = useState(false);
+  const { filesToLoad } = useAppSelector((state) => state.settings);
 
   const ipcTest = () => {
     console.log('sending...');
@@ -37,7 +44,21 @@ export default function SettingsDisplay() {
           </div>
         </div>
       </div>
-
+      <div>
+        <div
+          onClick={() => dispatch(decrementFilesToLoad())}
+          className="border border-editor-fg rounded p-2"
+        >
+          -
+        </div>
+        {filesToLoad}
+        <div
+          onClick={() => dispatch(incrementFilesToLoad())}
+          className="border border-editor-fg rounded p-2"
+        >
+          +
+        </div>
+      </div>
       <div>
         <div
           onClick={() => ipcTest()}
