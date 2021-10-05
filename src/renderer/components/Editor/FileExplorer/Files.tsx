@@ -92,13 +92,25 @@ export default function Files() {
           scrollableTarget="scrollableDiv"
           className="scrollbar-none"
         >
-          {/* <div className="flex flex-wrap justify-items-center"> */}
-          <div className="grid grid-cols-3 gap-8 justify-items-center">
+          {/* TODO V2: Maybe use grid instead of flex box? */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 justify-items-center">
             {infiniteFiles.map((file: IFile) => {
               return (
                 <div
                   key={`file-protocol://getMediaFile/${file.path}`}
-                  className="h-64 min-w-full"
+                  className="h-60 md:h-56 lg:h-52 xl:h-40 min-w-full"
+                >
+                  {getPreviewComponent(file)}
+                </div>
+              );
+            })}
+            </div> */}
+          <div className="flex flex-wrap justify-items-center">
+            {infiniteFiles.map((file: IFile) => {
+              return (
+                <div
+                  key={`file-protocol://getMediaFile/${file.path}`}
+                  className="h-60 w-80 flex-grow flex-initial m-2"
                 >
                   {getPreviewComponent(file)}
                 </div>

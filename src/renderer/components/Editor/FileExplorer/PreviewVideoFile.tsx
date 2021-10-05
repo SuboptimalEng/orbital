@@ -65,7 +65,7 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
       <video
         id={path}
         src={`file-protocol://getMediaFile/${path}`}
-        className="object-cover h-full w-full"
+        className="object-cover h-full"
         onLoadedMetadata={setDurationOnLoad}
         onMouseEnter={saveVideoElementData}
         onMouseMove={previewOnHover}
