@@ -70,10 +70,10 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
         onMouseEnter={saveVideoElementData}
         onMouseMove={previewOnHover}
       />
-      <div className="absolute text-base p-1 bottom-2 left-0 bg-activity-bg text-activity-fg rounded-r-lg">
+      <div className="absolute text-base p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
         {getReadablePath()}
       </div>
-      <div className="absolute text-base p-1 bottom-2 right-0 bg-activity-bg text-activity-fg rounded-l-lg">
+      <div className="absolute text-base p-1 bottom-2 right-0 bg-editor-bg text-editor-fg font-medium rounded-l-lg">
         {getReadableDuration()}
       </div>
       {/* <div className="flex justify-between p-2 text-xs font-bold">
