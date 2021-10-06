@@ -1,3 +1,4 @@
+import { useAppSelector } from '../../../store/hooks';
 import { IFile } from '../../../types';
 
 interface IPropTypes extends IFile {
@@ -10,6 +11,25 @@ export default function ViewVideoFile({
   ctime,
   handleClose,
 }: IPropTypes) {
+  const folder = useAppSelector((state) => state.folder);
+
+  const getReadableDate = (): string => {
+    return new Date(ctime).toLocaleString().split(',')[0];
+  };
+
+  const getReadablePath = (): string => {
+    return path.substr(folder.path.length);
+    // const subStringArray = path.substr(folder.path.length).split('/');
+    // let readablePath = '';
+    // for (let i = 0; i < subStringArray.length - 1; i++) {
+    //   if (subStringArray[i].length > 0) {
+    //     readablePath += '/' + subStringArray[i][0];
+    //   }
+    // }
+    // readablePath += '/' + subStringArray[subStringArray.length - 1];
+    // return readablePath;
+  };
+
   return (
     <div className="fixed inset-0 text-xl text-activity-fg filter bg-activity-bg z-10">
       <div
@@ -19,9 +39,14 @@ export default function ViewVideoFile({
         ❌
       </div>
       <div className="absolute w-full h-full flex place-items-center justify-center">
-        <div className="flex flex-col space-y-2 w-2/3">
-          <div className="font-bold" onClick={handleClose}>
-            {path}
+        <div className="flex flex-col space-y-2 w-3/5">
+          <div className="flex justify-between place-items-center">
+            <div className="font-bold" onClick={handleClose}>
+              {getReadablePath()}
+            </div>
+            <div className="font-bold" onClick={handleClose}>
+              {getReadableDate()}
+            </div>
           </div>
           <video
             id={path}
