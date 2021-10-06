@@ -1,5 +1,6 @@
 import { useAppSelector } from '../../../store/hooks';
 import { IFile } from '../../../types';
+import dateFormat from 'dateformat';
 
 interface IPropTypes extends IFile {
   handleClose: () => void;
@@ -14,7 +15,8 @@ export default function ViewVideoFile({
   const folder = useAppSelector((state) => state.folder);
 
   const getReadableDate = (): string => {
-    return new Date(ctime).toLocaleString().split(',')[0];
+    const date = new Date(ctime);
+    return dateFormat(date, 'mmmm dS, yyyy @ h:MM TT');
   };
 
   const getReadablePath = (): string => {
@@ -40,14 +42,6 @@ export default function ViewVideoFile({
       </div>
       <div className="absolute w-full h-full flex place-items-center justify-center">
         <div className="flex flex-col space-y-2 w-3/5">
-          <div className="flex justify-between place-items-center">
-            <div className="font-bold" onClick={handleClose}>
-              {getReadablePath()}
-            </div>
-            <div className="font-bold" onClick={handleClose}>
-              {getReadableDate()}
-            </div>
-          </div>
           <video
             id={path}
             src={`file-protocol://getMediaFile/${path}`}
@@ -55,6 +49,14 @@ export default function ViewVideoFile({
             className="w-full max-h-full"
             controls
           />
+          <div className="flex flex-col">
+            <div className="font-bold" onClick={handleClose}>
+              {getReadablePath()}
+            </div>
+            <div className="text-xs" onClick={handleClose}>
+              {getReadableDate()}
+            </div>
+          </div>
         </div>
       </div>
     </div>

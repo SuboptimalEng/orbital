@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "dateformat": "^5.0.1",
     "electron-is-dev": "^2.0.0",
     "fluent-ffmpeg": "^2.1.2",
     "glob": "^7.2.0",
@@ -77,6 +78,7 @@
     ]
   },
   "devDependencies": {
+    "@types/dateformat": "^3.0.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.33",
     "@types/react": "^17.0.21",

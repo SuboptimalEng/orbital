@@ -68,11 +68,6 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
     // return readablePath;
   };
 
-  // TODO V2: Display date at some point.
-  // const getReadableDate = (): string => {
-  //   return new Date(ctime).toLocaleString().split(',')[0];
-  // };
-
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
       {viewVideoFile ? (
@@ -102,10 +97,6 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
         <div className="absolute text-xs p-1 bottom-2 right-0 bg-editor-bg text-editor-fg font-medium rounded-l-lg">
           {getReadableDuration()}
         </div>
-        {/* <div className="flex justify-between p-2 text-xs font-bold">
-            <div>{name}</div>
-            <div>{getReadableDate()}</div>
-          </div> */}
       </div>
     </div>
   );
