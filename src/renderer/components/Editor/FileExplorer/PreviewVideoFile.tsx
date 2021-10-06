@@ -74,7 +74,7 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
   // };
 
   return (
-    <div>
+    <div className="relative h-full w-full flex place-items-center justify-center">
       {viewVideoFile ? (
         <ViewVideoFile
           path={path}

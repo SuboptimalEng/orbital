@@ -15,8 +15,10 @@ module.exports = {
     extend: {
       colors: {
         // NOTE: This is for reference.
-        // fg: withOpacity('--theme-foreground'),
-        // bg: withOpacity('--theme-background'),
+        // 'activity-bg': withOpacity('--theme-activity-bg'),
+        // 'activity-fg': withOpacity('--theme-activity-fg'),
+        // 'activity-hover': withOpacity('--theme-activity-hover'),
+        // 'activity-active': withOpacity('--theme-activity-active'),
 
         'activity-bg': 'var(--theme-activity-bg)',
         'activity-fg': 'var(--theme-activity-fg)',
