@@ -97,18 +97,6 @@ export default function Files() {
           className="scrollbar-none"
         >
           {/* TODO V2: Maybe use grid instead of flex box? */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 justify-items-center">
-            {infiniteFiles.map((file: IFile) => {
-              return (
-                <div
-                  key={`file-protocol://getMediaFile/${file.path}`}
-                  className="h-60 md:h-56 lg:h-52 xl:h-40 min-w-full"
-                >
-                  {getPreviewComponent(file)}
-                </div>
-              );
-            })}
-          </div> */}
           <div className="flex flex-wrap justify-items-center">
             {infiniteFiles.map((file: IFile) => {
               return (
