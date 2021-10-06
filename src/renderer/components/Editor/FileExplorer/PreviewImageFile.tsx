@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import { useAppSelector } from '../../../store/hooks';
 import { IFile } from '../../../types';
+import ViewImageFile from './ViewImageFile';
 
 export default function PreviewImageFile({ path, name, ctime }: IFile) {
   const folder = useAppSelector((state) => state.folder);
+  const [viewImageFile, setViewImageFile] = useState<boolean>(false);
 
   const openFile = () => {
+    setViewImageFile(true);
+  };
+
+  const handleClose = () => {
     console.log('hi');
+    setViewImageFile(false);
   };
 
   const getReadablePath = (): string => {
@@ -21,18 +29,29 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
     // return readablePath;
   };
   return (
-    <div
-      onClick={openFile}
-      className="relative h-full bg-activity-bg flex place-items-center justify-center cursor-pointer"
-    >
-      <img
-        src={`file-protocol://getMediaFile/${path}`}
-        className="object-cover max-h-full"
-        alt=""
-      />
+    <div className="relative h-full w-full flex place-items-center justify-center">
+      {viewImageFile ? (
+        <ViewImageFile
+          path={path}
+          name={name}
+          ctime={ctime}
+          handleClose={handleClose}
+        />
+      ) : null}
 
-      <div className="absolute text-xs p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
-        {getReadablePath()}
+      <div
+        onClick={openFile}
+        className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer"
+      >
+        <img
+          src={`file-protocol://getMediaFile/${path}`}
+          className="object-cover max-h-full"
+          alt=""
+        />
+
+        <div className="absolute text-xs p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
+          {getReadablePath()}
+        </div>
       </div>
     </div>
   );
