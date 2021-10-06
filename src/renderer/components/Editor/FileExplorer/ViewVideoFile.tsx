@@ -35,7 +35,7 @@ export default function ViewVideoFile({
   return (
     <div className="fixed inset-0 text-xl text-activity-fg filter bg-activity-bg z-10">
       <div className="absolute w-full h-full flex place-items-center justify-center">
-        <div className="fixed top-4 inset-x-4 flex justify-between place-items-center z-20">
+        <div className="fixed top-4 inset-x-4 flex justify-between place-items-start z-20">
           <div className="flex flex-col">
             <div className="text-2xl font-bold">{getReadablePath()}</div>
             <div className="text-sm">{getReadableDate()}</div>
