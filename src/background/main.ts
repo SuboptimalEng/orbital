@@ -37,9 +37,9 @@ function createWindow() {
 /* ================================================================ */
 
 import * as fs from 'fs';
-import { IFile } from '../renderer/types';
-
 import { glob } from 'glob';
+
+import { IFile } from '../renderer/types';
 import { allFileExtensions } from '../common/fileExtensions';
 
 // const ffmpeg = require('fluent-ffmpeg');

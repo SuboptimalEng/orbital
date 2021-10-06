@@ -25,7 +25,7 @@
   },
   "scripts": {
     "clean": "tsc --build --clean",
-    "tsc": "tsc ./src/common/* && tsc ./src/background/*",
+    "tsc": "tsc ./src/background/*",
     "compile": "npm run clean && npm run tsc",
     "start": "craco start",
     "build": "craco build",
