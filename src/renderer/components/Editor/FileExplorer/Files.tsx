@@ -1,37 +1,47 @@
 import { useEffect, useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 import { IFile } from '../../../types';
-import { useAppSelector } from '../../../store/hooks';
 import { videoExtensions } from '../../../../common/fileExtensions';
+
+import { setFilteredFiles } from '../../../store/searchSlice';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 import PreviewImageFile from './PreviewImageFile';
 import PreviewVideoFile from './PreviewVideoFile';
-
-import InfiniteScroll from 'react-infinite-scroll-component';
+import ViewImageFile from './ViewImageFile';
 
 export default function Files() {
-  const { files } = useAppSelector((state) => state.folder);
-  const { query } = useAppSelector((state) => state.search);
-  const { filesToLoad } = useAppSelector((state) => state.settings);
+  const dispatch = useAppDispatch();
 
-  const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
+  const { files } = useAppSelector((state) => state.folder);
+  const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
+  const { query, filteredFiles } = useAppSelector((state) => state.search);
+
+  const [fileIndex, setFileIndex] = useState<number>(0);
+  const [viewImageFile, setViewImageFile] = useState<boolean>(false);
+
+  // const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
+
   const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
   const [hasMoreFiles, setHasMoreFiles] = useState(true);
 
   useEffect(() => {
-    // TODO V2: Sort files by name using the sortByName redux variable.
-    const filteredFiles = files.filter((file) => file.path.includes(query));
-    setFilteredFiles(filteredFiles);
+    const searchResults = files.filter((file) => file.path.includes(query));
+    dispatch(setFilteredFiles(searchResults));
 
     const initialFiles: Array<IFile> = [];
     const numOfFiles =
-      filteredFiles.length < filesToLoad ? filteredFiles.length : filesToLoad;
+      searchResults.length < numOfFilesToLoad
+        ? searchResults.length
+        : numOfFilesToLoad;
 
     for (let i = 0; i < numOfFiles; i++) {
-      initialFiles.push(filteredFiles[i]);
+      initialFiles.push(searchResults[i]);
     }
     setInfiniteFiles([...initialFiles]);
 
-    if (filteredFiles.length < filesToLoad) {
+    if (searchResults.length < numOfFilesToLoad) {
       setHasMoreFiles(false);
     } else {
       setHasMoreFiles(true);
@@ -45,21 +55,31 @@ export default function Files() {
     const nextSetOfFiles: Array<IFile> = [];
 
     const numOfFiles =
-      infiniteFiles.length + filesToLoad > filteredFiles.length
+      infiniteFiles.length + numOfFilesToLoad > filteredFiles.length
         ? filteredFiles.length
-        : infiniteFiles.length + filesToLoad;
+        : infiniteFiles.length + numOfFilesToLoad;
 
     for (let i = infiniteFiles.length; i < numOfFiles; i++) {
       nextSetOfFiles.push(filteredFiles[i]);
     }
 
-    if (infiniteFiles.length + filesToLoad > filteredFiles.length) {
+    if (infiniteFiles.length + numOfFilesToLoad > filteredFiles.length) {
       setHasMoreFiles(false);
     } else {
       setHasMoreFiles(true);
     }
 
     setInfiniteFiles([...infiniteFiles, ...nextSetOfFiles]);
+  };
+
+  const openFile = (index: number) => {
+    setFileIndex(index);
+    setViewImageFile(true);
+  };
+
+  const handleClose = () => {
+    console.log('hi');
+    setViewImageFile(false);
   };
 
   const isVideoFile = (path: string): boolean => {
@@ -85,6 +105,13 @@ export default function Files() {
       id="scrollableDiv"
       className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg"
     >
+      {viewImageFile ? (
+        <ViewImageFile
+          index={fileIndex}
+          handleClose={handleClose}
+          infiniteFiles={infiniteFiles}
+        />
+      ) : null}
       {infiniteFiles.length === 0 ? (
         <div>No files match your search query 😭</div>
       ) : (
@@ -98,9 +125,10 @@ export default function Files() {
         >
           {/* TODO V2: Maybe use grid instead of flex box? */}
           <div className="flex flex-wrap justify-items-center">
-            {infiniteFiles.map((file: IFile) => {
+            {infiniteFiles.map((file: IFile, index: number) => {
               return (
                 <div
+                  onClick={() => openFile(index)}
                   key={`file-protocol://getMediaFile/${file.path}`}
                   className="h-60 w-80 flex-initial flex-grow m-1"
                 >

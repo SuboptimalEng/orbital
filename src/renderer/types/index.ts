@@ -32,11 +32,11 @@ export interface IFolder {
 
 export interface ISearch {
   query: string;
-  sortByName: string;
+  filteredFiles: Array<IFile>;
 }
 
 export interface ISettings {
-  filesToLoad: number;
+  numOfFilesToLoad: number;
 }
 
 // ================================================================

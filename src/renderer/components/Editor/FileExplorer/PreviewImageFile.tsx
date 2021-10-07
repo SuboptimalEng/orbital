@@ -30,19 +30,18 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
   };
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
-      {viewImageFile ? (
-        <ViewImageFile
-          path={path}
-          name={name}
-          ctime={ctime}
-          handleClose={handleClose}
-        />
-      ) : null}
+      {viewImageFile
+        ? null
+        : // <ViewImageFile
+          //   path={path}
+          //   name={name}
+          //   ctime={ctime}
+          //   handleClose={handleClose}
+          // />
+          null}
 
-      <div
-        onClick={openFile}
-        className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer"
-      >
+      {/* onClick={openFile} */}
+      <div className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer">
         <img
           src={`file-protocol://getMediaFile/${path}`}
           className="object-cover max-h-full"

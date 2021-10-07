@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch } from './store/hooks';
 import { applyRandomTheme } from './themes/utils';
 import { setFolder } from './store/folderSlice';

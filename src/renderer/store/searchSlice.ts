@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ISearch } from '../types';
+import { IFile, ISearch } from '../types';
 
 const initialState: ISearch = {
   query: '',
-  sortByName: 'asc',
+  filteredFiles: [],
 };
 
+// TODO V2: Allow user to sort files by name.
 const searchSlice = createSlice({
   name: 'search',
   initialState,
@@ -13,17 +14,11 @@ const searchSlice = createSlice({
     setQuery: (state, action: PayloadAction<string>) => {
       state.query = action.payload;
     },
-    toggleSortByName: (state) => {
-      if (state.sortByName === 'asc') {
-        state.sortByName = 'desc';
-      } else {
-        state.sortByName = 'asc';
-      }
-
-      console.log(state.sortByName);
+    setFilteredFiles: (state, action: PayloadAction<Array<IFile>>) => {
+      state.filteredFiles = action.payload;
     },
   },
 });
 
-export const { setQuery, toggleSortByName } = searchSlice.actions;
+export const { setQuery, setFilteredFiles } = searchSlice.actions;
 export const searchSliceReducer = searchSlice.reducer;
