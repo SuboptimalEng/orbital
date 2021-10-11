@@ -1,11 +1,11 @@
-import Files from './Files';
 import SearchBar from './SearchBar';
+import MediaGallery from './MediaGallery';
 
-export default function FileExplorer() {
+export default function Explorer() {
   return (
     <div className="w-full h-full">
       <SearchBar />
-      <Files />
+      <MediaGallery />
     </div>
   );
 }

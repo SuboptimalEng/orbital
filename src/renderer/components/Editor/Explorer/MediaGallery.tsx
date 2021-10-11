@@ -2,29 +2,30 @@ import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { IFile } from '../../../types';
-import { videoExtensions } from '../../../../common/fileExtensions';
+import { isVideoFile } from '../../../../common/fileExtensions';
 
-import { setFilteredFiles } from '../../../store/searchSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import {
+  setFilteredFiles,
+  toggleFileDisplay,
+} from '../../../store/explorerSlice';
 
-import PreviewImageFile from './PreviewImageFile';
-import PreviewVideoFile from './PreviewVideoFile';
-import ViewImageFile from './ViewImageFile';
+import ImageCard from './ImageCard';
+import VideoCard from './VideoCard';
+import MediaDisplay from './MediaDisplay';
 
-export default function Files() {
+export default function MediaGallery() {
   const dispatch = useAppDispatch();
 
   const { files } = useAppSelector((state) => state.folder);
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
-  const { query, filteredFiles } = useAppSelector((state) => state.search);
+  const { query, filteredFiles, showFileDisplay } = useAppSelector(
+    (state) => state.explorer
+  );
 
   const [fileIndex, setFileIndex] = useState<number>(0);
-  const [viewImageFile, setViewImageFile] = useState<boolean>(false);
-
-  // const [filteredFiles, setFilteredFiles] = useState<Array<IFile>>([]);
-
-  const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
   const [hasMoreFiles, setHasMoreFiles] = useState(true);
+  const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
 
   useEffect(() => {
     const searchResults = files.filter((file) => file.path.includes(query));
@@ -69,35 +70,23 @@ export default function Files() {
       setHasMoreFiles(true);
     }
 
-    setInfiniteFiles([...infiniteFiles, ...nextSetOfFiles]);
+    setInfiniteFiles((infiniteFiles) => [...infiniteFiles, ...nextSetOfFiles]);
   };
 
   const openFile = (index: number) => {
     setFileIndex(index);
-    setViewImageFile(true);
+    dispatch(toggleFileDisplay());
   };
 
-  const handleClose = () => {
-    console.log('hi');
-    setViewImageFile(false);
-  };
-
-  const isVideoFile = (path: string): boolean => {
-    const isVideoFile = videoExtensions.some((videoExtension) => {
-      return path.includes(`.${videoExtension}`);
-    });
-    return isVideoFile;
-  };
-
-  const getPreviewComponent = (file: IFile): JSX.Element => {
-    const previewComponentMap = {
-      video: <PreviewVideoFile {...file} />,
-      image: <PreviewImageFile {...file} />,
+  const getCardComponent = (file: IFile): JSX.Element => {
+    const cardComponentMap = {
+      video: <VideoCard {...file} />,
+      image: <ImageCard {...file} />,
     };
 
     return isVideoFile(file.path)
-      ? previewComponentMap.video
-      : previewComponentMap.image;
+      ? cardComponentMap.video
+      : cardComponentMap.image;
   };
 
   return (
@@ -105,13 +94,12 @@ export default function Files() {
       id="scrollableDiv"
       className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg"
     >
-      {viewImageFile ? (
-        <ViewImageFile
-          index={fileIndex}
-          handleClose={handleClose}
-          infiniteFiles={infiniteFiles}
-        />
+      {/* NOTE: Show individual file display modal.  */}
+      {showFileDisplay ? (
+        <MediaDisplay index={fileIndex} infiniteFiles={infiniteFiles} />
       ) : null}
+
+      {/* NOTE: Show file system gallery. */}
       {infiniteFiles.length === 0 ? (
         <div>No files match your search query 😭</div>
       ) : (
@@ -132,7 +120,7 @@ export default function Files() {
                   key={`file-protocol://getMediaFile/${file.path}`}
                   className="h-60 w-80 flex-initial flex-grow m-1"
                 >
-                  {getPreviewComponent(file)}
+                  {getCardComponent(file)}
                 </div>
               );
             })}

@@ -1,14 +1,13 @@
 import { MouseEvent, SyntheticEvent, useState } from 'react';
-import { useAppSelector } from '../../../store/hooks';
-import { IFile } from '../../../types';
-import ViewVideoFile from './ViewVideoFile';
 
-export default function PreviewVideoFile({ path, name, ctime }: IFile) {
+import { IFile } from '../../../types';
+import { useAppSelector } from '../../../store/hooks';
+
+export default function VideoCard({ path, name, ctime }: IFile) {
   let videoWidth = 10000;
   let boundingClientLeft = 0;
   const folder = useAppSelector((state) => state.folder);
   const [duration, setDuration] = useState<number>(0);
-  const [viewVideoFile, setViewVideoFile] = useState<boolean>(false);
 
   const setDurationOnLoad = (e: SyntheticEvent<HTMLVideoElement>) => {
     setDuration(e.currentTarget.duration);
@@ -36,15 +35,6 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
     videoElement.currentTime = currentTime;
   };
 
-  const openFile = () => {
-    setViewVideoFile(true);
-    // window.ipc.send('open-file', { path });
-  };
-
-  const handleClose = () => {
-    setViewVideoFile(false);
-  };
-
   const getReadableDuration = (): string => {
     const date = new Date(0);
     date.setSeconds(duration); // specify value for SECONDS here
@@ -70,18 +60,7 @@ export default function PreviewVideoFile({ path, name, ctime }: IFile) {
 
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
-      {viewVideoFile ? (
-        <ViewVideoFile
-          path={path}
-          name={name}
-          ctime={ctime}
-          handleClose={handleClose}
-        />
-      ) : null}
-      <div
-        onClick={openFile}
-        className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer"
-      >
+      <div className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer">
         <video
           id={path}
           src={`file-protocol://getMediaFile/${path}`}

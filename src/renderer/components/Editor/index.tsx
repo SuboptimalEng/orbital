@@ -3,7 +3,7 @@ import { enableActivity } from '../../store/activityBarSlice';
 
 import Welcome from './Welcome';
 import Settings from './Settings';
-import FileExplorer from './FileExplorer';
+import Explorer from './Explorer';
 
 export default function Editor() {
   const dispatch = useAppDispatch();
@@ -32,7 +32,7 @@ export default function Editor() {
   // NOTE: Might be worth figuring this out at some point.
   const editorDisplays: IEditorDisplays = {
     settings: () => <Settings />,
-    explorer: () => (path.length === 0 ? <Welcome /> : <FileExplorer />),
+    explorer: () => (path.length === 0 ? <Welcome /> : <Explorer />),
   };
   const editorDisplay = editorDisplays[activatedActivity.name];
 

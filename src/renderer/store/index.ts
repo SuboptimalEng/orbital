@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { folderSliceReducer } from './folderSlice';
-import { searchSliceReducer } from './searchSlice';
+import { explorerSliceReducer } from './explorerSlice';
 import { settingsSliceReducer } from './settingsSlice';
 import { activityBarSliceReducer } from './activityBarSlice';
 
 export const store = configureStore({
   reducer: {
     folder: folderSliceReducer,
-    search: searchSliceReducer,
+    explorer: explorerSliceReducer,
     settings: settingsSliceReducer,
     activityBar: activityBarSliceReducer,
   },

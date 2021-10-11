@@ -25,14 +25,20 @@ export interface IFile {
   ctime: string;
 }
 
+export interface IDisplayFile {
+  index: number;
+  infiniteFiles: Array<IFile>;
+}
+
 export interface IFolder {
   path: string;
   files: Array<IFile>;
 }
 
-export interface ISearch {
+export interface IExplorer {
   query: string;
   filteredFiles: Array<IFile>;
+  showFileDisplay: boolean;
 }
 
 export interface ISettings {

@@ -1,20 +1,8 @@
-import { useState } from 'react';
-import { useAppSelector } from '../../../store/hooks';
 import { IFile } from '../../../types';
-import ViewImageFile from './ViewImageFile';
+import { useAppSelector } from '../../../store/hooks';
 
-export default function PreviewImageFile({ path, name, ctime }: IFile) {
+export default function ImageCard({ path, name, ctime }: IFile) {
   const folder = useAppSelector((state) => state.folder);
-  const [viewImageFile, setViewImageFile] = useState<boolean>(false);
-
-  const openFile = () => {
-    setViewImageFile(true);
-  };
-
-  const handleClose = () => {
-    console.log('hi');
-    setViewImageFile(false);
-  };
 
   const getReadablePath = (): string => {
     return path.substr(folder.path.length);
@@ -28,19 +16,9 @@ export default function PreviewImageFile({ path, name, ctime }: IFile) {
     // readablePath += '/' + subStringArray[subStringArray.length - 1];
     // return readablePath;
   };
+
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
-      {viewImageFile
-        ? null
-        : // <ViewImageFile
-          //   path={path}
-          //   name={name}
-          //   ctime={ctime}
-          //   handleClose={handleClose}
-          // />
-          null}
-
-      {/* onClick={openFile} */}
       <div className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer">
         <img
           src={`file-protocol://getMediaFile/${path}`}
