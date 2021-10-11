@@ -33,14 +33,14 @@ export interface IFolder {
 export interface IExplorer {
   query: string;
   filteredFiles: Array<IFile>;
-  showMediaDisplay: boolean;
+  showMediaPreview: boolean;
 }
 
 export interface ISettings {
   numOfFilesToLoad: number;
 }
 
-export interface IMediaDisplay {
+export interface IMediaPreview {
   index: number;
   infiniteFiles: Array<IFile>;
 }

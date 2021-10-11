@@ -7,18 +7,18 @@ import { isVideoFile } from '../../../../common/mediaExtensions';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   setFilteredFiles,
-  toggleMediaDisplay,
+  toggleMediaPreview,
 } from '../../../store/explorerSlice';
 
 import ImageCard from './ImageCard';
 import VideoCard from './VideoCard';
-import MediaDisplay from './MediaDisplay';
+import MediaPreview from './MediaPreview';
 
 export default function MediaGallery() {
   const dispatch = useAppDispatch();
   const { files } = useAppSelector((state) => state.folder);
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
-  const { query, filteredFiles, showMediaDisplay } = useAppSelector(
+  const { query, filteredFiles, showMediaPreview } = useAppSelector(
     (state) => state.explorer
   );
 
@@ -74,7 +74,7 @@ export default function MediaGallery() {
 
   const openFile = (index: number) => {
     setFileIndex(index);
-    dispatch(toggleMediaDisplay());
+    dispatch(toggleMediaPreview());
   };
 
   const getCardComponent = (file: IFile): JSX.Element => {
@@ -94,8 +94,8 @@ export default function MediaGallery() {
       className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg"
     >
       {/* NOTE: Show individual file display modal.  */}
-      {showMediaDisplay ? (
-        <MediaDisplay index={fileIndex} infiniteFiles={infiniteFiles} />
+      {showMediaPreview ? (
+        <MediaPreview index={fileIndex} infiniteFiles={infiniteFiles} />
       ) : null}
 
       {/* NOTE: Show file system gallery. */}

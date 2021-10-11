@@ -1,16 +1,16 @@
 import dateFormat from 'dateformat';
 import { useState } from 'react';
 
-import { IFile, IMediaDisplay } from '../../../types';
+import { IFile, IMediaPreview } from '../../../types';
 import { isVideoFile } from '../../../../common/mediaExtensions';
 
-import { toggleMediaDisplay } from '../../../store/explorerSlice';
+import { toggleMediaPreview } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 import ImageDisplay from './ImageDisplay';
 import VideoDisplay from './VideoDisplay';
 
-export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
+export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
   const dispatch = useAppDispatch();
   const folder = useAppSelector((state) => state.folder);
 
@@ -52,7 +52,7 @@ export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
 
         <div
           className="cursor-pointer"
-          onClick={() => dispatch(toggleMediaDisplay())}
+          onClick={() => dispatch(toggleMediaPreview())}
         >
           ❌
         </div>
