@@ -2,8 +2,8 @@ import { setQuery } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 export default function SearchBar() {
-  const { query } = useAppSelector((state) => state.explorer);
   const dispatch = useAppDispatch();
+  const { query } = useAppSelector((state) => state.explorer);
 
   return (
     <div className="bg-search-bg text-search-fg h-24 px-16 shadow-2xl">

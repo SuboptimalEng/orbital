@@ -16,7 +16,6 @@ import MediaDisplay from './MediaDisplay';
 
 export default function MediaGallery() {
   const dispatch = useAppDispatch();
-
   const { files } = useAppSelector((state) => state.folder);
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
   const { query, filteredFiles, showFileDisplay } = useAppSelector(

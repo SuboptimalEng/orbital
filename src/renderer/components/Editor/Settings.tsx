@@ -8,8 +8,9 @@ import {
 
 export default function SettingsDisplay() {
   const dispatch = useAppDispatch();
-  const [toggle, setToggle] = useState(false);
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
+
+  const [toggle, setToggle] = useState(false);
 
   const ipcTest = () => {
     console.log('sending...');

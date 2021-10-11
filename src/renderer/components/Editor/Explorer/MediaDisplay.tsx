@@ -12,10 +12,10 @@ import VideoDisplay from './VideoDisplay';
 
 export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
   const dispatch = useAppDispatch();
+  const folder = useAppSelector((state) => state.folder);
 
   const [file, setFile] = useState<IFile>(infiniteFiles[index]);
   const [currentIndex, setCurrentIndex] = useState<number>(index);
-  const folder = useAppSelector((state) => state.folder);
 
   const displayPreviousFile = () => {
     // TODO: Handle out of bounds error in the UI.
@@ -49,6 +49,7 @@ export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
           <div className="font-bold">{getReadablePath()}</div>
           <div className="text-sm">{getReadableDate()}</div>
         </div>
+
         <div
           className="cursor-pointer"
           onClick={() => dispatch(toggleFileDisplay())}
