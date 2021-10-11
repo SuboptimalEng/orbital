@@ -25,11 +25,6 @@ export interface IFile {
   ctime: string;
 }
 
-export interface IDisplayFile {
-  index: number;
-  infiniteFiles: Array<IFile>;
-}
-
 export interface IFolder {
   path: string;
   files: Array<IFile>;
@@ -43,6 +38,11 @@ export interface IExplorer {
 
 export interface ISettings {
   numOfFilesToLoad: number;
+}
+
+export interface IMediaDisplay {
+  index: number;
+  infiniteFiles: Array<IFile>;
 }
 
 // ================================================================

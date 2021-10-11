@@ -1,7 +1,7 @@
 import dateFormat from 'dateformat';
 import { useState } from 'react';
 
-import { IFile, IDisplayFile } from '../../../types';
+import { IFile, IMediaDisplay } from '../../../types';
 import { isVideoFile } from '../../../../common/fileExtensions';
 
 import { toggleFileDisplay } from '../../../store/explorerSlice';
@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import ImageDisplay from './ImageDisplay';
 import VideoDisplay from './VideoDisplay';
 
-export default function MediaDisplay({ index, infiniteFiles }: IDisplayFile) {
+export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
   const dispatch = useAppDispatch();
 
   const [file, setFile] = useState<IFile>(infiniteFiles[index]);

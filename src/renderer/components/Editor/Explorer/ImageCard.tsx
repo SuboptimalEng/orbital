@@ -1,7 +1,7 @@
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
 
-export default function ImageCard({ path, name, ctime }: IFile) {
+export default function ImageCard({ path }: IFile) {
   const folder = useAppSelector((state) => state.folder);
 
   const getReadablePath = (): string => {

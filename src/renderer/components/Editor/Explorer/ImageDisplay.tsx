@@ -1,6 +1,6 @@
 import { IFile } from '../../../types';
 
-export default function ImageDisplay({ path, name, ctime }: IFile) {
+export default function ImageDisplay({ path }: IFile) {
   return (
     <img
       id={path}

@@ -3,7 +3,7 @@ import { MouseEvent, SyntheticEvent, useState } from 'react';
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
 
-export default function VideoCard({ path, name, ctime }: IFile) {
+export default function VideoCard({ path }: IFile) {
   let videoWidth = 10000;
   let boundingClientLeft = 0;
   const folder = useAppSelector((state) => state.folder);

@@ -1,6 +1,6 @@
 import { IFile } from '../../../types';
 
-export default function VideoDisplay({ path, name, ctime }: IFile) {
+export default function VideoDisplay({ path }: IFile) {
   return (
     <video
       id={path}
