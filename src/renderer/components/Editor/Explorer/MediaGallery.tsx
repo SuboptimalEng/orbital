@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { IFile } from '../../../types';
+import { isVideoFile } from '../../../../common/fileExtensions';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
@@ -9,6 +10,7 @@ import {
   toggleFileDisplay,
 } from '../../../store/explorerSlice';
 
+import ImageCard from './ImageCard';
 import VideoCard from './VideoCard';
 import MediaDisplay from './MediaDisplay';
 
@@ -75,6 +77,17 @@ export default function MediaGallery() {
     dispatch(toggleFileDisplay());
   };
 
+  const getCardComponent = (file: IFile): JSX.Element => {
+    const cardComponentMap = {
+      video: <VideoCard {...file} />,
+      image: <ImageCard {...file} />,
+    };
+
+    return isVideoFile(file.path)
+      ? cardComponentMap.video
+      : cardComponentMap.image;
+  };
+
   return (
     <div
       id="scrollableDiv"
@@ -106,7 +119,7 @@ export default function MediaGallery() {
                   key={`file-protocol://getMediaFile/${file.path}`}
                   className="h-60 w-80 flex-initial flex-grow m-1"
                 >
-                  <VideoCard {...file} />
+                  {getCardComponent(file)}
                 </div>
               );
             })}

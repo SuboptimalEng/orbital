@@ -2,11 +2,13 @@ import dateFormat from 'dateformat';
 import { useState } from 'react';
 
 import { IFile, IMediaDisplay } from '../../../types';
+import { isVideoFile } from '../../../../common/fileExtensions';
 
 import { toggleFileDisplay } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
-import VideoPlayer from './VideoPlayer';
+import ImageDisplay from './ImageDisplay';
+import VideoDisplay from './VideoDisplay';
 
 export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
   const dispatch = useAppDispatch();
@@ -61,7 +63,11 @@ export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
         </div>
 
         <div className="flex flex-col justify-center space-y-2 h-2/3 w-2/3">
-          <VideoPlayer {...file} />
+          {isVideoFile(file.path) ? (
+            <VideoDisplay {...file} />
+          ) : (
+            <ImageDisplay {...file} />
+          )}
         </div>
 
         <div className="cursor-pointer text-3xl" onClick={displayNextFile}>

@@ -40,7 +40,7 @@ import * as fs from 'fs';
 import { glob } from 'glob';
 
 import { IFile } from '../renderer/types';
-import { videoExtensions } from '../common/fileExtensions';
+import { allFileExtensions } from '../common/fileExtensions';
 
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -80,7 +80,7 @@ ipcMain.on('open-directory', async (event, payload) => {
   } else {
     const files: Array<IFile> = [];
     const rootDir = result.filePaths[0];
-    const globExtensions = videoExtensions
+    const globExtensions = allFileExtensions
       .map((fileExtension) => `*.${fileExtension}`)
       .join('|');
 
