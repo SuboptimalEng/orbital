@@ -1,4 +1,3 @@
-import dateFormat from 'dateformat';
 import { IFile } from '../../../types';
 
 export default function VideoDisplay({ path, name, ctime }: IFile) {
