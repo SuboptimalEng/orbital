@@ -7,8 +7,8 @@ import { isVideoFile } from '../../../../common/mediaExtensions';
 import { toggleMediaPreview } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
-import ImageDisplay from './ImageDisplay';
-import VideoDisplay from './VideoDisplay';
+import ImagePreview from './ImagePreview';
+import VideoPreview from './VideoPreview';
 
 export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
   const dispatch = useAppDispatch();
@@ -62,11 +62,11 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
           ⬅️
         </div>
 
-        <div className="flex flex-col justify-center space-y-2 h-2/3 w-2/3">
+        <div className="flex flex-col justify-center place-items-center h-5/6 w-5/6">
           {isVideoFile(file.path) ? (
-            <VideoDisplay {...file} />
+            <VideoPreview {...file} />
           ) : (
-            <ImageDisplay {...file} />
+            <ImagePreview {...file} />
           )}
         </div>
 
