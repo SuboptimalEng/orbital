@@ -4,7 +4,7 @@ import { IFile, IExplorer } from '../types';
 const initialState: IExplorer = {
   query: '',
   filteredFiles: [],
-  showFileDisplay: false,
+  showMediaDisplay: false,
 };
 
 // TODO V2: Allow user to sort files by name.
@@ -18,12 +18,12 @@ const explorerSlice = createSlice({
     setFilteredFiles: (state, action: PayloadAction<Array<IFile>>) => {
       state.filteredFiles = action.payload;
     },
-    toggleFileDisplay: (state) => {
-      state.showFileDisplay = !state.showFileDisplay;
+    toggleMediaDisplay: (state) => {
+      state.showMediaDisplay = !state.showMediaDisplay;
     },
   },
 });
 
-export const { setQuery, setFilteredFiles, toggleFileDisplay } =
+export const { setQuery, setFilteredFiles, toggleMediaDisplay } =
   explorerSlice.actions;
 export const explorerSliceReducer = explorerSlice.reducer;

@@ -33,7 +33,7 @@ export interface IFolder {
 export interface IExplorer {
   query: string;
   filteredFiles: Array<IFile>;
-  showFileDisplay: boolean;
+  showMediaDisplay: boolean;
 }
 
 export interface ISettings {

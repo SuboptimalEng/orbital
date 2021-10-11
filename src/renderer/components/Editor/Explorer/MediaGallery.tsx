@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { IFile } from '../../../types';
-import { isVideoFile } from '../../../../common/fileExtensions';
+import { isVideoFile } from '../../../../common/mediaExtensions';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   setFilteredFiles,
-  toggleFileDisplay,
+  toggleMediaDisplay,
 } from '../../../store/explorerSlice';
 
 import ImageCard from './ImageCard';
@@ -18,7 +18,7 @@ export default function MediaGallery() {
   const dispatch = useAppDispatch();
   const { files } = useAppSelector((state) => state.folder);
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
-  const { query, filteredFiles, showFileDisplay } = useAppSelector(
+  const { query, filteredFiles, showMediaDisplay } = useAppSelector(
     (state) => state.explorer
   );
 
@@ -74,7 +74,7 @@ export default function MediaGallery() {
 
   const openFile = (index: number) => {
     setFileIndex(index);
-    dispatch(toggleFileDisplay());
+    dispatch(toggleMediaDisplay());
   };
 
   const getCardComponent = (file: IFile): JSX.Element => {
@@ -94,7 +94,7 @@ export default function MediaGallery() {
       className="absolute top-24 inset-x-0 bottom-0 px-16 py-8 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg"
     >
       {/* NOTE: Show individual file display modal.  */}
-      {showFileDisplay ? (
+      {showMediaDisplay ? (
         <MediaDisplay index={fileIndex} infiniteFiles={infiniteFiles} />
       ) : null}
 

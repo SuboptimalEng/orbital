@@ -2,9 +2,9 @@ import dateFormat from 'dateformat';
 import { useState } from 'react';
 
 import { IFile, IMediaDisplay } from '../../../types';
-import { isVideoFile } from '../../../../common/fileExtensions';
+import { isVideoFile } from '../../../../common/mediaExtensions';
 
-import { toggleFileDisplay } from '../../../store/explorerSlice';
+import { toggleMediaDisplay } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 import ImageDisplay from './ImageDisplay';
@@ -52,7 +52,7 @@ export default function MediaDisplay({ index, infiniteFiles }: IMediaDisplay) {
 
         <div
           className="cursor-pointer"
-          onClick={() => dispatch(toggleFileDisplay())}
+          onClick={() => dispatch(toggleMediaDisplay())}
         >
           ❌
         </div>
