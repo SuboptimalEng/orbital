@@ -12,11 +12,6 @@ export default function SettingsDisplay() {
 
   const [toggle, setToggle] = useState(false);
 
-  const ipcTest = () => {
-    console.log('sending...');
-    window.ipc.send('test', { from: 'app.tsx' });
-  };
-
   return (
     <div className="p-20">
       <div className="flex flex-col space-y-4">
@@ -58,14 +53,6 @@ export default function SettingsDisplay() {
           className="border border-editor-fg rounded p-2"
         >
           +
-        </div>
-      </div>
-      <div>
-        <div
-          onClick={() => ipcTest()}
-          className="flex border-2 border-editor-fg rounded p-2"
-        >
-          IPC
         </div>
       </div>
     </div>
