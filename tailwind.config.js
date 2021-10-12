@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // NOTE: This is for reference.
+        // NOTE: This is for reference. Convert themes to RGB first.
         // 'activity-bg': withOpacity('--theme-activity-bg'),
         // 'activity-fg': withOpacity('--theme-activity-fg'),
         // 'activity-hover': withOpacity('--theme-activity-hover'),

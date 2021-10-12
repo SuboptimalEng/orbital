@@ -43,7 +43,7 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
   };
 
   return (
-    <div className="fixed inset-0 text-2xl text-activity-fg filter bg-activity-bg z-10">
+    <div className="fixed inset-0 text-2xl text-activity-fg bg-activity-bg z-10">
       <div className="fixed top-4 inset-x-4 flex justify-between place-items-start z-20">
         <div className="flex flex-col">
           <div className="font-bold">{getReadablePath()}</div>
