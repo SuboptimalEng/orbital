@@ -1,23 +1,32 @@
-import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { applyTheme, selectableThemes } from '../../themes/utils';
-import {
-  decrementNumOfFilesToLoad,
-  incrementNumOfFilesToLoad,
-} from '../../store/settingsSlice';
+import { setNumOfFilesToLoad } from '../../store/settingsSlice';
+import DropdownList from '../Base/DropdownList';
+import { numOfFilesToLoadType } from '../../types';
 
 export default function SettingsDisplay() {
   const dispatch = useAppDispatch();
   const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
 
-  const [toggle, setToggle] = useState(false);
+  console.log(selectableThemes);
+
+  const numOfFileSettings: Array<numOfFilesToLoadType> = [25, 50, 100];
+  const onChange = (value: numOfFilesToLoadType) => {
+    dispatch(setNumOfFilesToLoad(value));
+  };
 
   return (
     <div className="p-20">
       <div className="flex flex-col space-y-4">
         <div className="font-bold">Settings</div>
         <div className="text-2xl flex flex-col place-items-start">
-          <div
+          <DropdownList
+            initialValue={numOfFilesToLoad}
+            array={numOfFileSettings}
+            onChange={onChange}
+          />
+
+          {/* <div
             className="border-2 border-editor-fg rounded"
             onClick={() => setToggle(!toggle)}
           >
@@ -37,22 +46,7 @@ export default function SettingsDisplay() {
                 })}
               </div>
             )}
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          onClick={() => dispatch(decrementNumOfFilesToLoad())}
-          className="border border-editor-fg rounded p-2"
-        >
-          -
-        </div>
-        {numOfFilesToLoad}
-        <div
-          onClick={() => dispatch(incrementNumOfFilesToLoad())}
-          className="border border-editor-fg rounded p-2"
-        >
-          +
+          </div> */}
         </div>
       </div>
     </div>

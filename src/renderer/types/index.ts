@@ -36,8 +36,11 @@ export interface IExplorer {
   showMediaPreview: boolean;
 }
 
+export type numOfFilesToLoadType = 25 | 50 | 100;
+
 export interface ISettings {
-  numOfFilesToLoad: number;
+  theme: string;
+  numOfFilesToLoad: numOfFilesToLoadType;
 }
 
 export interface IMediaPreview {

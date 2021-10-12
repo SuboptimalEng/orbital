@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { ISettings } from '../types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ISettings, numOfFilesToLoadType } from '../types';
 
 const initialState: ISettings = {
+  theme: 'light',
   numOfFilesToLoad: 25,
 };
 
@@ -9,23 +10,14 @@ const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    decrementNumOfFilesToLoad: (state) => {
-      if (state.numOfFilesToLoad <= 25) {
-        state.numOfFilesToLoad = 25;
-      } else {
-        state.numOfFilesToLoad -= 25;
-      }
-    },
-    incrementNumOfFilesToLoad: (state) => {
-      if (state.numOfFilesToLoad >= 100) {
-        state.numOfFilesToLoad = 100;
-      } else {
-        state.numOfFilesToLoad += 25;
-      }
+    setNumOfFilesToLoad: (
+      state,
+      action: PayloadAction<numOfFilesToLoadType>
+    ) => {
+      state.numOfFilesToLoad = action.payload;
     },
   },
 });
 
-export const { decrementNumOfFilesToLoad, incrementNumOfFilesToLoad } =
-  settingsSlice.actions;
+export const { setNumOfFilesToLoad } = settingsSlice.actions;
 export const settingsSliceReducer = settingsSlice.reducer;
