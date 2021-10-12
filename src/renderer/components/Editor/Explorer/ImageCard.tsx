@@ -19,7 +19,7 @@ export default function ImageCard({ path }: IFile) {
 
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
-      <div className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer">
+      <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
         <img
           src={`file-protocol://getMediaFile/${path}`}
           className="object-cover max-w-full max-h-full"

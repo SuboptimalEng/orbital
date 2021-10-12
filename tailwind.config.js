@@ -33,6 +33,11 @@ module.exports = {
         'editor-hover': 'var(--theme-editor-hover)',
         'editor-border': 'var(--theme-editor-border)',
 
+        'card-bg': 'var(--theme-card-bg)',
+        'card-fg': 'var(--theme-card-fg)',
+        'preview-bg': 'var(--theme-preview-bg)',
+        'preview-fg': 'var(--theme-preview-fg)',
+
         'status-bg': 'var(--theme-status-bg)',
         'status-fg': 'var(--theme-status-fg)',
         'status-hover': 'var(--theme-status-hover)',

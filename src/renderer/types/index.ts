@@ -63,6 +63,11 @@ export interface ITheme {
   '--theme-editor-hover': string;
   '--theme-editor-border': string;
 
+  '--theme-card-bg': string;
+  '--theme-card-fg': string;
+  '--theme-preview-bg': string;
+  '--theme-preview-fg': string;
+
   '--theme-status-bg': string;
   '--theme-status-fg': string;
   '--theme-status-hover': string;
@@ -93,6 +98,11 @@ export interface ICreateTheme {
   editorFg: string;
   editorHover: string;
   editorBorder: string;
+
+  cardBg: string;
+  cardFg: string;
+  previewBg: string;
+  previewFg: string;
 
   statusBg: string;
   statusFg: string;

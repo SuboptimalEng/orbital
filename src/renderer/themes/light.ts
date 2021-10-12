@@ -15,6 +15,11 @@ export const lightTheme: ITheme = createTheme({
   editorHover: '#44475a',
   editorBorder: '#000000',
 
+  cardBg: '#111827',
+  cardFg: '#fafafa',
+  previewBg: '#111827',
+  previewFg: '#fafafa',
+
   statusBg: '#007acc',
   statusFg: '#fafafa',
   statusHover: '#44475a',

@@ -15,6 +15,11 @@ export const gruvboxTheme: ITheme = createTheme({
   editorHover: '#282828',
   editorBorder: '#ebdbb2',
 
+  cardBg: '#070808',
+  cardFg: '#ebdbb2',
+  previewBg: '#070808',
+  previewFg: '#ebdbb2',
+
   statusBg: '#070808',
   statusFg: '#ebdbb2',
   statusHover: '#282828',

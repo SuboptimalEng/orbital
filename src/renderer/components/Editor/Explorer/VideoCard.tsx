@@ -60,7 +60,7 @@ export default function VideoCard({ path }: IFile) {
 
   return (
     <div className="relative h-full w-full flex place-items-center justify-center">
-      <div className="relative h-full w-full flex place-items-center justify-center bg-activity-bg cursor-pointer">
+      <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
         <video
           id={path}
           src={`file-protocol://getMediaFile/${path}`}

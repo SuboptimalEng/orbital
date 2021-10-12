@@ -6,7 +6,7 @@ export default function VideoPreview({ path }: IFile) {
       id={path}
       typeof="video/ogg"
       src={`file-protocol://getMediaFile/${path}`}
-      className="object-contain max-w-full max-h-full border border-activity-fg"
+      className="object-contain max-w-full max-h-full border border-preview-fg"
       controls
     />
   );

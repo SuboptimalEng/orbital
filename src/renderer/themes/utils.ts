@@ -45,6 +45,11 @@ export function createTheme({
   editorHover,
   editorBorder,
 
+  cardBg,
+  cardFg,
+  previewBg,
+  previewFg,
+
   statusBg,
   statusFg,
   statusHover,
@@ -74,6 +79,11 @@ export function createTheme({
     '--theme-editor-fg': editorFg,
     '--theme-editor-hover': editorHover,
     '--theme-editor-border': editorBorder,
+
+    '--theme-card-bg': cardBg,
+    '--theme-card-fg': cardFg,
+    '--theme-preview-bg': previewBg,
+    '--theme-preview-fg': previewFg,
 
     '--theme-status-bg': statusBg,
     '--theme-status-fg': statusFg,

@@ -15,6 +15,11 @@ export const draculaTheme: ITheme = createTheme({
   editorHover: '#44475a',
   editorBorder: '#f8f8f2',
 
+  cardBg: '#21222c',
+  cardFg: '#f8f8f2',
+  previewBg: '#21222c',
+  previewFg: '#f8f8f2',
+
   statusBg: '#191a21',
   statusFg: '#f8f8f2',
   statusHover: '#44475a',
