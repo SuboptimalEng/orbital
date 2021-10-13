@@ -17,7 +17,8 @@ export const draculaTheme: ITheme = createTheme({
 
   cardBg: '#21222c',
   cardFg: '#f8f8f2',
-  previewBg: '#21222c',
+
+  previewBg: '#343746',
   previewFg: '#f8f8f2',
 
   statusBg: '#191a21',

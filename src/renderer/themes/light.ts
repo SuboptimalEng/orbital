@@ -11,14 +11,15 @@ export const lightTheme: ITheme = createTheme({
   searchFg: '#fafafa',
 
   editorBg: '#e5e7eb',
-  editorFg: '#000000',
+  editorFg: '#111827',
   editorHover: '#44475a',
   editorBorder: '#000000',
 
   cardBg: '#111827',
   cardFg: '#fafafa',
-  previewBg: '#111827',
-  previewFg: '#fafafa',
+
+  previewBg: '#e5e7eb',
+  previewFg: '#111827',
 
   statusBg: '#007acc',
   statusFg: '#fafafa',

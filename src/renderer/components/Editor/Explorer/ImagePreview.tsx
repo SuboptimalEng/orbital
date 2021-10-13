@@ -5,7 +5,7 @@ export default function ImagePreview({ path }: IFile) {
     <img
       id={path}
       src={`file-protocol://getMediaFile/${path}`}
-      className="object-contain max-w-full max-h-full border border-preview-fg"
+      className="object-contain max-w-full max-h-full bg-card-bg"
       alt=""
     />
   );

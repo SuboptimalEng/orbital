@@ -17,7 +17,8 @@ export const gruvboxTheme: ITheme = createTheme({
 
   cardBg: '#070808',
   cardFg: '#ebdbb2',
-  previewBg: '#070808',
+
+  previewBg: '#131414',
   previewFg: '#ebdbb2',
 
   statusBg: '#070808',

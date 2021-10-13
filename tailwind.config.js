@@ -35,6 +35,7 @@ module.exports = {
 
         'card-bg': 'var(--theme-card-bg)',
         'card-fg': 'var(--theme-card-fg)',
+
         'preview-bg': 'var(--theme-preview-bg)',
         'preview-fg': 'var(--theme-preview-fg)',
 
