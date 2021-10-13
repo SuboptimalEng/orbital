@@ -12,15 +12,15 @@ export default function SettingsDisplay() {
 
   const numOfFilesToLoadOptions = [
     {
-      label: '25 Items',
+      label: '25 files',
       value: 25,
     },
     {
-      label: '50 Items',
+      label: '50 files',
       value: 50,
     },
     {
-      label: '100 Items',
+      label: '100 files',
       value: 100,
     },
   ];
