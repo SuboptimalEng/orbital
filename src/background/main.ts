@@ -49,17 +49,13 @@ import { allFileExtensions } from '../common/mediaExtensions';
 // ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
 
 const { ipcMain, dialog } = require('electron');
-ipcMain.on('test', (event, payload) => {
+
+ipcMain.on('open-external', async (event, payload) => {
   // ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
   //   count: 1,
   //   filename: 'abc.jpg',
   //   folder: '/Users/suboptimaleng/Desktop/orb/',
   // });
-  console.log('add test: ', add(1, 2));
-  event.reply('test', { from: 'main.js' });
-});
-
-ipcMain.on('open-external', async (event, payload) => {
   shell.openExternal(payload.url);
 });
 

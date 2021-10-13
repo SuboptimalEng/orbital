@@ -30,14 +30,12 @@ function App() {
     dispatch(setThemeName(themeName));
 
     // NOTE: Create ipc event handler for handling directory changes.
+    // NOTE: Run this in useEffect to prevent multiple-triggers.
     window.ipc.on('open-directory', (payload: any) => {
       console.log(payload);
       dispatch(setFolder(payload));
       dispatch(setFolderIsLoading(false));
     });
-
-    // NOTE: Run this in useEffect to prevent multiple-triggers
-    window.ipc.on('test', (payload: any) => console.log({ payload }));
 
     // eslint-disable-next-line
   }, []);

@@ -6351,6 +6351,11 @@
   dependencies:
     "lru-cache" "^6.0.0"
 
+"hotkeys-js@^3.8.7":
+  "integrity" "sha512-ckAx3EkUr5XjDwjEHDorHxRO2Kb7z6Z2Sxul4MbBkN8Nho7XDslQsgMJT+CiJ5Z4TgRxxvKHEpuLE3imzqy4Lg=="
+  "resolved" "https://registry.npmjs.org/hotkeys-js/-/hotkeys-js-3.8.7.tgz"
+  "version" "3.8.7"
+
 "hpack.js@^2.1.6":
   "integrity" "sha1-h3dMCUnlE/QuhFdbPEVoH63ioLI="
   "resolved" "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz"
