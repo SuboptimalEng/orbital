@@ -1,11 +1,9 @@
-import hotkeys from 'hotkeys-js';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 
 import { IFolder } from './types';
 import { applyRandomTheme } from './themes/utils';
 import { setThemeName } from './store/settingsSlice';
-import { closeMediaPreview } from './store/explorerSlice';
 import { setFolder, setFolderIsLoading } from './store/folderSlice';
 
 import Editor from './components/Editor';
