@@ -84,12 +84,6 @@ export default function SettingsDisplay() {
               right arrow
             </div>
           </div>
-          <div className="text-2xl flex flex-col space-y-2">
-            <div className="font-medium">Search</div>
-            <div className="bg-activity-bg text-activity-fg p-1 w-40">
-              cmd/ctrl + f
-            </div>
-          </div>
         </div>
       </div>
     </div>

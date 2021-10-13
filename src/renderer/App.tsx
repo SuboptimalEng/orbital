@@ -2,6 +2,7 @@ import hotkeys from 'hotkeys-js';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 
+import { IFolder } from './types';
 import { applyRandomTheme } from './themes/utils';
 import { setThemeName } from './store/settingsSlice';
 import { closeMediaPreview } from './store/explorerSlice';
@@ -27,31 +28,13 @@ function App() {
   const { folderIsLoading } = useAppSelector((state) => state.folder);
 
   useEffect(() => {
-    const openSearch = () => {
-      console.log('open search');
-    };
-    const closePreview = () => {
-      dispatch(closeMediaPreview());
-      console.log('close preview');
-    };
-
-    hotkeys('esc', closePreview);
-    hotkeys('ctrl+f,cmd+f', openSearch);
-
-    return () => {
-      hotkeys.unbind('esc', closePreview);
-      hotkeys.unbind('ctrl+f,cmd+f', openSearch);
-    };
-  });
-
-  useEffect(() => {
     // NOTE: Ensure that random theme is applied only once.
     const themeName = applyRandomTheme();
     dispatch(setThemeName(themeName));
 
     // NOTE: Create ipc event handler for handling directory changes.
     // NOTE: Run this in useEffect to prevent multiple-triggers.
-    window.ipc.on('open-directory', (payload: any) => {
+    window.ipc.on('open-directory', (payload: IFolder) => {
       console.log(payload);
       dispatch(setFolder(payload));
       dispatch(setFolderIsLoading(false));

@@ -1,5 +1,6 @@
+import hotkeys from 'hotkeys-js';
 import dateFormat from 'dateformat';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { IFile, IMediaPreview } from '../../../types';
 import { isVideoFile } from '../../../../common/mediaExtensions';
@@ -16,6 +17,24 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
 
   const [file, setFile] = useState<IFile>(infiniteFiles[index]);
   const [currentIndex, setCurrentIndex] = useState<number>(index);
+
+  // TODO V2: Refactor hot keys into global function.
+  useEffect(() => {
+    const closePreview = () => {
+      dispatch(closeMediaPreview());
+      console.log('close preview');
+    };
+
+    hotkeys('esc', closePreview);
+    hotkeys('left', displayPreviousFile);
+    hotkeys('right', displayNextFile);
+
+    return () => {
+      hotkeys.unbind('esc');
+      hotkeys.unbind('left');
+      hotkeys.unbind('right');
+    };
+  });
 
   const displayPreviousFile = () => {
     // TODO: Handle out of bounds error in the UI.

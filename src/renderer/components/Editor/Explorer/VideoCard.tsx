@@ -65,16 +65,16 @@ export default function VideoCard({ path }: IFile) {
           id={path}
           src={`file-protocol://getMediaFile/${path}`}
           typeof="video/ogg"
-          className="object-cover h-full"
+          className="object-cover w-full max-h-full"
           onLoadedMetadata={setDurationOnLoad}
           onMouseEnter={saveVideoElementData}
           onMouseMove={previewOnHover}
         />
-        <div className="absolute text-xs p-1 bottom-2 left-0 bg-editor-bg text-editor-fg font-medium rounded-r-lg">
-          {getReadablePath()}
-        </div>
-        <div className="absolute text-xs p-1 bottom-2 right-0 bg-editor-bg text-editor-fg font-medium rounded-l-lg">
+        <div className="absolute text-xs p-1 top-1 right-1 bg-editor-bg text-editor-fg font-medium">
           {getReadableDuration()}
+        </div>
+        <div className="absolute text-xs p-1 bottom-1 left-0 right-0 bg-editor-bg text-editor-fg font-medium">
+          <div className="flex overflow-hidden">{getReadablePath()}</div>
         </div>
       </div>
     </div>
