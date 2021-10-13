@@ -64,18 +64,8 @@ function App() {
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}
         {/* NOTE: Three slashes works */}
+        {/* NOTE: https://superuser.com/questions/352133/why-do-file-urls-start-with-3-slashes */}
         {/* src="file:///Users/suboptimaleng/Desktop/orb/abc.jpg" */}
-        {/* NOTE: Hide this for now. */}
-        {/* <img
-            src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/abc.jpg"
-            alt="logo"
-            className="w-80"
-          ></img>
-          <video
-            src="file-protocol://getMediaFile/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4"
-            className="w-80"
-            controls
-          ></video> */}
       </div>
     </div>
   );
