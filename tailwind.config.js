@@ -13,6 +13,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
+      },
       colors: {
         // TODO V2: This is for reference. Convert themes to RGB first.
         // 'activity-bg': withOpacity('--theme-activity-bg'),

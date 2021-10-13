@@ -28,6 +28,7 @@ export interface IFile {
 export interface IFolder {
   path: string;
   files: Array<IFile>;
+  folderIsLoading: boolean;
 }
 
 export interface IExplorer {

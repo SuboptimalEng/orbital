@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from './store/hooks';
+import { useAppDispatch, useAppSelector } from './store/hooks';
 
 import { applyRandomTheme } from './themes/utils';
-import { setFolder } from './store/folderSlice';
 import { setThemeName } from './store/settingsSlice';
+import { setFolder, setFolderIsLoading } from './store/folderSlice';
 
 import Editor from './components/Editor';
+import Loading from './components/Loading';
 import StatusBar from './components/StatusBar';
 import ActivityBar from './components/ActivityBar';
 
@@ -21,6 +22,7 @@ declare global {
 
 function App() {
   const dispatch = useAppDispatch();
+  const { folderIsLoading } = useAppSelector((state) => state.folder);
 
   useEffect(() => {
     // NOTE: Ensure that random theme is applied only once.
@@ -31,6 +33,7 @@ function App() {
     window.ipc.on('open-directory', (payload: any) => {
       console.log(payload);
       dispatch(setFolder(payload));
+      dispatch(setFolderIsLoading(false));
     });
 
     // NOTE: Run this in useEffect to prevent multiple-triggers
@@ -42,15 +45,21 @@ function App() {
   return (
     <div className="font-sans antialiased">
       <div className="text-4xl flex place-items-center h-screen relative">
-        <div className="absolute top-0 bottom-8 w-16">
-          <ActivityBar />
-        </div>
-        <div className="absolute left-16 top-0 bottom-8 right-0">
-          <Editor />
-        </div>
-        <div className="absolute left-0 right-0 bottom-0">
-          <StatusBar />
-        </div>
+        {folderIsLoading ? (
+          <Loading />
+        ) : (
+          <div>
+            <div className="absolute top-0 bottom-8 w-16">
+              <ActivityBar />
+            </div>
+            <div className="absolute left-16 top-0 bottom-8 right-0">
+              <Editor />
+            </div>
+            <div className="absolute left-0 right-0 bottom-0">
+              <StatusBar />
+            </div>
+          </div>
+        )}
 
         {/* NOTE: Two slashes does not work */}
         {/* src="file://Users/suboptimaleng/Desktop/orb/abc.jpg" */}

@@ -5,6 +5,7 @@ import { IFolder } from '../types';
 const initialState: IFolder = {
   path: '',
   files: [],
+  folderIsLoading: false,
 };
 
 export const folderSlice = createSlice({
@@ -15,11 +16,14 @@ export const folderSlice = createSlice({
       state.path = action.payload.path;
       state.files = [...action.payload.files];
     },
+    setFolderIsLoading: (state, action: PayloadAction<boolean>) => {
+      state.folderIsLoading = action.payload;
+    },
   },
 });
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectFolderFiles = (state: RootState) => state.folder.files;
 
-export const { setFolder } = folderSlice.actions;
+export const { setFolder, setFolderIsLoading } = folderSlice.actions;
 export const folderSliceReducer = folderSlice.reducer;

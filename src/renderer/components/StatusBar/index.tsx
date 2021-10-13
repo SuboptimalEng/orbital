@@ -1,9 +1,12 @@
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { setFolderIsLoading } from '../../store/folderSlice';
 
 export default function StatusBar() {
+  const dispatch = useAppDispatch();
   const { path } = useAppSelector((state) => state.folder);
 
   const openDirectory = () => {
+    dispatch(setFolderIsLoading(true));
     window.ipc.send('open-directory');
   };
 

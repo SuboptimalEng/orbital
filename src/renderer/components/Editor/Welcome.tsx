@@ -1,5 +1,11 @@
+import { useAppDispatch } from '../../store/hooks';
+import { setFolderIsLoading } from '../../store/folderSlice';
+
 export default function Welcome() {
+  const dispatch = useAppDispatch();
+
   const openDirectory = () => {
+    dispatch(setFolderIsLoading(true));
     window.ipc.send('open-directory');
   };
 
