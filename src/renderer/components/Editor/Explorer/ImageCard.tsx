@@ -26,7 +26,7 @@ export default function ImageCard({ path }: IFile) {
           alt=""
         />
 
-        <div className="absolute text-xs p-1 bottom-1 left-0 right-0 bg-editor-bg text-editor-fg font-medium">
+        <div className="absolute text-xs p-1 bottom-2 left-0 right-0 bg-editor-bg text-editor-fg font-medium">
           <div className="flex overflow-x-hidden">{getReadablePath()}</div>
         </div>
       </div>
