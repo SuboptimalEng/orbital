@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { IFile, IMediaPreview } from '../../../types';
 import { isVideoFile } from '../../../../common/mediaExtensions';
 
-import { toggleMediaPreview } from '../../../store/explorerSlice';
+import { closeMediaPreview } from '../../../store/explorerSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 
 import ImagePreview from './ImagePreview';
@@ -52,7 +52,7 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
 
         <div
           className="cursor-pointer"
-          onClick={() => dispatch(toggleMediaPreview())}
+          onClick={() => dispatch(closeMediaPreview())}
         >
           ❌
         </div>

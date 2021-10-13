@@ -15,15 +15,22 @@ const explorerSlice = createSlice({
     setQuery: (state, action: PayloadAction<string>) => {
       state.query = action.payload;
     },
+    openMediaPreview: (state) => {
+      state.showMediaPreview = true;
+    },
+    closeMediaPreview: (state) => {
+      state.showMediaPreview = false;
+    },
     setFilteredFiles: (state, action: PayloadAction<Array<IFile>>) => {
       state.filteredFiles = action.payload;
-    },
-    toggleMediaPreview: (state) => {
-      state.showMediaPreview = !state.showMediaPreview;
     },
   },
 });
 
-export const { setQuery, setFilteredFiles, toggleMediaPreview } =
-  explorerSlice.actions;
+export const {
+  setQuery,
+  setFilteredFiles,
+  openMediaPreview,
+  closeMediaPreview,
+} = explorerSlice.actions;
 export const explorerSliceReducer = explorerSlice.reducer;

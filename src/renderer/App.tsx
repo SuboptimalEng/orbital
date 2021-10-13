@@ -1,8 +1,10 @@
+import hotkeys from 'hotkeys-js';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 
 import { applyRandomTheme } from './themes/utils';
 import { setThemeName } from './store/settingsSlice';
+import { closeMediaPreview } from './store/explorerSlice';
 import { setFolder, setFolderIsLoading } from './store/folderSlice';
 
 import Editor from './components/Editor';
@@ -23,6 +25,24 @@ declare global {
 function App() {
   const dispatch = useAppDispatch();
   const { folderIsLoading } = useAppSelector((state) => state.folder);
+
+  useEffect(() => {
+    const openSearch = () => {
+      console.log('open search');
+    };
+    const closePreview = () => {
+      dispatch(closeMediaPreview());
+      console.log('close preview');
+    };
+
+    hotkeys('esc', closePreview);
+    hotkeys('ctrl+f,cmd+f', openSearch);
+
+    return () => {
+      hotkeys.unbind('esc', closePreview);
+      hotkeys.unbind('ctrl+f,cmd+f', openSearch);
+    };
+  });
 
   useEffect(() => {
     // NOTE: Ensure that random theme is applied only once.

@@ -6,8 +6,8 @@ import { isVideoFile } from '../../../../common/mediaExtensions';
 
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
+  openMediaPreview,
   setFilteredFiles,
-  toggleMediaPreview,
 } from '../../../store/explorerSlice';
 
 import ImageCard from './ImageCard';
@@ -74,7 +74,7 @@ export default function MediaGallery() {
 
   const openFile = (index: number) => {
     setFileIndex(index);
-    dispatch(toggleMediaPreview());
+    dispatch(openMediaPreview());
   };
 
   const getCardComponent = (file: IFile): JSX.Element => {
