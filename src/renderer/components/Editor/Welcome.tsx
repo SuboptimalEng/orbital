@@ -11,7 +11,7 @@ export default function Welcome() {
 
   return (
     <div className="p-20">
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-8">
         <div className="font-bold">Getting Started...</div>
         <div className="text-2xl flex flex-col place-items-start">
           <button onClick={openDirectory} className="hover:text-hyperlink">

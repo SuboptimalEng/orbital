@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from './store/hooks';
+
 import { applyRandomTheme } from './themes/utils';
 import { setFolder } from './store/folderSlice';
+import { setThemeName } from './store/settingsSlice';
 
 import Editor from './components/Editor';
 import StatusBar from './components/StatusBar';
@@ -22,7 +24,8 @@ function App() {
 
   useEffect(() => {
     // NOTE: Ensure that random theme is applied only once.
-    applyRandomTheme();
+    const themeName = applyRandomTheme();
+    dispatch(setThemeName(themeName));
 
     // NOTE: Create ipc event handler for handling directory changes.
     window.ipc.on('open-directory', (payload: any) => {

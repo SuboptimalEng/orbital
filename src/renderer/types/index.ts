@@ -36,13 +36,6 @@ export interface IExplorer {
   showMediaPreview: boolean;
 }
 
-export type numOfFilesToLoadType = 25 | 50 | 100;
-
-export interface ISettings {
-  theme: string;
-  numOfFilesToLoad: numOfFilesToLoadType;
-}
-
 export interface IMediaPreview {
   index: number;
   infiniteFiles: Array<IFile>;
@@ -124,10 +117,3 @@ export interface ICreateTheme {
   purple: string;
   yellow: string;
 }
-
-export interface ISelectableTheme {
-  name: string;
-  theme: ITheme;
-}
-
-export interface ISelectableThemes extends Array<ISelectableTheme> {}

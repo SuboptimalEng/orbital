@@ -1,9 +1,17 @@
 import { lightTheme } from './light';
 import { draculaTheme } from './dracula';
 import { gruvboxTheme } from './gruvbox';
-import { ITheme, ICreateTheme, ISelectableThemes } from '../types';
+import { ITheme, ICreateTheme } from '../types';
 
-export const selectableThemes: ISelectableThemes = [
+interface ISelectableTheme {
+  name: string;
+  theme: ITheme;
+}
+
+// NOTE: This is another way to declare an interface for an array of selectable themes.
+// interface ISelectableThemes extends Array<ISelectableTheme> {}
+
+export const selectableThemes: Array<ISelectableTheme> = [
   {
     name: 'light',
     theme: lightTheme,
@@ -18,10 +26,18 @@ export const selectableThemes: ISelectableThemes = [
   },
 ];
 
-export function applyRandomTheme() {
+export function applyRandomTheme(): string {
   const randomTheme =
-    selectableThemes[Math.floor(Math.random() * selectableThemes.length)].theme;
-  applyTheme(randomTheme);
+    selectableThemes[Math.floor(Math.random() * selectableThemes.length)];
+  applyTheme(randomTheme.theme);
+  return randomTheme.name;
+}
+
+export function applyThemeByName(themeName: string) {
+  const theme =
+    selectableThemes.find((theme) => theme.name === themeName)?.theme ||
+    gruvboxTheme;
+  applyTheme(theme);
 }
 
 export function applyTheme(theme: ITheme) {

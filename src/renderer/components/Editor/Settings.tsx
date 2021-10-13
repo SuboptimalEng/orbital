@@ -1,52 +1,67 @@
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { applyTheme, selectableThemes } from '../../themes/utils';
-import { setNumOfFilesToLoad } from '../../store/settingsSlice';
+import { applyThemeByName, selectableThemes } from '../../themes/utils';
+import { setNumOfFilesToLoad, setThemeName } from '../../store/settingsSlice';
 import DropdownList from '../Base/DropdownList';
-import { numOfFilesToLoadType } from '../../types';
 
 export default function SettingsDisplay() {
   const dispatch = useAppDispatch();
-  const { numOfFilesToLoad } = useAppSelector((state) => state.settings);
+  const { themeName, numOfFilesToLoad } = useAppSelector(
+    (state) => state.settings
+  );
 
-  console.log(selectableThemes);
+  const numOfFilesToLoadOptions = [
+    {
+      label: '25 Items',
+      value: 25,
+    },
+    {
+      label: '50 Items',
+      value: 50,
+    },
+    {
+      label: '100 Items',
+      value: 100,
+    },
+  ];
 
-  const numOfFileSettings: Array<numOfFilesToLoadType> = [25, 50, 100];
-  const onChange = (value: numOfFilesToLoadType) => {
+  const onNumOfFilesToLoadChange = (value: number) => {
     dispatch(setNumOfFilesToLoad(value));
   };
 
+  const themeNameOptions = selectableThemes.map((theme) => {
+    return {
+      label: theme.name,
+      value: theme.name,
+    };
+  });
+
+  const onThemeNameChange = (value: string) => {
+    dispatch(setThemeName(value));
+  };
+
+  useEffect(() => {
+    applyThemeByName(themeName);
+  }, [themeName]);
+
   return (
     <div className="p-20">
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-8">
         <div className="font-bold">Settings</div>
-        <div className="text-2xl flex flex-col place-items-start">
-          <DropdownList
-            initialValue={numOfFilesToLoad}
-            array={numOfFileSettings}
-            onChange={onChange}
+        <div className="text-2xl flex flex-col place-items-start space-y-4">
+          <DropdownList<number>
+            title={'Select the number of files to load per scroll.'}
+            value={numOfFilesToLoad}
+            options={numOfFilesToLoadOptions}
+            onChange={onNumOfFilesToLoadChange}
           />
 
-          {/* <div
-            className="border-2 border-editor-fg rounded"
-            onClick={() => setToggle(!toggle)}
-          >
-            Theme
-            {toggle && (
-              <div className="absolute bg-editor-bg border-2 border-editor-fg rounded">
-                {selectableThemes.map((theme) => {
-                  return (
-                    <div
-                      key={theme.name}
-                      onClick={() => applyTheme(theme.theme)}
-                      className="border-2 border-editor-fg rounded p-2"
-                    >
-                      {theme.name}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div> */}
+          <DropdownList<string>
+            title={'Select a theme for Orbital.'}
+            value={themeName}
+            options={themeNameOptions}
+            onChange={onThemeNameChange}
+          />
         </div>
       </div>
     </div>
