@@ -45,23 +45,51 @@ export default function SettingsDisplay() {
   }, [themeName]);
 
   return (
-    <div className="p-20">
-      <div className="flex flex-col space-y-8">
-        <div className="font-bold">Settings</div>
-        <div className="text-2xl flex flex-col place-items-start space-y-4">
-          <DropdownList<number>
-            title={'Select the number of files to load per scroll.'}
-            value={numOfFilesToLoad}
-            options={numOfFilesToLoadOptions}
-            onChange={onNumOfFilesToLoadChange}
-          />
+    <div className="absolute inset-0 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
+      <div className="p-20 flex flex-col space-y-16">
+        <div className="flex flex-col space-y-4">
+          <div className="font-bold">Settings</div>
+          <div className="text-2xl flex flex-col place-items-start space-y-2">
+            <DropdownList<number>
+              title={'Select the number of files to load per scroll.'}
+              value={numOfFilesToLoad}
+              options={numOfFilesToLoadOptions}
+              onChange={onNumOfFilesToLoadChange}
+            />
 
-          <DropdownList<string>
-            title={'Select a color theme for Orbital.'}
-            value={themeName}
-            options={themeNameOptions}
-            onChange={onThemeNameChange}
-          />
+            <DropdownList<string>
+              title={'Select a color theme for Orbital.'}
+              value={themeName}
+              options={themeNameOptions}
+              onChange={onThemeNameChange}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col space-y-4">
+          <div className="font-bold">Key Bindings</div>
+          <div className="text-2xl flex flex-col space-y-2">
+            <div className="font-medium">Close Preview</div>
+            <div className="bg-activity-bg text-activity-fg p-1 w-40">esc</div>
+          </div>
+          <div className="text-2xl flex flex-col space-y-2">
+            <div className="font-medium">Previous Image</div>
+            <div className="bg-activity-bg text-activity-fg p-1 w-40">
+              left arrow
+            </div>
+          </div>
+          <div className="text-2xl flex flex-col space-y-2">
+            <div className="font-medium">Next Image</div>
+            <div className="bg-activity-bg text-activity-fg p-1 w-40">
+              right arrow
+            </div>
+          </div>
+          <div className="text-2xl flex flex-col space-y-2">
+            <div className="font-medium">Search</div>
+            <div className="bg-activity-bg text-activity-fg p-1 w-40">
+              cmd/ctrl + f
+            </div>
+          </div>
         </div>
       </div>
     </div>
