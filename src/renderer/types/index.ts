@@ -61,6 +61,7 @@ export interface ITheme {
 
   '--theme-card-bg': string;
   '--theme-card-fg': string;
+
   '--theme-preview-bg': string;
   '--theme-preview-fg': string;
 
@@ -97,6 +98,7 @@ export interface ICreateTheme {
 
   cardBg: string;
   cardFg: string;
+
   previewBg: string;
   previewFg: string;
 

@@ -63,6 +63,7 @@ export function createTheme({
 
   cardBg,
   cardFg,
+
   previewBg,
   previewFg,
 
@@ -98,6 +99,7 @@ export function createTheme({
 
     '--theme-card-bg': cardBg,
     '--theme-card-fg': cardFg,
+
     '--theme-preview-bg': previewBg,
     '--theme-preview-fg': previewFg,
 
