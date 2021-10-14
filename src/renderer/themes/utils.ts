@@ -29,7 +29,7 @@ export const selectableThemes: Array<ISelectableTheme> = [
 export function applyRandomTheme(): string {
   const randomTheme =
     selectableThemes[Math.floor(Math.random() * selectableThemes.length)];
-  applyTheme(randomTheme.theme);
+  _applyTheme(randomTheme.theme);
   return randomTheme.name;
 }
 
@@ -37,10 +37,10 @@ export function applyThemeByName(themeName: string) {
   const theme =
     selectableThemes.find((theme) => theme.name === themeName)?.theme ||
     gruvboxTheme;
-  applyTheme(theme);
+  _applyTheme(theme);
 }
 
-export function applyTheme(theme: ITheme) {
+function _applyTheme(theme: ITheme) {
   const root = document.documentElement;
   Object.keys(theme).forEach((cssVar) => {
     root.style.setProperty(cssVar, theme[cssVar as keyof ITheme]);

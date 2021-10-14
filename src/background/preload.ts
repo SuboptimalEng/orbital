@@ -1,7 +1,14 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
-const validSendChannels = ['open-file', 'open-external', 'open-directory'];
-const validOnChannels = ['open-directory'];
+const validSendChannels = [
+  'open-file',
+  'open-external',
+  'open-directory',
+  'update-settings',
+  'load-settings',
+];
+
+const validOnChannels = ['open-directory', 'load-settings'];
 
 contextBridge.exposeInMainWorld('ipc', {
   send: (channel: string, data: any) => {
@@ -16,6 +23,13 @@ contextBridge.exposeInMainWorld('ipc', {
       ipcRenderer.on(channel, (event: any, ...args: any) => {
         func(...args);
       });
+    }
+  },
+  // NOTE: Adding a remove event listener.
+  // NOTE: https://github.com/reZach/secure-electron-template/issues/43
+  removeAllListeners: (channel: string) => {
+    if (validOnChannels.includes(channel)) {
+      ipcRenderer.removeAllListeners(channel);
     }
   },
 });

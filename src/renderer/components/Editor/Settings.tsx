@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { applyThemeByName, selectableThemes } from '../../themes/utils';
 import { setNumOfFilesToLoad, setThemeName } from '../../store/settingsSlice';
+
+import { selectableThemes } from '../../themes/utils';
+
 import DropdownList from '../Base/DropdownList';
 
 export default function SettingsDisplay() {
@@ -9,6 +10,13 @@ export default function SettingsDisplay() {
   const { themeName, numOfFilesToLoad } = useAppSelector(
     (state) => state.settings
   );
+
+  const themeNameOptions = selectableThemes.map((theme) => {
+    return {
+      label: theme.name,
+      value: theme.name,
+    };
+  });
 
   const numOfFilesToLoadOptions = [
     {
@@ -25,24 +33,22 @@ export default function SettingsDisplay() {
     },
   ];
 
-  const onNumOfFilesToLoadChange = (value: number) => {
-    dispatch(setNumOfFilesToLoad(value));
+  const storeSettingsInElectron = (t: string, n: number) => {
+    window.ipc.send('update-settings', {
+      themeName: t,
+      numOfFilesToLoad: n,
+    });
   };
-
-  const themeNameOptions = selectableThemes.map((theme) => {
-    return {
-      label: theme.name,
-      value: theme.name,
-    };
-  });
 
   const onThemeNameChange = (value: string) => {
     dispatch(setThemeName(value));
+    storeSettingsInElectron(value, numOfFilesToLoad);
   };
 
-  useEffect(() => {
-    applyThemeByName(themeName);
-  }, [themeName]);
+  const onNumOfFilesToLoadChange = (value: number) => {
+    dispatch(setNumOfFilesToLoad(value));
+    storeSettingsInElectron(themeName, value);
+  };
 
   return (
     <div className="absolute inset-0 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">

@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 
 import { IFolder } from './types';
-import { applyRandomTheme } from './themes/utils';
-import { setThemeName } from './store/settingsSlice';
+import { applyThemeByName } from './themes/utils';
 import { setFolder, setFolderIsLoading } from './store/folderSlice';
+import { setNumOfFilesToLoad, setThemeName } from './store/settingsSlice';
 
 import Editor from './components/Editor';
 import Loading from './components/Loading';
@@ -17,26 +17,44 @@ declare global {
     ipc: {
       send: (channel: string, data?: any) => void;
       on: (channel: string, func: any) => void;
+      removeAllListeners: (channel: string) => void;
     };
   }
 }
 
 function App() {
   const dispatch = useAppDispatch();
+  const { themeName } = useAppSelector((state) => state.settings);
   const { folderIsLoading } = useAppSelector((state) => state.folder);
 
+  // NOTE: Change app theme whenever the redux themeName variable changes.
   useEffect(() => {
-    // NOTE: Ensure that random theme is applied only once.
-    const themeName = applyRandomTheme();
-    dispatch(setThemeName(themeName));
+    applyThemeByName(themeName);
+  }, [themeName]);
+
+  useEffect(() => {
+    // NOTE: Ask for user settings from the main process onMount.
+    window.ipc.send('load-settings');
+
+    // NOTE: Handle load-settings event from the main process.
+    // NOTE: Info is passed from userData (themeName + numOfFilesToLoad)
+    window.ipc.on('load-settings', (payload: any) => {
+      console.log(payload);
+      dispatch(setThemeName(payload.themeName));
+      dispatch(setNumOfFilesToLoad(payload.numOfFilesToLoad));
+    });
 
     // NOTE: Create ipc event handler for handling directory changes.
-    // NOTE: Run this in useEffect to prevent multiple-triggers.
     window.ipc.on('open-directory', (payload: IFolder) => {
-      console.log(payload);
       dispatch(setFolder(payload));
       dispatch(setFolderIsLoading(false));
     });
+
+    // NOTE Remove event listeners on unMount to prevent infinite listeners.
+    return () => {
+      window.ipc.removeAllListeners('get-settings');
+      window.ipc.removeAllListeners('open-directory');
+    };
 
     // eslint-disable-next-line
   }, []);

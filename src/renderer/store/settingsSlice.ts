@@ -15,10 +15,27 @@ const settingsSlice = createSlice({
   initialState,
   reducers: {
     setThemeName: (state, action: PayloadAction<string>) => {
-      state.themeName = action.payload;
+      if (
+        action.payload === 'dark' ||
+        action.payload === 'light' ||
+        action.payload === 'dracula' ||
+        action.payload === 'gruvbox'
+      ) {
+        state.themeName = action.payload;
+      } else {
+        state.themeName = state.themeName;
+      }
     },
     setNumOfFilesToLoad: (state, action: PayloadAction<number>) => {
-      state.numOfFilesToLoad = action.payload;
+      if (
+        action.payload === 25 ||
+        action.payload === 50 ||
+        action.payload === 100
+      ) {
+        state.numOfFilesToLoad = action.payload;
+      } else {
+        state.numOfFilesToLoad = 25;
+      }
     },
   },
 });

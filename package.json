@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^12.1.10",
     "dateformat": "^5.0.1",
     "electron-is-dev": "^2.0.0",
+    "electron-store": "^8.0.1",
     "fluent-ffmpeg": "^2.1.2",
     "glob": "^7.2.0",
     "hotkeys-js": "^3.8.7",

@@ -47,19 +47,33 @@ import { allFileExtensions } from '../common/mediaExtensions';
 // const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 // ffmpeg.setFfmpegPath(ffmpegPath.replace('app.asar', 'app.asar.unpacked'));
 // ffmpeg.setFfprobePath(ffprobePath.replace('app.asar', 'app.asar.unpacked'));
+// ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
+//   count: 1,
+//   filename: 'abc.jpg',
+//   folder: '/Users/suboptimaleng/Desktop/orb/',
+// });
 
-const { ipcMain, dialog } = require('electron');
+import { ipcMain, dialog } from 'electron';
+const Store = require('electron-store');
+const store = new Store();
 
-ipcMain.on('open-external', async (event, payload) => {
-  // ffmpeg('/Users/suboptimaleng/Desktop/orb/steve_jobs_demo.mp4').screenshots({
-  //   count: 1,
-  //   filename: 'abc.jpg',
-  //   folder: '/Users/suboptimaleng/Desktop/orb/',
-  // });
+ipcMain.on('update-settings', (event, payload) => {
+  store.set('themeName', payload.themeName);
+  store.set('numOfFilesToLoad', payload.numOfFilesToLoad);
+});
+
+ipcMain.on('load-settings', (event, payload) => {
+  event.reply('load-settings', {
+    themeName: store.get('themeName'),
+    numOfFilesToLoad: store.get('numOfFilesToLoad'),
+  });
+});
+
+ipcMain.on('open-external', (event, payload) => {
   shell.openExternal(payload.url);
 });
 
-ipcMain.on('open-file', async (event, payload) => {
+ipcMain.on('open-file', (event, payload) => {
   shell.openPath(payload.path);
 });
 

@@ -19,12 +19,18 @@ export default function Welcome() {
     <div className="p-20">
       <div className="flex flex-col space-y-4">
         <div className="font-bold">Getting Started...</div>
-        <div className="text-2xl flex flex-col place-items-start">
-          <button onClick={openDirectory} className="hover:text-hyperlink">
+        <div className="text-2xl flex flex-col">
+          <button
+            onClick={openDirectory}
+            className="flex text-left hover:text-hyperlink"
+          >
             📁 Open a Folder
           </button>
-          <button onClick={openExternal} className="hover:text-hyperlink">
-            🐦 Updates @SuboptimalEng
+          <button
+            onClick={openExternal}
+            className="flex text-left hover:text-hyperlink"
+          >
+            🐦 DM me @SuboptimalEng
           </button>
         </div>
       </div>
