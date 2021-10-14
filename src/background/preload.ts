@@ -12,12 +12,13 @@ const validOnChannels = ['open-directory', 'load-settings'];
 
 contextBridge.exposeInMainWorld('ipc', {
   send: (channel: string, data: any) => {
-    console.log(channel, data);
+    console.log('send: ', channel, data);
     if (validSendChannels.includes(channel)) {
       ipcRenderer.send(channel, data);
     }
   },
   on: (channel: string, func: any) => {
+    console.log('on: ', channel);
     if (validOnChannels.includes(channel)) {
       // Strip event as it includes `sender` and is a security risk
       ipcRenderer.on(channel, (event: any, ...args: any) => {
