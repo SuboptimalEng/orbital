@@ -126,7 +126,7 @@ export default function MediaGallery() {
                   onClick={() => openFile(index)}
                   key={`file-protocol://getMediaFile/${file.path}`}
                   onDrag={(e) => handleCardDrag(e, file.path)}
-                  className="h-64 w-72 flex flex-grow m-1"
+                  className="h-60 w-80 flex flex-grow m-1"
                 >
                   {getCardComponent(file)}
                 </div>

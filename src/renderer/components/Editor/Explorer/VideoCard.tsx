@@ -71,9 +71,12 @@ export default function VideoCard({ path }: IFile) {
           onMouseMove={previewOnHover}
         />
 
-        <div className="absolute text-sm p-1 bottom-2 left-0 right-0 bg-editor-bg text-editor-fg flex space-x-2 place-items-center justify-between">
-          <div className="truncate">{getReadablePath()}</div>
+        <div className="absolute text-sm px-1 right-1 top-1 bg-editor-bg text-editor-fg flex space-x-2 place-items-center justify-between">
           <div>{getReadableDuration()}</div>
+        </div>
+
+        <div className="absolute text-sm px-1 bottom-1 left-0 right-0 bg-editor-bg text-editor-fg flex space-x-2 place-items-center justify-between">
+          <div className="truncate">{getReadablePath()}</div>
         </div>
       </div>
     </div>
