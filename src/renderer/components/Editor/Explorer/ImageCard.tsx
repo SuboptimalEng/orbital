@@ -18,17 +18,16 @@ export default function ImageCard({ path }: IFile) {
   };
 
   return (
-    <div className="relative h-full w-full flex place-items-center justify-center">
-      <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
+    <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
+      <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center place-items-center">
         <img
           src={`file-protocol://getMediaFile/${path}`}
           className="object-cover max-w-full max-h-full"
           alt=""
         />
-
-        <div className="absolute text-xs p-1 bottom-2 left-0 right-0 bg-editor-bg text-editor-fg font-medium">
-          <div className="flex overflow-x-hidden">{getReadablePath()}</div>
-        </div>
+      </div>
+      <div className="absolute text-sm p-1 bottom-2 left-0 right-0 bg-editor-bg text-editor-fg   place-items-center">
+        <div className="truncate">{getReadablePath()}</div>
       </div>
     </div>
   );
