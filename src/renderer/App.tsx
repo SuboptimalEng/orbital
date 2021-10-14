@@ -39,7 +39,6 @@ function App() {
     // NOTE: Handle load-settings event from the main process.
     // NOTE: Info is passed from userData (themeName + numOfFilesToLoad)
     window.ipc.on('load-settings', (payload: any) => {
-      console.log(payload);
       dispatch(setThemeName(payload.themeName));
       dispatch(setNumOfFilesToLoad(payload.numOfFilesToLoad));
     });
