@@ -22,7 +22,7 @@ export default function ImageCard({ path }: IFile) {
       <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center place-items-center">
         <img
           src={`file-protocol://getMediaFile/${path}`}
-          className="object-cover max-w-full max-h-full"
+          className="object-cover w-full h-full"
           alt=""
         />
       </div>

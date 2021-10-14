@@ -65,7 +65,7 @@ export default function VideoCard({ path }: IFile) {
           id={path}
           src={`file-protocol://getMediaFile/${path}`}
           typeof="video/ogg"
-          className="object-cover h-full"
+          className="object-cover h-full max-w-full"
           onLoadedMetadata={setDurationOnLoad}
           onMouseEnter={saveVideoElementData}
           onMouseMove={previewOnHover}
