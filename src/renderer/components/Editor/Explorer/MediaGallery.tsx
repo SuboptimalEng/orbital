@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, DragEvent } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { IFile } from '../../../types';
@@ -88,6 +88,14 @@ export default function MediaGallery() {
       : cardComponentMap.image;
   };
 
+  const handleCardDrag = (
+    event: DragEvent<HTMLDivElement>,
+    filePath: string
+  ) => {
+    event.preventDefault();
+    window.ipc.send('start-drag', { filePath });
+  };
+
   return (
     <div
       id="scrollableDiv"
@@ -117,6 +125,7 @@ export default function MediaGallery() {
                 <div
                   onClick={() => openFile(index)}
                   key={`file-protocol://getMediaFile/${file.path}`}
+                  onDrag={(e) => handleCardDrag(e, file.path)}
                   className="h-64 w-72 flex flex-grow m-1"
                 >
                   {getCardComponent(file)}

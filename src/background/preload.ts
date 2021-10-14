@@ -6,6 +6,7 @@ const validSendChannels = [
   'open-directory',
   'update-settings',
   'load-settings',
+  'start-drag',
 ];
 
 const validOnChannels = ['open-directory', 'load-settings'];

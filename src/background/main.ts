@@ -77,6 +77,15 @@ ipcMain.on('open-file', (event, payload) => {
   shell.openPath(payload.path);
 });
 
+ipcMain.on('start-drag', (event, payload) => {
+  // NOTE: Drag files out of Orbital and into other apps.
+  // NOTE: https://github.com/electron/electron/issues/2923
+  event.sender.startDrag({
+    file: payload.filePath,
+    icon: path.join(__dirname, '../../public/assets/orbital-256.png'),
+  });
+});
+
 ipcMain.on('open-directory', async (event, payload) => {
   const result = await dialog.showOpenDialog(win, {
     properties: ['openDirectory'],
