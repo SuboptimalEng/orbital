@@ -23,7 +23,7 @@ const settingsSlice = createSlice({
       ) {
         state.themeName = action.payload;
       } else {
-        state.themeName = state.themeName;
+        state.themeName = 'light';
       }
     },
     setNumOfFilesToLoad: (state, action: PayloadAction<number>) => {
