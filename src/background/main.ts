@@ -78,7 +78,7 @@ ipcMain.on('open-file', (event, payload) => {
 });
 
 ipcMain.on('start-drag', (event, payload) => {
-  // NOTE: Drag files out of Orbital and into other apps.
+  // NOTE: Allow user to drag files into other apps.
   // NOTE: https://github.com/electron/electron/issues/2923
   event.sender.startDrag({
     file: payload.filePath,

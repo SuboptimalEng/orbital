@@ -64,7 +64,7 @@ export default function SettingsDisplay() {
             />
 
             <DropdownList<string>
-              title={'Select a color theme for Orbital.'}
+              title={'Select a color theme.'}
               value={themeName}
               options={themeNameOptions}
               onChange={onThemeNameChange}

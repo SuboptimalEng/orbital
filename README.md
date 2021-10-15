@@ -1,24 +1,24 @@
-# 🛰 Orbital
+# 🎥 Video File Browser
 
-A desktop app that allows you to search, filter, and preview video files on your computer.
+A desktop app that allows you to search, filter, and preview video files on your computer - like YouTube for your local file system.
 
 ## Tech
 
 - React
+- Redux
 - TypeScript
-- Redux (counter example)
-- Tailwind CSS (toggle themes + opacity)
-- FFmpeg (video processing)
+- Tailwind CSS
 - Electron.js
+- FFmpeg
 
 ## Getting Started
 
 ```javascript
-// running orbital
+// running
 npm install
 npm run dev
 
-// building orbital
+// building
 npm install
 npm run electron-pack
 ```
