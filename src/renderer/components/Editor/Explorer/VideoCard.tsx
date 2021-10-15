@@ -47,37 +47,26 @@ export default function VideoCard({ path }: IFile) {
 
   const getReadablePath = (): string => {
     return path.substr(folder.path.length);
-    // const subStringArray = path.substr(folder.path.length).split('/');
-    // let readablePath = '';
-    // for (let i = 0; i < subStringArray.length - 1; i++) {
-    //   if (subStringArray[i].length > 0) {
-    //     readablePath += '/' + subStringArray[i][0];
-    //   }
-    // }
-    // readablePath += '/' + subStringArray[subStringArray.length - 1];
-    // return readablePath;
   };
 
   return (
-    <div className="relative h-full w-full flex place-items-center justify-center">
-      <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
-        <video
-          id={path}
-          src={`file-protocol://getMediaFile/${path}`}
-          typeof="video/ogg"
-          className="object-cover h-full max-w-full"
-          onLoadedMetadata={setDurationOnLoad}
-          onMouseEnter={saveVideoElementData}
-          onMouseMove={previewOnHover}
-        />
+    <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
+      <video
+        id={path}
+        src={`file-protocol://getMediaFile/${path}`}
+        typeof="video/ogg"
+        className="object-cover h-full max-w-full"
+        onLoadedMetadata={setDurationOnLoad}
+        onMouseEnter={saveVideoElementData}
+        onMouseMove={previewOnHover}
+      />
 
-        <div className="absolute text-sm px-1 right-1 top-1 bg-editor-bg text-editor-fg flex space-x-2 place-items-center justify-between">
-          <div>{getReadableDuration()}</div>
-        </div>
+      <div className="absolute text-sm px-1 right-0 top-2 bg-editor-bg text-editor-fg place-items-center">
+        <div>{getReadableDuration()}</div>
+      </div>
 
-        <div className="absolute text-sm px-1 bottom-1 left-0 right-0 bg-editor-bg text-editor-fg flex space-x-2 place-items-center justify-between">
-          <div className="truncate">{getReadablePath()}</div>
-        </div>
+      <div className="absolute text-sm px-1 bottom-2 left-0 max-w-full bg-editor-bg text-editor-fg place-items-center">
+        <div className="truncate">{getReadablePath()}</div>
       </div>
     </div>
   );
