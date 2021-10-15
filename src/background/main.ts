@@ -82,7 +82,7 @@ ipcMain.on('start-drag', (event, payload) => {
   // NOTE: https://github.com/electron/electron/issues/2923
   event.sender.startDrag({
     file: payload.filePath,
-    icon: path.join(__dirname, '../../public/assets/orbital-256.png'),
+    icon: path.join(__dirname, '../../public/assets/app-256.png'),
   });
 });
 

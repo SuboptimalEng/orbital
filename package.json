@@ -42,7 +42,7 @@
   "build": {
     "appId": "com.electron.example-app",
     "mac": {
-      "icon": "./public/assets/orbital.icns",
+      "icon": "./public/assets/app.icns",
       "category": "public.app-category.productivity",
       "target": [
         "dmg",
