@@ -1,7 +1,7 @@
 import { add } from './add';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
-import { app, BrowserWindow, protocol, shell, autoUpdater } from 'electron';
+import { app, BrowserWindow, protocol, shell } from 'electron';
 
 let win: any;
 function createWindow() {
@@ -41,11 +41,6 @@ import { glob } from 'glob';
 
 import { IFile } from '../renderer/types';
 import { allFileExtensions } from '../common/mediaExtensions';
-
-// NOTE: Add remote updates for Orbital.
-const server = 'orbital-releases-o57ia3vlh-suboptimaleng.vercel.app';
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-autoUpdater.setFeedURL({ url });
 
 // const ffmpeg = require('fluent-ffmpeg');
 // const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
