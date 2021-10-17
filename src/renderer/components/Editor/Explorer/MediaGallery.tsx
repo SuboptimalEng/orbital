@@ -88,11 +88,9 @@ export default function MediaGallery() {
       : cardComponentMap.image;
   };
 
-  const handleCardDrag = (
-    event: DragEvent<HTMLDivElement>,
-    filePath: string
-  ) => {
+  const handleCardDrag = (event: DragEvent, filePath: string) => {
     event.preventDefault();
+    console.log(filePath);
     window.ipc.send('start-drag', { filePath });
   };
 
