@@ -1,6 +1,6 @@
 {
   "name": "video_file_browser",
-  "productName": "Video File Browser",
+  "productName": "Orbital",
   "version": "0.1.0",
   "private": true,
   "main": "src/background/main.js",
