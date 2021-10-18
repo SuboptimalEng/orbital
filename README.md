@@ -21,7 +21,7 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 - Search files through all sub-directories with filename.
 - Preview videos in gallery mode by hovering over them.
 - Preview media files and traverse them with keybindings.
-- Choose between different color themes (light, dark, dracula, gruvbox).
+- Choose between different color themes (light, dracula, gruvbox).
 
 ## Supported Media File Types
 
