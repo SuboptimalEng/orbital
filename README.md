@@ -41,7 +41,7 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc)?
 
-  - This requires me to set up an LLC and get an Apple developer license. This is a viable option for companies that have lots of resources, but since I'm a solo-developer (making less than $100 a month), setting this up will cost time and money which I'd rather spend that on adding new features.
+  - This requires me to set up an LLC and get an Apple developer license. This is a viable option for companies that have lots of resources, but since I'm a solo-developer (making less than $100 a month), setting this up will cost time and money which I'd rather spend on adding new features.
 
 ## Contact
 
