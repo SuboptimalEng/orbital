@@ -15,6 +15,7 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 ## Features
 
 - Gallery view of videos and images
+- Filter media files by searching .mp4 or .png
 - Search files through all sub-directories with filename
 - Preview videos in gallery mode by hovering over them
 - Preview media files and traverse them with keybindings
