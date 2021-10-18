@@ -52,7 +52,7 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 # 💻 Developer Guide
 
-This part of the README is dedicated for anyone who wishes to get into the technical details of Orbital.
+This part of the README is dedicated to anyone who wishes to get into the technical details of Orbital. (Disclaimer: I started learning React and TypeScript two months ago so I would really appreciate any feedback on the code!)
 
 ## Tech Stack
 
@@ -75,3 +75,7 @@ npm run dev
 npm install
 npm run electron-pack
 ```
+
+## Licensing
+
+While Orbital is open source, I ask that you do not re-distribute it.
