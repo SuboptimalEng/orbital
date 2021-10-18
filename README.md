@@ -21,11 +21,6 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 - Preview media files and traverse them with keybindings.
 - Choose between different color themes (light, dracula, gruvbox).
 
-## Supported Media File Types
-
-- Video: .mov, .mp4, .webm
-- Image: .ico, .jpeg, .jpg, .png, .webp
-
 # 🙏🏾 Gumroad Guide - [Purchase Now]()
 
 First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
@@ -37,6 +32,11 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 - Whoa that looks scary, why is it there?
 
 ## Frequently Asked Questions (FAQ)
+
+- What are the supported media file types?
+
+  - Video: .mov, .mp4, .webm
+  - Image: .ico, .jpeg, .jpg, .png, .webp
 
 - Is there going to be support for Windows?
 
