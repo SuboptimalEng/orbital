@@ -18,19 +18,19 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
 - #### Gallery view of videos and images.
 
-  <img src="/pics/theme_gruvbox.png" width=800>
+  <img src="/pics/theme_gruvbox.png" width=600>
 
 - #### Search files through all sub-folders with filename.
 
-  <img src="/pics/image_search.png" width=800>
+  <img src="/pics/image_search.png" width=600>
 
 - #### Preview media files and traverse them with keybindings.
 
-  <img src="/pics/image_preview.png" width=800>
+  <img src="/pics/image_preview.png" width=600>
 
 - #### Choose between light, dracula (shown below), and gruvbox (shown above) color themes.
 
-  <img src="/pics/theme_dracula.png" width=800>
+  <img src="/pics/theme_dracula.png" width=600>
 
 # 🙏🏾 Gumroad Guide - [Purchase Now]()
 
