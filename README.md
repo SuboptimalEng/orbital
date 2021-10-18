@@ -18,7 +18,7 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 - Video: mov, mp4, webm
 - Image: ico, jpeg, jpg, png, webp
 
-# Gumroad Guide
+# 🙏🏾 Gumroad Guide
 
 This part of the README is dedicated to the users who purchase Orbital through Gumroad.
 
@@ -34,7 +34,7 @@ This part of the README is dedicated to the users who purchase Orbital through G
 
 The best way to reach me personally is to send a DM on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
 
-# Developer Guide
+# 💻 Developer Guide
 
 This part of the README is dedicated for programmers who wish to get the technical details for Orbital. Feel free to
 
