@@ -20,6 +20,8 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 # Gumroad Guide
 
+This part of the README is dedicated to the users who purchase Orbital through Gumroad.
+
 ## Installation Guide
 
 ## Frequently Asked Questions (FAQ)
@@ -28,7 +30,13 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
   - Yes
 
+## Contact
+
+The best way to reach me personally is to send a DM on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+
 # Developer Guide
+
+This part of the README is dedicated for programmers who wish to get the technical details for Orbital. Feel free to
 
 ## Tech Stack
 
