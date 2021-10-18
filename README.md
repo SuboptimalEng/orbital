@@ -25,7 +25,7 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - First download the DMG file.
 - Open it and you will see this popup.
-- Whoa Suboptimal, that looks scary, why is it there?
+- Whoa that looks scary, why is it there?
 
 ## Frequently Asked Questions (FAQ)
 
