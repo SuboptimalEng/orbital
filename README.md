@@ -25,11 +25,11 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
 First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
-## What's Included in the Purchase?
+## What's Included?
 
-- ✅ Downloadable .dmg to run Orbital on Mac OS
-- ✅ Everything in the demo and features sections
-- ✅ Lifetime updates
+- Downloadable .dmg to run Orbital on Mac OS
+- Everything in the demo and features sections
+- Lifetime updates
 
 ## Mac OS Installation Guide
 
