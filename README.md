@@ -20,7 +20,7 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
   <img src="/pics/theme_gruvbox.png" width=600>
 
-- #### Search files through all sub-directories with filename.
+- #### Search files through all sub-folders with filename.
 
   <img src="/pics/image_search.png" width=600>
 
