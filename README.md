@@ -4,13 +4,12 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 ## Demo
 
-## Images
-
 ## Features
 
-- Orbital currently supports video and image file types
-- Search files through all sub-directories using filename
-- Preview media files in-app and traverse with keybindings (left, right, esc)
+- Gallery view of videos and images
+- Search files through all sub-directories with filename
+- Preview videos in gallery mode by hovering over them
+- Preview media files and traverse them with keybindings (left, right, esc)
 - Choose between different color themes (light, dark, dracula, gruvbox)
 
 ## Supported File Types
@@ -20,7 +19,9 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 # 🙏🏾 Gumroad Guide
 
-First of all, thank you! Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
+First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
+
+## General
 
 ## Mac Installation Guide
 
@@ -30,9 +31,17 @@ First of all, thank you! Seriously, thanks a bunch! I recently quit my job to be
 
 ## Frequently Asked Questions (FAQ)
 
-- Is there going to be support for windows?
+- Is there going to be support for Windows?
 
-  - Yes
+  - I would love to release this on Windows, but I just do not have access to windows computer right now. I will add it to the road-map when I get one.
+
+- How do I get the latest version of Orbital?
+
+  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to download it and follow the installation guide. You can follow me on [Twitter](https://www.twitter.com/SuboptimalEng) to get the news about any recent updates.
+
+- Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc?)
+
+  - This requires me to set up an LLC and get an Apple developer license. This is a viable option for companies that have lots of resources, but since I'm a solo-developer (making less than $100 a month), setting this up will cost time and money which I'd rather spend that on adding new features.
 
 ## Contact
 
