@@ -47,8 +47,8 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - Want to get in touch?
 
-  - The best way to reach me personally is on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
-  - The best way to reach me for business opportunities is to send an email at suboptimaleng at gmail dot com.
+  - For personal inquiries, send me a message on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+  - For business opportunities, send me an email at suboptimaleng at gmail dot com.
 
 # 💻 Developer Guide
 
