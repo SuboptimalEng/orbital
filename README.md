@@ -14,19 +14,19 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
 ## Features
 
-- Gallery view of videos and images
-- Filter media files by searching .mp4 or .png
-- Search files through all sub-directories with filename
-- Preview videos in gallery mode by hovering over them
-- Preview media files and traverse them with keybindings
-- Choose between different color themes (light, dark, dracula, gruvbox)
+- Gallery view of videos and images.
+- Filter media files by searching .mp4 or .png.
+- Search files through all sub-directories with filename.
+- Preview videos in gallery mode by hovering over them.
+- Preview media files and traverse them with keybindings.
+- Choose between different color themes (light, dark, dracula, gruvbox).
 
 ## Supported Media File Types
 
 - Video: .mov, .mp4, .webm
 - Image: .ico, .jpeg, .jpg, .png, .webp
 
-# 🙏🏾 Gumroad Guide
+# 🙏🏾 Gumroad Guide - [Purchase Now]()
 
 First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
@@ -52,12 +52,12 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - What is your refund policy?
 
-  - I will offer a full refund if you don't like your purchase within 14 days. Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng).
+  - I can give a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng).
 
 - Want to get in touch?
 
   - For personal inquiries, send me a message on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
-  - For business opportunities, send me an email at suboptimaleng at gmail dot com.
+  - For business inquiries, send me an email at suboptimaleng at gmail dot com.
 
 # 💻 Developer Guide
 
