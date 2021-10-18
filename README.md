@@ -16,10 +16,19 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
 ## Features
 
-- [Gallery view](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png) of videos and images.
-- [Search files](https://github.com/SuboptimalEng/Orbital/blob/main/pics/image_search.png) through all sub-directories with filename.
-- [Preview media files](https://github.com/SuboptimalEng/Orbital/blob/main/pics/image_preview.png) and traverse them with keybindings.
-- Choose between different color themes ([light](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_light.png), [dracula](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_dracula.png), [gruvbox](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png)).
+- #### Gallery view of videos and images.
+
+  <img src="/pics/theme_gruvbox.png" width=600>
+
+- #### Search files through all sub-directories with filename.
+
+  <img src="/pics/image_search.png" width=600>
+
+- #### Preview media files and traverse them with keybindings.
+
+  <img src="/pics/image_preview.png" width=600>
+
+- #### Choose between different color themes ([light](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_light.png), [dracula](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_dracula.png), [gruvbox](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png)).
 
 # 🙏🏾 Gumroad Guide - [Purchase Now]()
 
