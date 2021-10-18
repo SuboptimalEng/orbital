@@ -20,9 +20,13 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 # 🙏🏾 Gumroad Guide
 
-This part of the README is dedicated to the users who purchase Orbital through Gumroad.
+First of all, thank you! I mean it! I recently quit my job to become an indie hacker and I really appreciate your support.
 
-## Installation Guide
+## Mac Installation Guide
+
+- First download the DMG file.
+- Open it and you will see this popup.
+- Whoa Suboptimal, that looks scary, why is it there?
 
 ## Frequently Asked Questions (FAQ)
 
@@ -36,7 +40,7 @@ The best way to reach me personally is to send a DM on Twitter [@SuboptimalEng](
 
 # 💻 Developer Guide
 
-This part of the README is dedicated for programmers who wish to get the technical details for Orbital. Feel free to
+This part of the README is dedicated for anyone who wishes to get into the technical details of Orbital.
 
 ## Tech Stack
 
