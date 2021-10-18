@@ -59,7 +59,7 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - How do I get the latest version of Orbital?
 
-  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to download it and follow the installation guide. You can follow me on [Twitter](https://www.twitter.com/SuboptimalEng) to get the news about any recent updates.
+  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to re-download it and follow the installation guide. You can follow me on [Twitter](https://www.twitter.com/SuboptimalEng) to get the news about any recent updates.
 
 - Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc)?
 
