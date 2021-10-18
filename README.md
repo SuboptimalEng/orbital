@@ -1,6 +1,6 @@
 # 🛰 Orbital - Video File Browser
 
-Orbital is an _open-source_, _local-first_ desktop app that allows you to search, filter, and preview video (and image) files on your computer - like YouTube for your local file system.
+Orbital is a _local-first_ desktop app that allows you to search, filter, and preview video (and image) files on your computer - like YouTube for your local file system.
 
 ## Demo
 
@@ -21,8 +21,6 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
-## General
-
 ## Mac Installation Guide
 
 - First download the DMG file.
@@ -42,6 +40,10 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 - Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc)?
 
   - This requires me to set up an LLC and get an Apple developer license. This is a viable option for companies that have lots of resources, but since I'm a solo-developer (making less than $100 a month), setting this up will cost time and money which I'd rather spend on adding new features.
+
+- What is your refund policy?
+
+  - I will offer a full refund if you don't like your purchase within 14 days. Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng)
 
 ## Contact
 
