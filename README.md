@@ -43,11 +43,12 @@ First of all, thank you. Seriously, thanks a bunch! I recently quit my job to be
 
 - What is your refund policy?
 
-  - I will offer a full refund if you don't like your purchase within 14 days. Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng)
+  - I will offer a full refund if you don't like your purchase within 14 days. Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng).
 
-## Contact
+- Want to get in touch?
 
-The best way to reach me personally is to send a DM on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+  - The best way to reach me personally is on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+  - The best way to reach me for business opportunities is to send an email at suboptimaleng at gmail dot com.
 
 # 💻 Developer Guide
 
