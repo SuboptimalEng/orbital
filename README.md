@@ -17,11 +17,8 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 ## Features
 
 - [Gallery view](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png) of videos and images.
-
 - [Search files](https://github.com/SuboptimalEng/Orbital/blob/main/pics/image_search.png) through all sub-directories with filename.
-
 - [Preview media files](https://github.com/SuboptimalEng/Orbital/blob/main/pics/image_preview.png) and traverse them with keybindings.
-
 - Choose between different color themes ([light](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_light.png), [dracula](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_dracula.png), [gruvbox](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png)).
 
 # 🙏🏾 Gumroad Guide - [Purchase Now]()
