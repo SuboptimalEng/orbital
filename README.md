@@ -20,7 +20,7 @@ Orbital is an _open-source_, _local-first_ desktop app that allows you to search
 
 # 🙏🏾 Gumroad Guide
 
-First of all, thank you! I mean it! I recently quit my job to become an indie hacker and I really appreciate your support.
+First of all, thank you! Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
 ## Mac Installation Guide
 
