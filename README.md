@@ -28,7 +28,9 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
   <img src="/pics/image_preview.png" width=800>
 
-- #### Choose between different color themes ([light](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_light.png), [dracula](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_dracula.png), [gruvbox](https://github.com/SuboptimalEng/Orbital/blob/main/pics/theme_gruvbox.png)).
+- #### Choose between light, dracula, and gruvbox (shown above) color themes.
+
+  <img src="/pics/theme_dracula.png" width=800>
 
 # 🙏🏾 Gumroad Guide - [Purchase Now]()
 
