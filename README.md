@@ -51,7 +51,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Mac OS Installation Guide
 
-- #### Download the DMG file from Gumroad and open it.
+- #### Download the .dmg file from Gumroad and open it.
 
   <img src="/guide/1.png" width=400>
 
@@ -63,17 +63,19 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/3.png" width=200>
 
-- #### Anyway, you can press "ok" to close that popup. Now head over to System Preferences > Security & Privacy.
+- #### Anyway, you can press "ok" to close that popup for now and head over to System Preferences > Security & Privacy.
 
   <img src="/guide/4.png" width=400>
 
-- #### In here, you should see the option to open (Orbital) anyway. You will only press this the first time you download the app.
+- #### In here, you should see the option to "open (Orbital) anyway". You will need to press this the first time you download the app. This will open the app, but hold your horses, you aren't finished yet!
 
   <img src="/guide/5.png" width=400>
 
-- #### Finally, head back to this screen and drag the Orbital icon into the Applications folder. From now on, you should freely be able to open Orbital from your desktop.
+- #### Head back to this screen and drag the Orbital icon into the Applications folder. From now on, you should be able to easily open and close Orbital from your desktop without any popups.
 
   <img src="/guide/2.png" width=400>
+
+- #### Feel free to reach out to me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) if you have any more questions
 
 ## Frequently Asked Questions (FAQ)
 
