@@ -43,7 +43,10 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 ## What's Included?
 
 - Downloadable .dmg to run Orbital on Mac OS
-- Everything in the demo and features sections
+- Gallery view of videos and images.
+- Search files through all sub-folders with filename.
+- Preview media files and traverse them with keybindings.
+- Choose between light, dracula, and gruvbox color themes.
 - Lifetime updates
 
 ## Mac OS Installation Guide
