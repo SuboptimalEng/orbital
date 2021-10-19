@@ -55,7 +55,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/1.png" width=500>
 
-  <img src="/guide/2.png" width=300>
+  <img src="/guide/2.png" width=400>
 
 - #### When you click on Orbital, you will see this popup. The reason this happens is because I did not buy an Apple Developer License yet. (Details in FAQ).
 
