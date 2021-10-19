@@ -1,6 +1,10 @@
 # 🛰 Orbital - Video File Browser
 
-Orbital is a _local-first_ desktop app that allows you to search, filter, and preview video (and image) files on your computer - like YouTube for your local file system. Follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) 👈 to get notified about future updates.
+Orbital is a _local-first_ desktop app that allows you to search, filter, and preview video (and image) files on your computer - like YouTube for your local file system.
+
+## About
+
+Orbital is available for purchase on 👉 [Gumroad]() 👈 for $10 USD. Your support helps me continue development without wasting time looking for consulting gigs or part-time jobs. Follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) 👈 to get notified about future releases and updates.
 
 ## Demo
 
