@@ -32,9 +32,9 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
   <img src="/pics/theme_dracula.png" width=600>
 
-# 🙏🏾 Gumroad Guide - [Purchase Now]()
+# 📖 Gumroad Guide 👉 [Purchase Now]() 👈
 
-First of all, thank you. Seriously, thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
+First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
 ## What's Included?
 
