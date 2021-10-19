@@ -71,6 +71,8 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/5.png" width=400>
 
+  <img src="/guide/6.png" width=200>
+
 - #### Head back to this screen and drag the Orbital icon into the Applications folder. From now on, you should be able to easily open and close Orbital from your desktop without any popups.
 
   <img src="/guide/2.png" width=400>
