@@ -100,7 +100,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - Want to get in touch?
 
-  - For updates, refunds and personal inquiries, send me a message on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+  - For personal inquiries, send me a message on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
   - For business inquiries, send me an email at suboptimaleng at gmail dot com.
 
 # 💻 Developer Guide
