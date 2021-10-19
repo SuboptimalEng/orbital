@@ -96,7 +96,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - What is your refund policy?
 
-  - I can give a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter.
+  - I can give you a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter.
 
 - Want to get in touch?
 
