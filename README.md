@@ -59,7 +59,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - #### When you click on Orbital, you will see this popup. The reason this happens is because I did not buy an Apple Developer License yet. (Details in FAQ).
 
-  <img src="/guide/3.png" width=200>
+  <img src="/guide/3.png" width=250>
 
 - #### Anyway, you can press "ok" to close that popup for now and head over to System Preferences > Security & Privacy.
 
@@ -67,7 +67,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - #### In here, you should see the option to "open (Orbital) anyway". You will need to press this the first time you download the app. This will open the app, but hold your horses, you aren't finished yet!
 
-  <img src="/guide/5.png" width=400>
+  <img src="/guide/5.png" width=450>
 
   <img src="/guide/6.png" width=250>
 
