@@ -51,17 +51,21 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Mac OS Installation Guide
 
-- First download the DMG file from Gumroad. Open the .dmg file from downloads.
+- #### Download the DMG file from Gumroad and open it.
 
-  <img src="/guide/1.png" width=600>
+  <img src="/guide/1.png" width=400>
 
-- You should now see a screen that shows the orbital logo.
+- #### You should now see a screen that shows the orbital logo.
 
-  <img src="/guide/2.png" width=600>
+  <img src="/guide/2.png" width=400>
 
-- When you try to open Orbital, you may see this popup. Whoa that looks scary, why is it there? The tl;dr is that I do not have an Apple Developer License right now.
+- #### When you try to open Orbital, you may see this popup. Whoa that looks scary, why is it there? The tl;dr is that I do not have an Apple Developer License right now.
 
-  <img src="/guide/3.png" width=600>
+  <img src="/guide/3.png" width=400>
+
+- #### You will need to head over to .
+
+- #### You will only need to do this the first time you download the app. Afterwards, Apple will allow you to freely open and close Orbital on your Mac.
 
 ## Frequently Asked Questions (FAQ)
 
