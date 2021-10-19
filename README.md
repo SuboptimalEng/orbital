@@ -1,10 +1,10 @@
 # 🛰 Orbital - Video File Browser
 
-Orbital is a _local-first_ desktop app that allows you to search, filter, and preview video (and image) files on your computer - like YouTube for your local file system.
+Orbital is a local-first desktop app that allows you to search, filter, and preview video (and image) files on your computer. Think of it like an app that turns your computer's file browser into YouTube.
 
-## About
+## How does it work?
 
-Orbital is available for purchase on 👉 [Gumroad]() for $10 USD. Your support helps me continue development without wasting time looking for consulting gigs or part-time jobs. Follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) to get notified about future releases and updates.
+You select a main folder, and Orbital will load the supported media files in that folder (and all sub-folders) and allow you to easily search, filter, and preview them.
 
 ## Demo
 
@@ -52,7 +52,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Frequently Asked Questions (FAQ)
 
-- What are the supported media file types?
+- What media file types are supported?
 
   - Video: .mov, .mp4, .webm
   - Image: .ico, .jpeg, .jpg, .png, .webp
@@ -99,11 +99,11 @@ npm install
 npm run dev
 
 // building
-// while Orbital is open source, I ask that you do not re-distribute it
+// while Orbital is open-source, I ask that you do not re-distribute it
 npm install
 npm run electron-pack
 ```
 
 ## Licensing
 
-While Orbital is open source, I ask that you do not re-distribute it.
+While Orbital is open-source, I ask that you do not re-distribute it.
