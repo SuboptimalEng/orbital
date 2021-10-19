@@ -4,7 +4,7 @@ Orbital is a _local-first_ desktop app that allows you to search, filter, and pr
 
 ## About
 
-Orbital is available for purchase on 👉 [Gumroad]() 👈 for $10 USD. Your support helps me continue development without wasting time looking for consulting gigs or part-time jobs. Follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) 👈 to get notified about future releases and updates.
+Orbital is available for purchase on 👉 [Gumroad]() for $10 USD. Your support helps me continue development without wasting time looking for consulting gigs or part-time jobs. Follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) to get notified about future releases and updates.
 
 ## Demo
 
@@ -34,7 +34,7 @@ Orbital is available for purchase on 👉 [Gumroad]() 👈 for $10 USD. Your sup
 
   <img src="/pics/theme_preview.png" width=600>
 
-# 📖 Gumroad Guide 👉 [Purchase Now]() 👈
+# 📖 Gumroad Guide 👉 [Purchase Now]()
 
 First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become an indie hacker and I really appreciate your support.
 
