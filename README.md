@@ -2,7 +2,7 @@
 
 Orbital is a local-first desktop app that allows you to search, filter, and preview video (and image) files on your computer. It turns your computer's file browser into YouTube.
 
-Orbital is available for purchase on 👉 [Gumroad]() for $10 USD.
+Orbital is available for 👉 [purchase on Gumroad]() for $10 USD.
 
 ## How does it work?
 
