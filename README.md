@@ -53,7 +53,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - #### Download the .dmg file from Gumroad and open it. Click it to open and you should see a screen that shows the Orbital logo along with your applications folder.
 
-  <img src="/guide/1.png" width=300>
+  <img src="/guide/1.png" width=400>
 
   <img src="/guide/2.png" width=300>
 
