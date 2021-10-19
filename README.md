@@ -51,7 +51,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Mac OS Installation Guide
 
-- #### Download the .dmg file from Gumroad and open it. Click it to open and you should see a screen that shows the Orbital logo along with your applications folder.
+- #### Download the .dmg file from Gumroad and confirm that it is in your downloads folder. Click it to open and you should see a screen that shows the Orbital logo along with your applications folder.
 
   <img src="/guide/1.png" width=500>
 
@@ -61,7 +61,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/3.png" width=250>
 
-- #### Anyway, you can press "ok" to close that popup for now and head over to System Preferences > Security & Privacy.
+- #### Anyway, you can press "ok" to close that popup, and head over to System Preferences > Security & Privacy.
 
   <img src="/guide/4.png" width=400>
 
@@ -75,7 +75,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/2.png" width=400>
 
-- #### Feel free to reach out to me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) if you have any more questions
+- #### Feel free to reach out to me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) if you have any more questions.
 
 ## Frequently Asked Questions (FAQ)
 
