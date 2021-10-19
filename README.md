@@ -51,13 +51,11 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Mac OS Installation Guide
 
-- #### Download the .dmg file from Gumroad and open it.
+- #### Download the .dmg file from Gumroad and open it. Click it to open and you should see a screen that shows the Orbital logo along with your applications folder.
 
-  <img src="/guide/1.png" width=400>
+  <img src="/guide/1.png" width=300>
 
-- #### You should now see a screen that shows the Orbital logo along with your applications folder.
-
-  <img src="/guide/2.png" width=400>
+  <img src="/guide/2.png" width=300>
 
 - #### When you click on Orbital, you will see this popup. The reason this happens is because I did not buy an Apple Developer License yet. (Details in FAQ).
 
