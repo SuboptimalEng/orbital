@@ -59,11 +59,17 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/2.png" width=400>
 
-- #### When you try to open Orbital, you may see this popup. Whoa that looks scary, why is it there? The tl;dr is that I do not have an Apple Developer License right now.
+- #### When you try to open Orbital, you will see this popup. The reason this happens is because I did not but an Apple Developer License yet. (Details in FAQ).
 
   <img src="/guide/3.png" width=400>
 
-- #### You will need to head over to .
+- #### Anyway, you can press "ok" to close that popup and head over to System Preferences.
+
+  <img src="/guide/4.png" width=400>
+
+- #### The
+
+  <img src="/guide/5.png" width=400>
 
 - #### You will only need to do this the first time you download the app. Afterwards, Apple will allow you to freely open and close Orbital on your Mac.
 
