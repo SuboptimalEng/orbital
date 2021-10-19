@@ -88,7 +88,7 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - How do I get the latest version of Orbital?
 
-  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to re-download it and follow the installation guide. You can follow me on [Twitter](https://www.twitter.com/SuboptimalEng) to get the news about any recent updates.
+  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to re-download it and follow the installation guide. You can follow me on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng) to get the news about any recent updates.
 
 - Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc)?
 
@@ -96,11 +96,11 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 - What is your refund policy?
 
-  - I can give a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter [@SuboptimalEng](https://twitter.com/SuboptimalEng).
+  - I can give a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
 
 - Want to get in touch?
 
-  - For personal inquiries, send me a message on Twitter [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
+  - For personal inquiries, send me a message on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
   - For business inquiries, send me an email at suboptimaleng at gmail dot com.
 
 # 💻 Developer Guide
