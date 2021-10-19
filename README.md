@@ -6,7 +6,7 @@ Orbital is available for 👉 [purchase on Gumroad]() for $10 USD.
 
 ## How does it work?
 
-You select a main folder, and Orbital will load the supported media files in that folder (and all sub-folders) and allow you to easily search, filter, and preview them.
+You select a main folder, and Orbital will load the video (and image) files in that folder (and all sub-folders) and allow you to easily search, filter, and preview them.
 
 ## Demo
 
