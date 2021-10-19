@@ -55,23 +55,25 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
   <img src="/guide/1.png" width=400>
 
-- #### You should now see a screen that shows the orbital logo.
+- #### You should now see a screen that shows the Orbital logo along with your applications folder.
 
   <img src="/guide/2.png" width=400>
 
-- #### When you try to open Orbital, you will see this popup. The reason this happens is because I did not but an Apple Developer License yet. (Details in FAQ).
+- #### When you click on Orbital, you will see this popup. The reason this happens is because I did not buy an Apple Developer License yet. (Details in FAQ).
 
-  <img src="/guide/3.png" width=400>
+  <img src="/guide/3.png" width=200>
 
-- #### Anyway, you can press "ok" to close that popup and head over to System Preferences.
+- #### Anyway, you can press "ok" to close that popup. Now head over to System Preferences > Security & Privacy.
 
   <img src="/guide/4.png" width=400>
 
-- #### The
+- #### In here, you should see the option to open (Orbital) anyway. You will only press this the first time you download the app.
 
   <img src="/guide/5.png" width=400>
 
-- #### You will only need to do this the first time you download the app. Afterwards, Apple will allow you to freely open and close Orbital on your Mac.
+- #### Finally, head back to this screen and drag the Orbital icon into the Applications folder. From now on, you should freely be able to open Orbital from your desktop.
+
+  <img src="/guide/2.png" width=400>
 
 ## Frequently Asked Questions (FAQ)
 
