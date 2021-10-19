@@ -51,15 +51,15 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 ## Mac OS Installation Guide
 
-- First download the DMG file from Gumroad.
+- First download the DMG file from Gumroad. Open the .dmg file from downloads.
 
   <img src="/guide/1.png" width=600>
 
-- Double click to open the DMG file and start the download process.
+- You should now see a screen that shows the orbital logo.
 
   <img src="/guide/2.png" width=600>
 
-- When you try to open it and you may see this popup. Whoa that looks scary, why is it there? I've answered this in-depth in the FAQ, but the tl;dr is that I do not have an Apple Developer License just yet.
+- When you try to open Orbital, you may see this popup. Whoa that looks scary, why is it there? The tl;dr is that I do not have an Apple Developer License right now.
 
   <img src="/guide/3.png" width=600>
 
