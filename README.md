@@ -10,8 +10,6 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 ## Demo
 
-  <video src="/demos/no_music.mp4" width=480>
-
 ## Features
 
 - #### Gallery view of videos and images.
