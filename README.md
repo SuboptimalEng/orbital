@@ -6,11 +6,8 @@ Orbital is available to 👉 [purchase on Gumroad](https://suboptimaleng.gumroad
 
 ## How does it work?
 
-You select a main folder, and Orbital will load the video (and image) files in that folder (and all sub-folders) and allow you to easily search, filter, and preview them.
+https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-82e1-9ea141a1ce61.mp4
 
-## Demo
-
-https://user-images.githubusercontent.com/70355008/138158001-d059415a-a213-41cf-b474-48c1fee4fc1e.mp4
 
 ## Features
 
