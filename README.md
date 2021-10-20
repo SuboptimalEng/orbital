@@ -34,7 +34,7 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 - #### Drag and drop media files into other apps like iMovie or Da Vinci Resolve.
 
-  <img src="/pics/image_imovie.png" width=480>
+  <img src="/pics/image_da_vinci.png" width=480>
 
 - #### Choose between light, dracula (shown below), and gruvbox (shown above) color themes.
 
