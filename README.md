@@ -10,6 +10,8 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 ## Demo
 
+https://user-images.githubusercontent.com/70355008/138158001-d059415a-a213-41cf-b474-48c1fee4fc1e.mp4
+
 ## Features
 
 - #### Gallery view of videos and images.
