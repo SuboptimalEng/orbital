@@ -10,14 +10,7 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 ## Demo
 
-- Choose root directory
-- Scroll down to load all files
-- Search for a video file
-- Preview a video on hover
-- Show video preview display
-- Show drag and drop to iMovie
-- Show keybindings in action
-- Change color themes
+  <video src="/demos/no_music.mp4" width=480>
 
 ## Features
 
