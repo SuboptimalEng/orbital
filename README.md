@@ -47,9 +47,10 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 ## What's Included?
 
 - Downloadable .dmg to run Orbital on Mac OS.
-- Gallery view of videos and images.
+- Gallery view of video (and image) files.
 - Search files through all sub-folders with filename.
 - Preview media files and traverse them with keybindings.
+- Drag and drop media files into other apps like iMovie or Da Vinci Resolve.
 - Choose between light, dracula, and gruvbox color themes.
 - Lifetime updates.
 
