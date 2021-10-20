@@ -22,23 +22,23 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 - #### Gallery view of videos and images.
 
-  <img src="/pics/theme_gruvbox.png" width=360>
+  <img src="/pics/theme_gruvbox.png" width=480>
 
 - #### Search files through all sub-folders with filename.
 
-  <img src="/pics/image_search.png" width=360>
+  <img src="/pics/image_search.png" width=480>
 
 - #### Preview media files and traverse them with keybindings.
 
-  <img src="/pics/image_preview.png" width=360>
+  <img src="/pics/image_preview.png" width=480>
 
 - #### Drag and drop media files into other apps like Da Vinci Resolve.
 
-  <img src="/pics/image_dnd.png" width=360>
+  <img src="/pics/image_dnd.png" width=480>
 
 - #### Choose between light, dracula (shown below), and gruvbox (shown above) color themes.
 
-  <img src="/pics/theme_preview.png" width=360>
+  <img src="/pics/theme_preview.png" width=480>
 
 # 📖 Gumroad Guide 👉 [Purchase Now](https://suboptimaleng.gumroad.com/l/orbital-app)
 
