@@ -45,16 +45,6 @@ You select a main folder, and Orbital will load the video (and image) files in t
 
 First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become a YouTuber + indie hacker and I really appreciate your support.
 
-## What's Included?
-
-- Downloadable .dmg to run Orbital on Mac OS.
-- Gallery view of video (and image) files.
-- Search files through all sub-folders with filename.
-- Preview media files and traverse them with keybindings.
-- Drag and drop media files into other apps like iMovie or Da Vinci Resolve.
-- Choose between light, dracula, and gruvbox color themes.
-- Lifetime updates.
-
 ## Mac OS Installation Guide
 
 - #### Download the .dmg file from Gumroad and click it to open. You should see a screen that shows the Orbital logo along with your applications folder.
