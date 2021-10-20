@@ -51,15 +51,18 @@ export default function VideoCard({ path }: IFile) {
 
   return (
     <div className="relative h-full w-full flex place-items-center justify-center bg-card-bg cursor-pointer">
-      <video
-        id={path}
-        src={`file-protocol://getMediaFile/${path}`}
-        typeof="video/ogg"
-        className="object-cover h-full max-w-full"
-        onLoadedMetadata={setDurationOnLoad}
-        onMouseEnter={saveVideoElementData}
-        onMouseMove={previewOnHover}
-      />
+      <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center place-items-center">
+        <video
+          id={path}
+          draggable={true}
+          typeof="video/ogg"
+          src={`file-protocol://getMediaFile/${path}`}
+          className="object-cover h-full max-w-full"
+          onLoadedMetadata={setDurationOnLoad}
+          onMouseEnter={saveVideoElementData}
+          onMouseMove={previewOnHover}
+        />
+      </div>
 
       <div className="absolute text-sm px-1 right-0 top-2 bg-editor-bg text-editor-fg place-items-center">
         <div>{getReadableDuration()}</div>

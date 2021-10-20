@@ -14,6 +14,7 @@ export default function ImageCard({ path }: IFile) {
         <img
           src={`file-protocol://getMediaFile/${path}`}
           className="object-cover w-full h-full"
+          draggable={true}
           alt=""
         />
       </div>

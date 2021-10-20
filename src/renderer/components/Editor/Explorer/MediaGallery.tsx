@@ -90,7 +90,7 @@ export default function MediaGallery() {
 
   const handleCardDrag = (event: DragEvent, filePath: string) => {
     event.preventDefault();
-    console.log(filePath);
+    // console.log(filePath);
     window.ipc.send('start-drag', { filePath });
   };
 
