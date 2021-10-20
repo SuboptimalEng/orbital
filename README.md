@@ -8,7 +8,6 @@ Orbital is available to 👉 [purchase on Gumroad](https://suboptimaleng.gumroad
 
 https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-82e1-9ea141a1ce61.mp4
 
-
 ## Features
 
 - #### Gallery view of videos and images.
