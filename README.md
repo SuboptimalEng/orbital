@@ -11,14 +11,23 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 ## Features
 
 - Gallery view of videos and images.
+
   <img src="/pics/theme_gruvbox.png" width=480>
+
 - Search files through all sub-folders with filename.
+
   <img src="/pics/image_search.png" width=480>
+
 - Preview media files and traverse them with keybindings.
+
   <img src="/pics/image_preview.png" width=480>
+
 - Drag and drop media files into other apps like iMovie or Da Vinci Resolve.
+
   <img src="/pics/image_da_vinci.png" width=480>
+
 - Choose between light, dracula, and gruvbox color themes.
+
   <img src="/pics/theme_preview.png" width=480>
 
 # 📖 Gumroad Guide 👉 [Purchase Now](https://suboptimaleng.gumroad.com/l/orbital-app)
