@@ -34,9 +34,8 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 
 First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become a YouTuber + indie hacker and I really appreciate your support.
 
-## Mac OS 👉 [Installation Guide](/md/INSTALL.md)
-
-## Frequently Asked Questions 👉 [FAQ](/md/FAQ.md)
+- Mac OS 👉 [Installation Guide](/md/INSTALL.md)
+- Frequently Asked Questions 👉 [FAQ](/md/FAQ.md)
 
 # 💻 Developer Guide
 

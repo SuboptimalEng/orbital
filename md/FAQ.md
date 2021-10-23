@@ -1,4 +1,4 @@
-## Frequently Asked Questions (FAQ)
+# Frequently Asked Questions (FAQ)
 
 - What media file types are supported?
 
