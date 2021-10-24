@@ -1,11 +1,13 @@
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
+import Hightlighter from 'react-highlight-words';
 
 export default function ImageCard({ path }: IFile) {
   const folder = useAppSelector((state) => state.folder);
+  const { query } = useAppSelector((state) => state.explorer);
 
   const getReadablePath = (): string => {
-    return path.substr(folder.path.length);
+    return path.substr(folder.path.length + 1);
   };
 
   return (
@@ -20,7 +22,12 @@ export default function ImageCard({ path }: IFile) {
       </div>
 
       <div className="absolute text-sm px-1 bottom-2 left-0 max-w-full bg-editor-bg text-editor-fg place-items-center">
-        <div className="truncate">{getReadablePath()}</div>
+        <div className="truncate">
+          <Hightlighter
+            searchWords={[query]}
+            textToHighlight={getReadablePath()}
+          />
+        </div>
       </div>
     </div>
   );
