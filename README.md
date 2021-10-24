@@ -37,6 +37,11 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 - Mac OS 👉 [Installation Guide](/md/INSTALL.md)
 - Frequently Asked Questions 👉 [FAQ](/md/FAQ.md)
 
+# 🤔 Discussions
+
+- [r/webdev](https://www.reddit.com/r/webdev/comments/qdxngk/i_made_an_opensource_file_browser_to_easily/)
+- [r/videography](https://www.reddit.com/r/videography/comments/qekxl8/after_quitting_my_job_and_going_fulltime_on/)
+
 # 💻 Developer Guide
 
 This part of the README is dedicated to anyone who wishes to get into the technical details of Orbital. For what it's worth, I started learning React and TypeScript two months ago so I would really appreciate any feedback on the code!
