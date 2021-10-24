@@ -1,5 +1,6 @@
 import { useEffect, useState, DragEvent } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { distance } from 'fastest-levenshtein';
 
 import { IFile } from '../../../types';
 import { isVideoFile } from '../../../../common/mediaExtensions';
@@ -27,7 +28,22 @@ export default function MediaGallery() {
   const [infiniteFiles, setInfiniteFiles] = useState<Array<IFile>>([]);
 
   useEffect(() => {
-    const searchResults = files.filter((file) => file.path.includes(query));
+    const MAX_DISTANCE = 1;
+
+    // NOTE: This method updates the list of files to show in the media gallery.
+    const searchResults = files.filter((file) => {
+      // NOTE: The total distance between the query and filename can be very large
+      // if the query is really short, or the user does not specify anything. To
+      // adjust for this, we need to calculate another distance based on the query.
+      const totalDistance = distance(
+        query.toLowerCase(),
+        file.name.toLowerCase()
+      );
+      const adjustedDistance =
+        totalDistance - (file.name.length - query.length);
+      return adjustedDistance <= MAX_DISTANCE;
+    });
+
     dispatch(setFilteredFiles(searchResults));
 
     const initialFiles: Array<IFile> = [];
