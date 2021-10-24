@@ -51,6 +51,7 @@ This part of the README is dedicated to anyone who wishes to get into the techni
 - Make PR describing changes
 - Create new release on merge
 - Update gumroad .dmg file
+- Update Orbital version
 
 ## Tech Stack
 
