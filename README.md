@@ -46,6 +46,12 @@ First of all, thank you. Seriously - thanks a bunch! I recently quit my job to b
 
 This part of the README is dedicated to anyone who wishes to get into the technical details of Orbital. For what it's worth, I started learning React and TypeScript two months ago so I would really appreciate any feedback on the code!
 
+## Updates Checklist
+
+- Make PR describing changes
+- Create new release on merge
+- Update gumroad .dmg file
+
 ## Tech Stack
 
 - React
