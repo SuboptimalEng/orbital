@@ -1,4 +1,5 @@
 import { MouseEvent, SyntheticEvent, useState } from 'react';
+import Hightlighter from 'react-highlight-words';
 
 import { IFile } from '../../../types';
 import { useAppSelector } from '../../../store/hooks';
@@ -6,7 +7,10 @@ import { useAppSelector } from '../../../store/hooks';
 export default function VideoCard({ path }: IFile) {
   let videoWidth = 10000;
   let boundingClientLeft = 0;
+
   const folder = useAppSelector((state) => state.folder);
+  const { query } = useAppSelector((state) => state.explorer);
+
   const [duration, setDuration] = useState<number>(0);
 
   const setDurationOnLoad = (e: SyntheticEvent<HTMLVideoElement>) => {
@@ -46,7 +50,7 @@ export default function VideoCard({ path }: IFile) {
   };
 
   const getReadablePath = (): string => {
-    return path.substr(folder.path.length);
+    return path.substr(folder.path.length + 1);
   };
 
   return (
@@ -69,7 +73,12 @@ export default function VideoCard({ path }: IFile) {
       </div>
 
       <div className="absolute text-sm px-1 bottom-2 left-0 max-w-full bg-editor-bg text-editor-fg place-items-center">
-        <div className="truncate">{getReadablePath()}</div>
+        <div className="truncate">
+          <Hightlighter
+            searchWords={[query]}
+            textToHighlight={getReadablePath()}
+          />
+        </div>
       </div>
     </div>
   );
