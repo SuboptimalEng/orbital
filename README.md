@@ -30,67 +30,28 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 
   <img src="/pics/theme_preview.png" width=480>
 
-# 📖 Gumroad Guide 👉 [Purchase Now](https://suboptimaleng.gumroad.com/l/orbital-app)
+# 📖 Gumroad Guide 👉 [Buy Now](https://suboptimaleng.gumroad.com/l/orbital-app)
 
 First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become a YouTuber + indie hacker and I really appreciate your support.
 
-## Mac OS Installation Guide
+- Mac OS 👉 [Installation Guide](/md/INSTALL.md)
+- Frequently Asked Questions 👉 [FAQ](/md/FAQ.md)
 
-- Download the .dmg file from Gumroad and click it to open. You should see a screen that shows the Orbital logo along with your applications folder.
+# 🤔 Discussions
 
-  <img src="/pics/guide/1.png" width=400>
-
-- When you click on Orbital, you will see this popup that looks similar to this. The reason this happens is because I did not buy an Apple Developer License yet. (Details in FAQ).
-
-  <img src="/pics/guide/2.png" width=250>
-
-- Anyway, you can press "ok" to close that popup, and head over to System Preferences > Security & Privacy.
-
-  <img src="/pics/guide/3.png" width=400>
-
-- In here, you should see the option to "open (Orbital) anyway". You will need to press this the first time you download the app. This will open the app, but hold your horses, you aren't finished yet!
-
-  <img src="/pics/guide/4.png" width=400>
-
-  <img src="/pics/guide/5.png" width=222>
-
-- Head back to this screen and drag the Orbital icon into the Applications folder. From now on, you should be able to easily open and close Orbital from your desktop without any popups.
-
-  <img src="/pics/guide/1.png" width=400>
-
-- Feel free to reach out to me on Twitter if you have any more questions.
-
-## Frequently Asked Questions (FAQ)
-
-- What media file types are supported?
-
-  - Video: .mov, .mp4, .webm
-  - Image: .ico, .jpeg, .jpg, .png, .webp
-
-- Is there going to be support for Windows?
-
-  - I would love to release this on Windows, but I just do not have access to windows computer right now. I will add it to the road-map when I get one.
-
-- How do I get the latest version of Orbital?
-
-  - For the time being, I will update the downloadable DMG file on Gumroad whenever a new version comes out. You should be able to re-download it and follow the installation guide. You can follow me on Twitter to get the news about any recent updates.
-
-- Why can't Orbital automatically update like other desktop apps (Spotify, Notion, Discord, etc)?
-
-  - This requires me to set up an LLC and get an Apple developer license. This is a viable option for companies that have lots of resources, but since I'm a solo-developer (making less than $100 a month), setting this up will cost time and money which I'd rather spend on adding new features.
-
-- What is your refund policy?
-
-  - I can give you a full refund if you don't like your purchase (within 14 days). Just send me a message on Twitter.
-
-- Want to get in touch?
-
-  - For personal inquiries, send me a message on Twitter 👉 [@SuboptimalEng](https://www.twitter.com/SuboptimalEng).
-  - For business inquiries, send me an email at suboptimaleng at gmail dot com.
+- [r/webdev](https://www.reddit.com/r/webdev/comments/qdxngk/i_made_an_opensource_file_browser_to_easily/)
+- [r/videography](https://www.reddit.com/r/videography/comments/qekxl8/after_quitting_my_job_and_going_fulltime_on/)
 
 # 💻 Developer Guide
 
 This part of the README is dedicated to anyone who wishes to get into the technical details of Orbital. For what it's worth, I started learning React and TypeScript two months ago so I would really appreciate any feedback on the code!
+
+## Updates Checklist
+
+- Make PR describing changes
+- Create new release on merge
+- Update gumroad .dmg file
+- Update Orbital version
 
 ## Tech Stack
 
