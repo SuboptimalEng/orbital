@@ -13,15 +13,15 @@ interface ISelectableTheme {
 
 export const selectableThemes: Array<ISelectableTheme> = [
   {
-    name: 'light',
+    name: 'Light',
     theme: lightTheme,
   },
   {
-    name: 'dracula',
+    name: 'Dracula',
     theme: draculaTheme,
   },
   {
-    name: 'gruvbox',
+    name: 'Gruvbox',
     theme: gruvboxTheme,
   },
 ];

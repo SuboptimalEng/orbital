@@ -19,7 +19,7 @@ export default function ImageCard({ path }: IFile) {
         />
       </div>
 
-      <div className="absolute text-sm px-1 bottom-2 left-0 max-w-full bg-editor-bg text-editor-fg place-items-center">
+      <div className="absolute text-sm bottom-2 left-0 max-w-full bg-editor-bg text-editor-fg place-items-center p-1">
         <div className="truncate">{getReadablePath()}</div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import hotkeys from 'hotkeys-js';
 import dateFormat from 'dateformat';
 import { useEffect, useState } from 'react';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai';
 
 import { IFile, IMediaPreview } from '../../../types';
 import { isVideoFile } from '../../../../common/mediaExtensions';
@@ -73,12 +75,12 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
           className="cursor-pointer"
           onClick={() => dispatch(closeMediaPreview())}
         >
-          ❌
+          <AiOutlineClose className="transition-all duration-500 text-5xl hover:text-red" />
         </div>
       </div>
       <div className="absolute inset-x-4 inset-y-4 flex place-items-center justify-between">
         <div className="cursor-pointer text-3xl" onClick={displayPreviousFile}>
-          ⬅️
+          <BiLeftArrowAlt className="transition-all transform hover:scale-150" />
         </div>
 
         <div className="flex flex-col justify-center place-items-center h-5/6 w-5/6">
@@ -90,7 +92,7 @@ export default function MediaPreview({ index, infiniteFiles }: IMediaPreview) {
         </div>
 
         <div className="cursor-pointer text-3xl" onClick={displayNextFile}>
-          ➡️
+          <BiRightArrowAlt className="transition-all transform hover:scale-150" />
         </div>
       </div>
     </div>

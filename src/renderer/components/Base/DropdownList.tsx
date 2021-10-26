@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Listbox } from '@headlessui/react';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 
 // NOTE: Should we implement OptionValueType constraint?
 // type OptionValueType = number | string;
@@ -43,21 +44,23 @@ export default function DropdownList<T>({
         {({ open }) => {
           return (
             <div className="w-40 relative">
-              <Listbox.Button className="flex bg-activity-bg text-activity-fg place-items-center justify-between px-2 py-1 w-full focus:outline-none">
+              <Listbox.Button className="transition-all duration-500 flex bg-activity-bg hover:bg-activity-hover text-activity-fg place-items-center justify-between p-2 text-xl rounded-md w-full focus:outline-none">
                 <div>{result}</div>
-                <div>🔽</div>
+                <div>
+                  <AiOutlineArrowDown />
+                </div>
               </Listbox.Button>
               {open && (
-                <div className="absolute bg-activity-bg text-activity-fg z-10 w-full cursor-pointer">
-                  <Listbox.Options className="focus:outline-none">
+                <div className="transition-all duration-500 absolute bg-activity-bg text-activity-fg z-10 w-full cursor-pointer rounded-md mt-1">
+                  <Listbox.Options className="focus:outline-none rounded-md">
                     {options.map((option) => (
                       <Listbox.Option key={option.label} value={option.value}>
                         {({ active }) => (
                           <div
                             className={`${
                               active
-                                ? 'bg-activity-hover px-2 py-1'
-                                : 'px-2 py-1'
+                                ? 'transition-all duration-500 opacity-100 text-xl bg-activity-hover p-2 rounded-md'
+                                : 'transition-all duration-500 opacity-50 p-2 text-xl rounded-md'
                             }`}
                           >
                             {option.label}

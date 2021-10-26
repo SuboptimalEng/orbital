@@ -1,5 +1,7 @@
 import { useAppDispatch } from '../../store/hooks';
 import { setFolderIsLoading } from '../../store/folderSlice';
+import { HiFolderAdd } from 'react-icons/hi';
+import { BsTwitter } from 'react-icons/bs';
 
 export default function Welcome() {
   const dispatch = useAppDispatch();
@@ -19,19 +21,25 @@ export default function Welcome() {
     <div className="p-20">
       <div className="flex flex-col space-y-4">
         <div className="font-bold">Getting Started...</div>
-        <div className="text-2xl flex flex-col">
-          <button
-            onClick={openDirectory}
-            className="flex text-left hover:text-hyperlink"
-          >
-            📁 Open a Folder
-          </button>
-          <button
-            onClick={openExternal}
-            className="flex text-left hover:text-hyperlink"
-          >
-            🐦 DM me @SuboptimalEng
-          </button>
+        <div className="text-xl flex flex-row space-x-5">
+          <div className="">
+            <button
+              onClick={openDirectory}
+              className="transition-all duration-500 flex flex-col justify-center items-center space-y-5 w-64 bg-orange p-5 h-64 rounded-lg hover:text-hyperlink"
+            >
+              <HiFolderAdd className="text-9xl" />
+            </button>
+            <span>Open a Folder</span>
+          </div>
+          <div>
+            <button
+              onClick={openExternal}
+              className="transition-all duration-500 flex flex-col justify-center items-center space-y-5 w-64 bg-activity-fg p-5 h-64 rounded-lg hover:text-hyperlink"
+            >
+              <BsTwitter className="text-7xl" />
+            </button>
+            <span>DM me @SuboptimalEng</span>
+          </div>
         </div>
       </div>
     </div>

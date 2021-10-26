@@ -13,7 +13,7 @@ export default function SearchBar() {
           value={query}
           placeholder="Search files by name"
           onChange={(e) => dispatch(setQuery(e.target.value))}
-          className="bg-search-bg w-full py-2 focus:outline-none"
+          className="transition-all duration-500 bg-search-bg w-full p-2 rounded-lg focus:outline-none hover:bg-search-fg focus:bg-search-fg focus:text-search-bg"
         />
       </div>
     </div>

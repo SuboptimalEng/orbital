@@ -53,7 +53,7 @@ export default function SettingsDisplay() {
   return (
     <div className="absolute inset-0 scrollbar scrollbar-thumb-scrollbar-fg scrollbar-track-scrollbar-bg">
       <div className="p-20 flex flex-col space-y-16">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-5">
           <div className="font-bold">Settings</div>
           <div className="text-2xl flex flex-col place-items-start space-y-2">
             <DropdownList<number>
@@ -72,22 +72,24 @@ export default function SettingsDisplay() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-5">
           <div className="font-bold">Key Bindings</div>
           <div className="text-2xl flex flex-col space-y-2">
             <div className="font-medium">Close Preview</div>
-            <div className="bg-activity-bg text-activity-fg p-1 w-40">esc</div>
+            <div className="bg-activity-bg text-activity-fg p-2 rounded-md w-40 text-xl">
+              Esc
+            </div>
           </div>
           <div className="text-2xl flex flex-col space-y-2">
             <div className="font-medium">Previous Image</div>
-            <div className="bg-activity-bg text-activity-fg p-1 w-40">
-              left arrow
+            <div className="bg-activity-bg text-activity-fg p-2 rounded-md w-40 text-xl">
+              Left Arrow
             </div>
           </div>
           <div className="text-2xl flex flex-col space-y-2">
             <div className="font-medium">Next Image</div>
-            <div className="bg-activity-bg text-activity-fg p-1 w-40">
-              right arrow
+            <div className="bg-activity-bg text-activity-fg p-2 rounded-md w-40 text-xl">
+              Right Arrow
             </div>
           </div>
         </div>
