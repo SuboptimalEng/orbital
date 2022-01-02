@@ -31,12 +31,12 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 
   <img src="/pics/theme_preview.png" width=480>
 
-# 📖 Gumroad Guide 👉 [Buy Now](https://suboptimaleng.gumroad.com/l/orbital-app)
+<!-- # 📖 Gumroad Guide 👉 [Buy Now](https://suboptimaleng.gumroad.com/l/orbital-app)
 
 First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become a YouTuber + indie hacker and I really appreciate your support.
 
 - Mac OS 👉 [Installation Guide](/md/INSTALL.md)
-- Frequently Asked Questions 👉 [FAQ](/md/FAQ.md)
+- Frequently Asked Questions 👉 [FAQ](/md/FAQ.md) -->
 
 # 🤔 Discussions
 
