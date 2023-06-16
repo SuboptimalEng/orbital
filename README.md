@@ -1,8 +1,6 @@
 # 🛰 Orbital - Video File Browser
 
-Orbital is a local-first desktop app that allows you to search, filter, and preview video (and image) files on your computer. It turns your computer's file browser into YouTube. All questions (and suggestions) can be directed to me on 👉 [Twitter](https://www.twitter.com/SuboptimalEng).
-
-<!-- Orbital is available to 👉 [purchase on Gumroad](https://suboptimaleng.gumroad.com/l/orbital-app) for $10 USD.  -->
+Orbital is a local-first desktop app that allows you to search, filter, and preview video (and image) files on your computer. It turns your computer's file browser into YouTube. All questions (and suggestions) can be directed to me on [twitter](https://www.twitter.com/SuboptimalEng).
 
 ## How does it work?
 
@@ -29,13 +27,6 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 - Choose between light, dracula, and gruvbox color themes.
 
   <img src="/pics/theme_preview.png" width=480>
-
-<!-- # 📖 Gumroad Guide 👉 [Buy Now](https://suboptimaleng.gumroad.com/l/orbital-app)
-
-First of all, thank you. Seriously - thanks a bunch! I recently quit my job to become a YouTuber + indie hacker and I really appreciate your support.
-
-- Mac OS 👉 [Installation Guide](/md/INSTALL.md)
-- Frequently Asked Questions 👉 [FAQ](/md/FAQ.md) -->
 
 # 🤔 Discussions
 
