@@ -28,12 +28,12 @@ https://user-images.githubusercontent.com/70355008/138158479-9d322fd6-487b-48d0-
 
   <img src="/pics/theme_preview.png" width=480>
 
-# 🤔 Discussions
+# Discussions
 
 - [r/webdev](https://www.reddit.com/r/webdev/comments/qdxngk/i_made_an_opensource_file_browser_to_easily/)
 - [r/videography](https://www.reddit.com/r/videography/comments/qekxl8/after_quitting_my_job_and_going_fulltime_on/)
 
-# 💻 Developer Guide
+# Developer Guide
 
 This part of the README is dedicated to anyone who wishes to get into the technical details of Orbital. For what it's worth, I started learning React and TypeScript two months ago so I would really appreciate any feedback on the code!
 
